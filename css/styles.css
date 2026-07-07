@@ -124,3 +124,15 @@ button.prev-btn:hover {
     from { opacity: 0; transform: translateX(20px); }
     to { opacity: 1; transform: translateX(0); }
 }
+.navbar {
+  border-bottom: 1px solid #e8e2dc; /*adds a line bottom of the navigation bar*/
+  padding: 18px 40px;
+}
+ 
+.navbar__logo {
+  display: flex;
+  align-items: center; /*centered*/
+  justify-content: center; 
+  gap: 42px; /* gap betweentexts */
+}
+ 
