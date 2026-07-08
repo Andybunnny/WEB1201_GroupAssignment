@@ -61,7 +61,7 @@ input:focus, select:focus {
 
 /* --- BUTTONS --- */
 button {
-    background-color: #D84315;
+    background-color: #8f620f;
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -70,11 +70,11 @@ button {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
-    margin-top: 1rem;
+    margin-top: 0.2rem; /* Adds a small gap between the button and the input field */
 }
 
 button:hover {
-    background-color: #BF360C;
+    background-color: #b1aa4e;
 }
 
 button:active {
@@ -136,3 +136,14 @@ button.prev-btn:hover {
   gap: 42px; /* gap betweentexts */
 }
  
+.navbar__logo a {
+    color: #967B5A; /*text color*/
+    text-decoration: none; /*removes underline*/
+    font-size: 14px;
+    font-weight: 600;
+
+
+}
+.navbar__logo a:hover {
+    color: #be7a20; /*changes color when hovered*/
+}
