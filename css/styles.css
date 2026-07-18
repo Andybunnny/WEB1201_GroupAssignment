@@ -1,3 +1,5 @@
+/* ===== GLOBAL STYLES & COMPONENTS ===== */
+
 /* --- Base Reset & Typography --- */
 * {
     box-sizing: border-box;
@@ -11,6 +13,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- Header --- */
@@ -28,63 +31,46 @@ header h1 {
     color: var(--text-primary);
 }
 
-/* --- Theme Toggle Button --- */
-.theme-toggle {
-    position: absolute;
-    top: 2rem;
-    right: 2.5rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: background-color var(--transition), transform 0.2s ease;
-}
-
-.theme-toggle:hover {
-    background-color: var(--border);
-    transform: scale(1.1);
-}
-
-.theme-toggle svg {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-    fill: none;
-}
-
 /* --- Navigation --- */
 nav {
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     margin-bottom: 3rem;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 80px;
+    padding: 0 2rem;
 }
 
-nav ul {
+nav .nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 3rem;
-    padding: 1rem 0;
+    padding: 0;
+    margin: 0; 
     flex-wrap: wrap;
 }
 
-nav ul li {
+nav .nav-links li {
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-secondary);
-    cursor: pointer;
-    transition: color var(--transition);
     position: relative;
 }
 
-nav ul li::after {
+nav .nav-links li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: color var(--transition);
+}
+
+nav .nav-links li::after {
     content: '';
     position: absolute;
     bottom: -4px;
@@ -95,12 +81,44 @@ nav ul li::after {
     transition: width var(--transition);
 }
 
-nav ul li:hover {
+nav .nav-links li:hover a {
     color: var(--text-primary);
 }
 
-nav ul li:hover::after {
-    width: 100%;
+nav .nav-links li:hover::after {
+    width: 100%;    
+}
+
+/* --- Nav Icons Container (Right Aligned) --- */
+.nav-icons {
+    position: absolute;
+    right: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-icons a, .theme-toggle {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-icons a:hover, .theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
 }
 
 /* --- Main Layout --- */
@@ -119,17 +137,25 @@ footer {
 }
 
 /* --- Responsive Layout --- */
-@media (max-width: 640px) {
+@media (max-width: 850px) {
     header {
         padding: 2.5rem 1rem 1.5rem;
     }
 
-    header h1 {
-        font-size: 1.5rem;
+    nav {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
     }
 
-    nav ul {
+    nav .nav-links {
         gap: 1.5rem;
+    }
+
+    .nav-icons {
+        position: relative;
+        right: auto;
+        margin-top: 1.5rem;
+        justify-content: center;
     }
 
     main {

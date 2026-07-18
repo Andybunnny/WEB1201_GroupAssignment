@@ -1,0 +1,188 @@
+/* ===== AUTHENTICATION STYLES (LOGIN & SIGNUP) ===== */
+
+.auth-container {
+    max-width: 550px;
+    margin: 4rem auto;
+    padding: 2.5rem 2rem;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.auth-container h2, .auth-container h3 {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.auth-container p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.auth-container hr {
+    border: 0;
+    height: 1px;
+    background: var(--border);
+    margin: 2.5rem 0;
+}
+
+/* --- FORM LAYOUT (FLEXBOX) --- */
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.auth-container label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: -0.8rem;
+    color: var(--text-primary);
+}
+
+.auth-container input,
+.auth-container select,
+.auth-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    transition: border-color var(--transition);
+}
+
+.auth-container input:focus,
+.auth-container select:focus,
+.auth-container textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(176, 137, 104, 0.08);
+}
+
+/* --- BUTTONS --- */
+.auth-container button {
+    background-color: var(--accent);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color var(--transition), transform 0.1s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-container button:hover {
+    background-color: var(--accent-hover);
+}
+
+.auth-container button:active {
+    transform: scale(0.98);
+}
+
+.auth-container button.prev-btn {
+    background-color: var(--text-secondary);
+}
+
+.auth-container button.prev-btn:hover {
+    background-color: var(--text-primary);
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2 ease;
+}
+
+.forgot-password:hover {
+    color: var(--accent-hover);
+}
+
+.create-account-btn {
+    background-color: transparent !important;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent) !important;
+    width: 60% !important;
+    margin: 10px auto !important;
+    display: block;
+}
+
+.create-account-btn:hover {
+    background-color: var(--accent) !important;
+    color: #ffffff !important;
+}
+
+/* --- PROGRESS INDICATOR --- */
+.progress-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.step {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 2;
+}
+
+.step.active {
+    color: var(--accent);
+}
+
+/* --- UTILITY CLASSES --- */
+.hidden { display: none !important; }
+.form-step { display: none; }
+.form-step.active-step {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    animation: slideIn 0.4s ease-out forwards;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-group button {
+    margin-top: 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal !important;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    width: auto !important;
+}
+
+.btn-complete {
+    background-color: #2e7d32 !important;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
