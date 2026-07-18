@@ -63,4 +63,32 @@ document.addEventListener("DOMContentLoaded", () => {
       applyTheme(next);
     });
   });
+
+  // ===== STICKY HEADER LOGIC =====
+    const headerWrapper = document.getElementById('mainHeader');
+    
+    if (headerWrapper) {
+        // 1. Create an invisible placeholder block
+        const placeholder = document.createElement('div');
+        // 2. Insert it right before the header in the DOM
+        headerWrapper.parentNode.insertBefore(placeholder, headerWrapper);
+        
+        window.addEventListener('scroll', () => {
+            // Get the current height of the header
+            const headerHeight = headerWrapper.offsetHeight;
+            
+            // 3. Trigger sticky state only after scrolling well past the header
+            if (window.scrollY > headerHeight + 30) {
+                // Lock the placeholder to the exact height to prevent the page from collapsing
+                placeholder.style.height = `${headerHeight}px`;
+                headerWrapper.classList.add('is-sticky');
+                
+            // 4. Reset ONLY when the user scrolls all the way back to the top
+            } else if (window.scrollY <= 10) { 
+                // Remove the placeholder height and the sticky class
+                placeholder.style.height = '0px';
+                headerWrapper.classList.remove('is-sticky');
+            }
+        });
+    }
 });
