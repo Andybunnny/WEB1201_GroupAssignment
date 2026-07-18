@@ -1,25 +1,14 @@
-/* ===== FILE: team.css (Minimalist & Professional Theme) ===== */
-
-:root {
-    --bg-main: #f5f5f7; 
-    --bg-card: #ffffff; 
-    --text-primary: #1d1d1f; 
-    --text-accent: #515154; 
-    --text-muted: #86868b; 
-    --border-color: #e5e5ea; 
-    --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.06); 
-    --radius: 4px; 
-}
+/* ===== CSS theme file for team page ===== */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Removed the hardcoded font so it inherits your global bakery font */
 }
 
 body {
-    background-color: var(--bg-main);
+    background-color: var(--bg-body);
     color: var(--text-primary);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
@@ -35,7 +24,7 @@ body {
     gap: 0.5rem;
     color: var(--text-primary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.95rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -48,32 +37,73 @@ body {
 
 .back-btn:hover {
     transform: translateX(-5px);
-    color: var(--text-muted);
+    color: var(--accent);
+}
+
+/* --- Dark Mode Toggle Button (Top Right) --- */
+.team-theme-toggle {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 0;
+}
+
+.team-theme-toggle:hover {
+    transform: scale(1.1);
+    color: var(--accent);
+}
+
+.team-theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
 }
 
 /* --- Main Layout --- */
 .team-section {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .page-title {
-    font-size: 3rem;
-    letter-spacing: 0.14em;
-    margin-bottom: 4rem;
+    font-size: 2.4rem; 
+    letter-spacing: 0.15em;
     color: var(--text-primary);
     text-align: center;
-    font-weight: 400;
+    font-weight: 300; /* Made slightly lighter to match bakery header */
+}
+
+.team-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 1rem auto 4rem auto;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1.05rem;
 }
 
 .team-container {
     display: flex;
-    gap: 2rem;
     justify-content: center;
     align-items: stretch;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     min-height: 450px;
+    gap: 2rem;
+}
+
+/* Removes gaps when a card is expanded */
+.team-container:has(.is-expanded) {
+    gap: 0;
 }
 
 /* --- Base Card Styles --- */
@@ -98,16 +128,15 @@ body {
     height: 100%;
     object-fit: cover;
     min-height: 400px;
-    background-color: #ebebeb; 
+    background-color: var(--border); 
     border-radius: var(--radius);
-    /* Stronger fade effect when not hovering */
-    filter: grayscale(50%) opacity(0.6); 
+    /* Softened the grayscale so it feels warmer and fits a bakery */
+    filter: grayscale(40%) opacity(0.85); 
     transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
 .team-card:hover .member-image img,
 .team-card.is-expanded .member-image img {
-    /* Full color and opacity restored on hover or when clicked */
     filter: grayscale(0%) opacity(1);
 }
 
@@ -123,35 +152,35 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centered initially */
-    border: 1px solid var(--border-color);
+    justify-content: center; 
+    border: 1px solid var(--border);
     box-shadow: var(--shadow-soft);
     border-radius: var(--radius);
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .member-content h3 {
-    color: var(--text-primary);
+    color: var(--accent); /* Uses bakery accent color for names */
     font-size: 1.4rem;
     margin-bottom: 0.3rem;
     font-weight: 600;
 }
 
 .role {
-    color: var(--text-accent);
+    color: var(--text-secondary);
     font-size: 0.85rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .student-id {
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
-/* --- Detailed Information (Hidden initially) --- */
+/* --- Detailed Information --- */
 .detailed-info {
     max-height: 0;
     opacity: 0;
@@ -162,7 +191,7 @@ body {
 .detailed-info hr {
     border: 0;
     height: 1px;
-    background-color: var(--border-color);
+    background-color: var(--border);
     margin: 1.5rem 0;
 }
 
@@ -176,7 +205,7 @@ body {
 .detailed-info ul {
     list-style-type: none;
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 .detailed-info li {
@@ -197,30 +226,30 @@ body {
 }
 
 .portfolio-btn {
-    background-color: var(--text-primary);
-    color: var(--bg-card);
+    background-color: var(--accent);
+    color: #ffffff;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 0.85rem;
     border-radius: var(--radius);
-    border: 1px solid var(--text-primary);
+    border: 1px solid var(--accent);
     transition: all 0.3s ease;
 }
 
 .portfolio-btn:hover {
-    background-color: transparent;
-    color: var(--text-primary);
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
 }
 
 .close-btn {
     background-color: transparent;
-    color: var(--text-accent);
-    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
     padding: 0.7rem 1.4rem;
     cursor: pointer;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: bold;
     border-radius: var(--radius);
     transition: all 0.3s ease;
 }
@@ -230,17 +259,11 @@ body {
     color: var(--text-primary);
 }
 
-/* --- Fix for the off-center issue --- */
-/* This removes the invisible gaps when a card is expanded so it centers perfectly */
-.team-container:has(.is-expanded) {
-    gap: 0;
-}
-
-/* --- EXPANDED STATE (Triggered via JS) --- */
+/* --- EXPANDED STATE --- */
 .team-card.is-expanded {
     flex: 1; 
-    max-width: 1000px; /* Constrains the width so it doesn't look stretched */
-    margin: 0 auto; /* Perfectly centers the whole card on the page */
+    max-width: 1000px; 
+    margin: 0 auto; 
     cursor: default;
 }
 
@@ -250,17 +273,17 @@ body {
 }
 
 .team-card.is-expanded .member-image {
-    width: 50%; /* Keeps the image wide enough to show the subject */
+    width: 50%;
 }
 
 .team-card.is-expanded .member-content {
     width: 55%; 
-    margin-left: -5%; /* Reduced the overlap (from -15%) so it shifts to the right and blocks less image */
+    margin-left: -5%; 
     justify-content: flex-start; 
     padding-top: 3.5rem; 
 }
 
-/* --- HIDDEN STATE (Triggered via JS for non-clicked cards) --- */
+/* --- HIDDEN STATE --- */
 .team-card.is-hidden {
     flex: 0;
     opacity: 0;
@@ -271,21 +294,12 @@ body {
     overflow: hidden;
 }
 
-/* --- New Layout Additions --- */
-.team-subtitle {
-    text-align: center;
-    max-width: 600px;
-    margin: -2.5rem auto 4rem auto; /* Pulls it closer to the title */
-    color: var(--text-muted);
-    line-height: 1.6;
-    font-size: 1.05rem;
-}
-
+/* --- Tech Stack & Footer --- */
 .tech-stack {
     text-align: center;
     margin-top: 6rem;
     padding-top: 4rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border);
 }
 
 .tech-stack h3 {
@@ -307,12 +321,12 @@ body {
 .tech-icons span {
     background: var(--bg-card);
     padding: 0.7rem 1.5rem;
-    border-radius: 50px; /* Gives them a sleek pill shape */
+    border-radius: 50px; 
     font-size: 0.85rem;
-    color: var(--text-accent);
-    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
     box-shadow: var(--shadow-soft);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.05em;
     transition: transform 0.3s ease, color 0.3s ease;
     cursor: default;
@@ -320,13 +334,13 @@ body {
 
 .tech-icons span:hover {
     transform: translateY(-3px);
-    color: var(--text-primary);
+    color: var(--accent);
 }
 
 .team-footer {
     text-align: center;
     padding: 3rem 2rem 2rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 0.85rem;
 }
 
