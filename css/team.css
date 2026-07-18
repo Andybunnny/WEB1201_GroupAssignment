@@ -4,7 +4,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* Removed the hardcoded font so it inherits your global bakery font */
 }
 
 body {
@@ -80,7 +79,7 @@ body {
     letter-spacing: 0.15em;
     color: var(--text-primary);
     text-align: center;
-    font-weight: 300; /* Made slightly lighter to match bakery header */
+    font-weight: 300;
 }
 
 .team-subtitle {
@@ -121,6 +120,7 @@ body {
     width: 50%;
     position: relative;
     z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .member-image img {
@@ -130,7 +130,6 @@ body {
     min-height: 400px;
     background-color: var(--border); 
     border-radius: var(--radius);
-    /* Softened the grayscale so it feels warmer and fits a bakery */
     filter: grayscale(40%) opacity(0.85); 
     transition: filter 0.4s ease, opacity 0.4s ease;
 }
@@ -160,7 +159,7 @@ body {
 }
 
 .member-content h3 {
-    color: var(--accent); /* Uses bakery accent color for names */
+    color: var(--accent);
     font-size: 1.4rem;
     margin-bottom: 0.3rem;
     font-weight: 600;
@@ -178,6 +177,18 @@ body {
 .student-id {
     font-size: 0.8rem;
     color: var(--text-secondary);
+}
+
+/* --- Hover Zoom Effect --- */
+/* The :not(.is-expanded) ensures it only zooms when the card is closed */
+.team-card:not(.is-expanded):hover .member-image,
+.team-card:not(.is-expanded):hover .member-content {
+    transform: scale(1.03); /* Zooms both elements in by 3% */
+}
+
+/* Shadow below the card on hover */
+.team-card:not(.is-expanded):hover .member-content {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Detailed Information --- */
