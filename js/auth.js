@@ -1,10 +1,38 @@
 /* ===== AUTHENTICATION & CLIENT-SIDE SIMULATION ===== */
 
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- 1. SESSION CHECK & LOGOUT LOGIC ---
+    // Make sure your HTML has a wrapper div with id="authFormContainer" around your forms!
+    const authFormContainer = document.getElementById('authFormContainer'); 
+    const loggedInState = document.getElementById('loggedInState');
+    const welcomeName = document.getElementById('welcomeName');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    const currentUser = JSON.parse(localStorage.getItem('granbakery_user'));
+
+    // If the user data exists in local storage, show the logged-in state
+    if (currentUser && currentUser.fullName) {
+        if (authFormContainer) authFormContainer.style.display = 'none';
+        if (loggedInState) {
+            loggedInState.style.display = 'block';
+            welcomeName.textContent = currentUser.fullName;
+        }
+    }
+
+    // Handle Logout Click
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            // Remove user from storage and refresh the page to show forms again
+            localStorage.removeItem('granbakery_user');
+            window.location.reload(); 
+        });
+    }
+
+    // --- 2. SIGNUP LOGIC & MULTI-STEP NAVIGATION ---
     const signupForm = document.getElementById('signupForm');
     const loginForm = document.getElementById('loginForm');
 
-    // --- SIGNUP LOGIC & MULTI-STEP NAVIGATION ---
     if (signupForm) {
         // Attach functions to the window object so the HTML onclick attributes can find them
         window.nextStep = function(currentStepNumber) {
@@ -66,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- LOGIN LOGIC & VALIDATION ---
+    // --- 3. EXISTING LOGIN LOGIC & VALIDATION ---
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
