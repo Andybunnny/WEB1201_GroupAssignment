@@ -1,57 +1,55 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cookies - Granbakery</title>
+		<link rel="stylesheet" href="css/cookies.css">
+	</head>
+	<body>
+		<header>
+			<img src="assets/img/granbakery_header_final.png" height="90">
+		</header>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/styles.css">
-  <meta name="description" content="">
+		<nav>
+			<ul>
+				<li>Home</li>
+				<li>About</li>
+				<li>Order Now</li>
+				<li>Catalogue</li>
+				<li>Our Team</li>
+			</ul>
+		</nav>
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+		<main>
+			<section>
+				<h2>Freshly Baked Cookies</h2>
+			</section>
+			<section id="controls" aria-label="Catalogue Controls" class="controls-container">
+				<input type="text" id="searchInput" placeholder="Search cookies..." aria-label="Search cookies">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+				<select id="categoryFilter" aria-label="Filter by category">
+					<option value="all">All Categories</option>
+					<option value="classic">Classic</option>
+					<option value="premium">Premium Delights</option>
+					<option value="healthy">Guilt-Free / Healthy</option>
+				</select>
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+				<select id="priceSort" aria-label="Sort by price">
+					<option value="none">Sort By Price</option>
+					<option value="low-high">Price: Low to High</option>
+					<option value="high-low">Price: High to Low</option>
+				</select>
+			</section>
 
-<!---- <div class="logo">
-    <img src="this to enter logo" alt="Logo">
-  </div> --> 
+			<section id="catalogueGrid" class="product-grid" aria-live="polite">
+				<!-- Cookie cards will be injected here by JavaScript -->
+			</section>
 
-  <nav class="navbar">
-    <div class="navbar__logo">
-      <a href="index.html" >Home</a>
-      <a href="about.html">About</a>
-      <a href="people.html">Our Team</a>
-      <button class="order-btn">Order Now</button>
-      <a href="cakes.html">Cakes</a>
-      <a href="cookies.html">Cookies</a>
-      <a href="contact.html">Contact</a>  
-      
-    </div>
+			<script src="test/catalogue.js"></script>
+		</main>
 
-  </nav>
-
-  <!--THIS IF WANT TO ADD BREADCRUMB
-  <div class="breadcrumb">
-    <a href="#">Home</a>
-    <span class="sep">»</span>
-    <span class="current">News</span>
-  </div> -->
-
-</head>
-
-<body>
-<h1>cookies section</h1>
-  
-
-</body>
-
+		<footer>
+			<p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
+		</footer>
+	</body>
 </html>
