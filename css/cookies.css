@@ -1,103 +1,5 @@
 /* ===== COOKIES PAGE - PREMIUM MINIMALIST STYLE ===== */
 
-/* --- CSS Variables --- */
-:root {
-    --bg-body: #faf9f7;
-    --bg-card: #ffffff;
-    --text-primary: #2c2c2c;
-    --text-secondary: #6e6e6e;
-    --accent: #b08968;
-    --accent-hover: #8c6b4d;
-    --border: #e8e4df;
-    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.04);
-    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
-    --radius: 12px;
-    --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-}
-
-/* --- Base Reset & Typography --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: var(--font-sans);
-    background-color: var(--bg-body);
-    color: var(--text-primary);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* --- Header --- */
-header {
-    text-align: center;
-    padding: 2.5rem 1rem 2rem;
-}
-
-header h1 {
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-primary);
-}
-
-/* --- Navigation --- */
-nav {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 3rem;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding: 1rem 0;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: color var(--transition);
-    position: relative;
-}
-
-nav ul li::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--accent);
-    transition: width var(--transition);
-}
-
-nav ul li:hover {
-    color: var(--text-primary);
-}
-
-nav ul li:hover::after {
-    width: 100%;
-}
-
-/* --- Main Layout --- */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem 4rem;
-}
-
 main section:first-of-type {
     text-align: center;
     margin-bottom: 3rem;
@@ -227,32 +129,8 @@ main section:first-of-type h2 {
     transform: scale(0.97);
 }
 
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 3rem 1rem;
-    border-top: 1px solid var(--border);
-    margin-top: 2rem;
-}
-
 /* --- Responsive --- */
 @media (max-width: 640px) {
-    header {
-        padding: 2.5rem 1rem 1.5rem;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul {
-        gap: 1.5rem;
-    }
-
-    main {
-        padding: 0 1rem 3rem;
-    }
-
     .product-grid {
         grid-template-columns: 1fr;
     }
