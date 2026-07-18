@@ -1,78 +1,86 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/styles.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
-
-<!---- <div class="logo">
-    <img src="this to enter logo" alt="Logo">
-  </div> -->
-
-  <!--THIS IF WANT TO ADD BREADCRUMB
-  <div class="breadcrumb">
-    <a href="#">Home</a>
-    <span class="sep">»</span>
-    <span class="current">News</span>
-  </div> -->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Granbakery</title>
+    <!-- Link your global CSS files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-  <nav class="navbar">
-    <div class="navbar_logo">
-      <a href="index.html">
-        <img src="assets/img/hihi2.jpg" alt="Small business logo" class="logo_img">
-      </a>
-    </div>
 
+    <!-- Header with Logo -->
+    <header>
+        <img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo">
+    </header>
 
-    <div class="navbar_menu">
-      <a href="index.html" >Home</a>
-      <a href="about.html">About</a>
-      <a href="people.html">Our Team</a>
-      <button class="order-btn">Order Now</button>
-      <a href="cakes.html">Cakes</a>
-      <a href="cookies.html">Cookies</a>
-      <a href="contact.html">Contact</a>
-    </div>
+    <!-- Global Navigation Bar -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cakes.html">Order Now</a></li>
+            <li><a href="cookies.html">Catalogue</a></li>
+            <li><a href="team.html">Our Team</a></li>
+        </ul>
+        
+        <div class="nav-icons">
+            <!-- Dark Mode Toggle -->
+            <button class="theme-toggle" aria-label="Toggle theme"></button>
+            
+            <!-- User Profile (Links to Login/Simulation) -->
+            <a href="login.html" aria-label="Go to login page">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            
+            <!-- Shopping Cart -->
+            <a href="#" aria-label="Shopping cart">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            </a>
+        </div>
+    </nav>
 
-    <div class="navbar_login">
-      <a href="login.html">Login</a>
-      <a href="signup.html">Sign Up</a>
-    </div>
+    <!-- Main Home Page Content -->
+    <main>
+        <!-- Hero Section (Utilizing your existing .hero CSS) -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2 style="text-align: left; margin-bottom: 1rem;">Artisanal Bakes, Crafted with Love</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Welcome to Granbakery. Experience the finest cookies, cakes, and pastries made fresh daily with premium ingredients.</p>
+                <button onclick="window.location.href='cookies.html'">Shop Catalogue</button>
+            </div>
+            
+            <!-- Placeholder for a nice hero image -->
+            <img class="hero-img" src="assets/img/hero_placeholder.jpg" alt="Display of freshly baked cookies and cakes" style="background-color: var(--border);">
+        </section>
+        
+        <section style="text-align: center; margin-top: 4rem;">
+            <h3>Why Choose Granbakery?</h3>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto;">
+                Every bite is a testament to our dedication. Whether you are ordering a custom cake for a special occasion or grabbing a quick artisanal cookie, we guarantee freshness and flavor in every crumb.
+            </p>
+        </section>
+    </main>
 
-  </nav>
+    <!-- Global Footer -->
+    <footer>
+        <p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
+    </footer>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>GRANBAKERY STORY</h1>
-      <hr class="dotted-line-top">
-      <p>Welcome to the Granbakery, where every recipe comes seasoned with decades of love, patience, and a dash of grandparently magic! From our kitchen to your table, we specialize in warm, rustic breads, time-honored pastries, and comforting treats baked fresh every single morning using the very same recipes we've perfected over a lifetime together. For us, this isn't just a business—it's our way of spreading joy, welcoming neighbors, and making sure everyone who walks through our doors feels like they've just come home. Stop by, catch the aroma of fresh vanilla and yeast, and let us share a little piece of our heart with you!</p>
-
-      <a href="about.html" class="hero-btn">READ MORE ›</a>
-    </div>
-
-    <div class="hero-img" role="img" aria-label="bakery">
-      <img src="assets/img/pic.jpg" alt="Hands preparing dough">
-    </div>
-  </section>
+    <!-- Global JavaScript for Theme Toggle -->
+    <script src="js/global.js"></script>
+    
+    <!-- Optional: Auth check script to welcome returning users if they are simulated as logged in -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const storedUserStr = localStorage.getItem('granbakery_user');
+            if (storedUserStr) {
+                const storedUser = JSON.parse(storedUserStr);
+                console.log(`Welcome back to the homepage, ${storedUser.fullName}!`);
+                // You could dynamically change the User icon to show they are logged in here if desired.
+            }
+        });
+    </script>
 </body>
-
 </html>

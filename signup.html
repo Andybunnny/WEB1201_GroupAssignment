@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Granbakery</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <header>
+        <img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo">
+    </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="">Order Now</a></li>
+            <li><a href="cookies.html">Catalogue</a></li>
+            <li><a href="team.html">Our Team</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="theme-toggle" aria-label="Toggle theme"></button>
+            <a href="login.html" aria-label="Go to login page">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            <a href="#" aria-label="Shopping cart">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="auth-container">
+            <h2>Create Your Account</h2>
+            
+            <!-- Progress Indicator -->
+            <div class="progress-indicator">
+                <span class="step active" id="step1-indicator">1. Account</span>
+                <span class="step" id="step2-indicator">2. Details</span>
+                <span class="step" id="step3-indicator">3. Address</span> <!-- NEW: Address Indicator -->
+                <span class="step" id="step4-indicator">4. Confirm</span> <!-- MODIFIED: Changed from 3 to 4 -->
+            </div>
+
+            <form id="signupForm">
+                <!-- STEP 1 -->
+                <div class="form-step active-step" id="step1">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                    
+                    <label for="password">Password (Min 8 chars)</label>
+                    <input type="password" id="password" minlength="8" required>
+                    
+                    <button type="button" onclick="nextStep(1)">Next Step</button>
+                    
+                    <a href="login.html" class="forgot-password" style="margin-top: 10px;">Already have an account? Log in</a>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="form-step hidden" id="step2">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                    
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" pattern="[0-9]{10,11}" title="Please enter a valid 10-11 digit phone number" required>
+                    
+                    <label for="gender">Gender</label>
+                    <select id="gender" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other / Prefer not to say</option>
+                    </select>
+                    
+                    <div class="btn-group">
+                        <button type="button" class="prev-btn" onclick="prevStep(2)">Back</button>
+                        <button type="button" onclick="nextStep(2)">Next Step</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="form-step hidden" id="step3">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" rows="3" placeholder="Enter your full delivery address" required></textarea>
+                    
+                    <label for="postcode">Postcode</label>
+                    <input type="text" id="postcode" pattern="[0-9]{5}" title="Please enter a valid 5-digit postcode" required>
+                    
+                    <div class="btn-group">
+                        <button type="button" class="prev-btn" onclick="prevStep(3)">Back</button>
+                        <button type="button" onclick="nextStep(3)">Next Step</button>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="form-step hidden" id="step4">
+                    <h3>Almost done!</h3>
+                    <p>Review your details and agree to the terms to complete your registration.</p>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" required>
+                        I agree to the Terms of Service and Privacy Policy.
+                    </label>
+                    
+                    <div class="btn-group">
+                        <button type="button" class="prev-btn" onclick="prevStep(4)">Back</button>
+                        <button type="submit" class="btn-complete">Complete Setup</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/global.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
