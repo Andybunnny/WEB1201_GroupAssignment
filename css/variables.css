@@ -1,0 +1,25 @@
+/* --- CSS Variables --- */
+:root {
+    --bg-body: #faf9f7;
+    --bg-card: #ffffff;
+    --text-primary: #2c2c2c;
+    --text-secondary: #6e6e6e;
+    --accent: #b08968;
+    --accent-hover: #8c6b4d;
+    --border: #e8e4df;
+    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+    --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+[data-theme="dark"] {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a0a0a0;
+    --accent: #d4a373;
+    --border: #333333;
+    /* Adjust these colors to fit your design */
+}
