@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+  <div class="cart-header">
+    <h1>Your Cart</h1>
+    <button class="exit-btn" onclick="window.history.back()">✕</button>
+  </div>
+
+  <div class="table-headers" id="tableHeaders">
+    <div class="col-product">Product</div>
+    <div class="col-price">Price</div>
+    <div class="col-qty">Quantity</div>
+    <div class="col-total">Total</div>
+  </div>
+
+  <div id="cartItems"></div>
+  <div class="cart-total" id="cartTotal"></div>
+  <button class="checkout-btn" id="checkoutBtn" onclick="checkout()">Check Out</button>
+  <div id="orderMessage"></div>
+
+  <script src="js/cartdisplay.js"></script>
+
+</body>
+</html>

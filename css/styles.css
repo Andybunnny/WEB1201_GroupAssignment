@@ -84,6 +84,12 @@ nav ul li {
     position: relative;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition);
+}
+
 nav ul li::after {
     content: '';
     position: absolute;

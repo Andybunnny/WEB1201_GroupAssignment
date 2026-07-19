@@ -32,7 +32,7 @@ function renderCookies(cookiesToRender) {
         <h3>${cookie.name}</h3>
         <p class="cookie-category">Category: ${cookie.category}</p>
         <p class="cookie-price">RM ${cookie.price.toFixed(2)}</p>
-        <button aria-label="Add ${cookie.name} to cart">Add to Cart</button>
+        <button aria-label="Add ${cookie.name} to cart" onclick="addToCart('${cookie.name}', ${cookie.price}, '${cookie.image}')">Add to Cart</button>
       </article>
     `;
     catalogueGrid.insertAdjacentHTML('beforeend', cardHTML);
