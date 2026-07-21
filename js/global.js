@@ -92,3 +92,120 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+/* ===== GLOBAL CART LOGIC ===== */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let confirmRemoveIndex = -1; 
+
+function toggleCart() {
+    const slideCart = document.getElementById("slideOutCart");
+    if (slideCart) {
+        slideCart.classList.toggle("open");
+        if (slideCart.classList.contains("open")) {
+            showCart(); 
+        }
+    }
+}
+
+function updateCartCount() {
+    const countEl = document.getElementById("cartCount");
+    if (countEl) {
+        const totalQty = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        countEl.textContent = totalQty;
+    }
+}
+
+function addToCart(name, price, image) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity = (existingItem.quantity || 1) + 1;
+    } else {
+        cart.push({ name: name, price: price, image: image, quantity: 1 });
+    }
+    
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    showCart();
+
+    const slideCart = document.getElementById("slideOutCart");
+    if (slideCart && !slideCart.classList.contains("open")) {
+        toggleCart();
+    }
+}
+
+function showCart() {
+    const itemsBoxes = [document.getElementById("slideCartItems"), document.getElementById("cartItems")];
+    const totalBoxes = [document.getElementById("slideCartTotal"), document.getElementById("cartTotal")];
+
+    let total = 0;
+    let htmlContent = "";
+
+    if (cart.length === 0) {
+        htmlContent = "<p style='text-align:center; padding:2rem;'>Your cart is empty.</p>";
+    } else {
+        cart.forEach((item, i) => {
+            let qty = item.quantity || 1;
+            let subtotal = item.price * qty;
+            total += subtotal;
+
+            let minusButtonHTML;
+            if (qty === 1 && confirmRemoveIndex === i) {
+                minusButtonHTML = `<button class='remove-confirm-btn' onclick='decreaseQty(${i})'>Remove?</button>`;
+            } else {
+                minusButtonHTML = `<button class='qty-btn' onclick='decreaseQty(${i})'>-</button>`;
+            }
+
+            htmlContent += `
+            <div class='cart-item'>
+                <div class='col-product' style='display:flex; align-items:center;'>
+                    <img src='${item.image || ""}' alt='${item.name}'>
+                    <span style='font-weight: 500;'>${item.name}</span>
+                </div>
+                <div class='col-qty qty-controls'>
+                    ${minusButtonHTML}
+                    <span style='margin: 0 10px;'>${qty}</span>
+                    <button class='qty-btn' onclick='increaseQty(${i})'>+</button>
+                </div>
+                <div class='col-total'>
+                    RM ${subtotal.toFixed(2)}
+                </div>
+            </div>`;
+        });
+    }
+
+    const totalText = `Total: RM ${total.toFixed(2)}`;
+
+    itemsBoxes.forEach(box => { if (box) box.innerHTML = htmlContent; });
+    totalBoxes.forEach(box => { if (box) box.innerHTML = totalText; });
+    
+    updateCartCount();
+}
+
+function increaseQty(i) {
+    cart[i].quantity = (cart[i].quantity || 1) + 1;
+    confirmRemoveIndex = -1;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showCart();
+}
+
+function decreaseQty(i) {
+    let qty = cart[i].quantity || 1;
+    if (qty > 1) {
+        cart[i].quantity = qty - 1;
+        confirmRemoveIndex = -1;
+    } else {
+        if (confirmRemoveIndex === i) {
+            cart.splice(i, 1);
+            confirmRemoveIndex = -1;
+        } else {
+            confirmRemoveIndex = i;
+        }
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showCart();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+    showCart();
+});
