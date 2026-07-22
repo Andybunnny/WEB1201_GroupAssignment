@@ -32,6 +32,7 @@ function renderCookies(cookiesToRender) {
         <h3>${cookie.name}</h3>
         <p class="cookie-category">Category: ${cookie.category}</p>
         <p class="cookie-price">RM ${cookie.price.toFixed(2)}</p>
+        <!-- UPDATED: Added the onclick trigger -->
         <button aria-label="Add ${cookie.name} to cart" onclick="addToCart('${cookie.name}', ${cookie.price}, '${cookie.image}')">Add to Cart</button>
       </article>
     `;

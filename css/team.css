@@ -1,0 +1,381 @@
+/* ===== CSS theme file for team page ===== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Back to Bakery Button --- */
+.back-btn {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.back-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    color: var(--accent);
+}
+
+/* --- Dark Mode Toggle Button (Top Right) --- */
+.team-theme-toggle {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 0;
+}
+
+.team-theme-toggle:hover {
+    transform: scale(1.1);
+    color: var(--accent);
+}
+
+.team-theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+}
+
+/* --- Main Layout --- */
+.team-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.page-title {
+    font-size: 2.4rem; 
+    letter-spacing: 0.15em;
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: 300;
+}
+
+.team-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 1rem auto 4rem auto;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    min-height: 450px;
+    gap: 2rem;
+}
+
+/* Removes gaps when a card is expanded */
+.team-container:has(.is-expanded) {
+    gap: 0;
+}
+
+/* --- Base Card Styles --- */
+.team-card {
+    flex: 1;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    min-width: 0; 
+}
+
+/* Image on the left */
+.member-image {
+    width: 50%;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 400px;
+    background-color: var(--border); 
+    border-radius: var(--radius);
+    filter: grayscale(40%) opacity(0.85); 
+    transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.team-card:hover .member-image img,
+.team-card.is-expanded .member-image img {
+    filter: grayscale(0%) opacity(1);
+}
+
+/* Overlapping text box */
+.member-content {
+    width: 65%;
+    background-color: var(--bg-card);
+    padding: 2.5rem 2rem;
+    margin-left: -15%; 
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--radius);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.member-content h3 {
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.role {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.student-id {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* --- Hover Zoom Effect --- */
+/* The :not(.is-expanded) ensures it only zooms when the card is closed */
+.team-card:not(.is-expanded):hover .member-image,
+.team-card:not(.is-expanded):hover .member-content {
+    transform: scale(1.03); /* Zooms both elements in by 3% */
+}
+
+/* Shadow below the card on hover */
+.team-card:not(.is-expanded):hover .member-content {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Detailed Information --- */
+.detailed-info {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.detailed-info hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border);
+    margin: 1.5rem 0;
+}
+
+.detailed-info h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.detailed-info ul {
+    list-style-type: none;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.detailed-info li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.detailed-info strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* --- Card Actions (Buttons) --- */
+.card-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.portfolio-btn {
+    background-color: var(--accent);
+    color: #ffffff;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--accent);
+    transition: all 0.3s ease;
+}
+
+.portfolio-btn:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.close-btn {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0.7rem 1.4rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+/* --- EXPANDED STATE --- */
+.team-card.is-expanded {
+    flex: 1; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    cursor: default;
+}
+
+.team-card.is-expanded .detailed-info {
+    max-height: 500px; 
+    opacity: 1;
+}
+
+.team-card.is-expanded .member-image {
+    width: 50%;
+}
+
+.team-card.is-expanded .member-content {
+    width: 55%; 
+    margin-left: -5%; 
+    justify-content: flex-start; 
+    padding-top: 3.5rem; 
+}
+
+/* --- HIDDEN STATE --- */
+.team-card.is-hidden {
+    flex: 0;
+    opacity: 0;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+/* --- Tech Stack & Footer --- */
+.tech-stack {
+    text-align: center;
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--border);
+}
+
+.tech-stack h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-icons span {
+    background: var(--bg-card);
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px; 
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: default;
+}
+
+.tech-icons span:hover {
+    transform: translateY(-3px);
+    color: var(--accent);
+}
+
+.team-footer {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 950px) {
+    .team-container {
+        flex-direction: column;
+    }
+    
+    .team-card {
+        min-height: 400px;
+    }
+    
+    .team-card.is-expanded .member-image, .member-image {
+        width: 100%;
+        height: 280px;
+        min-height: auto;
+    }
+    
+    .team-card.is-expanded .member-content, .member-content {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: -40px;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+}
