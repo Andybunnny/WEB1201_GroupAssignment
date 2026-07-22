@@ -26,10 +26,6 @@
 					<a href="login.html" aria-label="Go to login page">
 						<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
 					</a>
-					<!-- UPDATED: Navbar icon now opens the slide-out cart -->
-					<a href="#" aria-label="Shopping cart" onclick="toggleCart(); return false;">
-						<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-					</a>
 				</div>
 			</nav>
 		</div>
@@ -68,29 +64,9 @@
 		</footer>
 
         <!-- NEW: Floating Cart Button -->
-        <button class="floating-cart-btn" id="cartBtn" onclick="toggleCart()">
+		<button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
             <span class="cart-count" id="cartCount">0</span>
         </button>
 
-        <!-- NEW: Slide-Out Cart Panel -->
-        <div id="slideOutCart" class="slide-out-cart">
-            <div class="cart-header">
-                <h2>Your Cart</h2>
-                <button class="close-cart-btn" onclick="toggleCart()">✕</button>
-            </div>
-            
-            <div class="table-headers">
-                <div class="col-product">Product</div>
-                <div class="col-qty">Quantity</div>
-                <div class="col-total">Total</div>
-            </div>
-
-            <div id="slideCartItems" class="slide-cart-items"></div>
-            
-            <div class="cart-footer">
-                <div id="slideCartTotal" class="slide-cart-total">Total: RM 0.00</div>
-                <button class="checkout-btn" onclick="window.location.href='cart.html'">Go to Checkout</button>
-            </div>
-        </div>
 	</body>
 </html>

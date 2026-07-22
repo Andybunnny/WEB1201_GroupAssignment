@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="css/variables.css">
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" href="css/reviews.css">
+        <script src="js/global.js"></script> 
+        <script src="js/reviews.js"></script>
 	</head>
 	<body>
 
@@ -80,32 +82,8 @@
         
 
         <!-- Floating Cart Button -->
-        <button class="floating-cart-btn" id="cartBtn" onclick="toggleCart()">
+        <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
             <span class="cart-count" id="cartCount">0</span>
         </button>
-
-        <!-- Slide-Out Cart Panel -->
-        <div id="slideOutCart" class="slide-out-cart">
-            <div class="cart-header">
-                <h2>Your Cart</h2>
-                <button class="close-cart-btn" onclick="toggleCart()">✕</button>
-            </div>
-            
-            <div class="table-headers">
-                <div class="col-product">Product</div>
-                <div class="col-qty">Quantity</div>
-                <div class="col-total">Total</div>
-            </div>
-
-            <div id="slideCartItems" class="slide-cart-items"></div>
-            
-            <div class="cart-footer">
-                <div id="slideCartTotal" class="slide-cart-total">Total: RM 0.00</div>
-                <button class="checkout-btn" onclick="window.location.href='cart.html'">Go to Checkout</button>
-            </div>
-            
-        <!-- Scripts -->
-        <script src="js/global.js"></script> 
-        <script src="js/reviews.js"></script>
 	</body>
 </html>
