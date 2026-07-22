@@ -9,23 +9,34 @@
 		<link rel="stylesheet" href="css/cartbutton.css">
 	</head>
 	<body>
-		<header>
-			<button class="theme-toggle" aria-label="Toggle theme"></button>
-			<img src="assets/img/granbakery_header_final.png" height="90">
-		</header>
+		<div class="header-nav-wrapper" id="mainHeader">
+			<header>
+				<a href="index.html" class="logo-link" aria-label="Go to Home Page">
+					<img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo" class="main-logo">
+				</a>
+			</header>
 
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="order.html">Order Now</a></li>
-				<li><a href="catalogue.html">Catalogue</a></li>
-				<li><a href="team.html">Our Team</a></li>
-			</ul>
-		</nav>
-    <section class="image">
-      <img src="assets/img/home/aboutimg.jpg" alt="Display of bakery" class="aboutphoto">
-    </section>
+			<nav>
+				<ul class="nav-links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="cookies.html">Catalogue</a></li>
+					<li><a href="reviews.html">Reviews</a></li>
+					<li><a href="team.html">Our Team</a></li>
+				</ul>
+				<div class="nav-icons">
+					<button class="theme-toggle" aria-label="Toggle theme"></button>
+					<a href="login.html" aria-label="Go to login page">
+						<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+					</a>
+				</div>
+			</nav>
+		</div>
+
+		<section class="image">
+		<img src="assets/img/home/aboutimg.jpg" alt="Display of bakery" class="aboutphoto">
+		</section>
+
 		<main>
 			<section class="aboutHero">
 				<h2>Our Story</h2>
