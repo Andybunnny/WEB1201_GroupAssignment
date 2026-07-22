@@ -112,7 +112,7 @@ main section:first-of-type h2 {
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--bg-body);
     background-color: var(--text-primary);
     border: 1px solid var(--text-primary);
     border-radius: var(--radius);
