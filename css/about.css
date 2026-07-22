@@ -1,0 +1,47 @@
+.image {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.aboutHero {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.aboutHero h2 {
+  color: #ad9079;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.aboutHero p {
+  text-align: left;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.aboutValues {
+  display: flex;
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.valueCard {
+  background: #faede3a9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.valueCard h3 {
+  color: #ad9079;
+  margin-bottom: 8px;
+}
