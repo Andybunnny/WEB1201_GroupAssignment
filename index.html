@@ -1,157 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Cookies - Granbakery</title>
-		<link rel="stylesheet" href="css/variables.css">
-		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" href="css/cookies.css">
-    <link rel="stylesheet" href="css/home.css">
-	</head>
-	<body>
-		<header>
-			<button class="theme-toggle" aria-label="Toggle theme"></button>
-			<img src="assets/img/granbakery_header_final.png" height="90">
-		</header>
 
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="cookies.html">Order Now</a></li>
-				<li><a href="catalogue.html">Catalogue</a></li>
-				<li><a href="team.html">Our Team</a></li>
-			</ul>
-		</nav>
-
-  <section class="display">
-    <img src="assets/img/home/homephoto2.png" alt="Display of bakery" class="homephoto">
-  </section>
-
-  <section class="productdisplay">
-    <div class="productdisplay-text">
-      <h1>OUR PRODUCTS</h1>
-    </div>
-    <div class="displaygrid">
-      <a href="cookie.html" class="productdisplay-btn"> 
-        <img src="assets/img/home/cake2.jpg" alt="Cake" class="productdisplay-img">
-        <span>Whole Cakes</span>
-      </a>
-      <a href="cookies.html" class="productdisplay-btn"> 
-        <img src="assets/img/home/cookie2.jpg" alt="Cookies" class="productdisplay-img">
-        <span>Cookies</span>
-      </a>
-      <a href="cookies.html" class="productdisplay-btn"> 
-        <img src="assets/img/home/bread2.jpg" alt="Bread" class="productdisplay-img">
-        <span>Bread</span>
-      </a>
-      <a href="cookies.html" class="productdisplay-btn"> 
-        <img src="assets/img/home/cupcake2.jpg" alt="Pastries" class="productdisplay-img">
-        <span>Cupcakes</span>
-      </a>
-    </div>
-
-      <!--will direct it to the page once u finish the cake page and cookies page--> 
-  </section>
-
-  <section class="hero">
-    <div class="hero-text">
-      <h1>GRANBAKERY STORY</h1>
-      <hr class="dotted-line-top">
-      <p>Welcome to the Granbakery, where every recipe comes seasoned with decades of love, patience, and a dash of grandparently magic! From our kitchen to your table, we specialize in warm, rustic breads, time-honored pastries, and comforting treats baked fresh every single morning using the very same recipes we've perfected over a lifetime together. For us, this isn't just a business—it's our way of spreading joy, welcoming neighbors, and making sure everyone who walks through our doors feels like they've just come home. Stop by, catch the aroma of fresh vanilla and yeast, and let us share a little piece of our heart with you!</p>
-
-      <a href="about.html" class="hero-btn">READ MORE </a>
-    </div>
-
-    <div class="hero-img" role="img" aria-label="bakery">
-      <img src="assets/img/home/pic.jpg" alt="Hands preparing dough">
-    </div>
-  </section>
-  <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
-  🛒
-  <span class="cart-count" id="cartCount">0</span>
-</button>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Granbakery</title>
-    <!-- Link your global CSS files -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Granbakery</title>
+  <!-- Global CSS files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
+  <!-- Header with Logo -->
+  <header>
+    <img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo">
+  </header>
 
-    <!-- Header with Logo -->
-    <header>
-        <img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo">
-    </header>
+  <!-- Global Navigation Bar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="team.html">Our Team</a></li>
+    </ul>
 
-    <!-- Global Navigation Bar -->
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="cookies.html">Catalogue</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="team.html">Our Team</a></li>
-        </ul>
-        
-        <div class="nav-icons">
-            <!-- Dark Mode Toggle -->
-            <button class="theme-toggle" aria-label="Toggle theme"></button>
-            
-            <!-- User Profile (Links to Login/Simulation) -->
-            <a href="login.html" aria-label="Go to login page">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            </a>
-            
-            <!-- Shopping Cart -->
-            <a href="#" aria-label="Shopping cart">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-            </a>
-        </div>
-    </nav>
+    <div class="nav-icons">
+      <!-- Dark Mode Toggle -->
+      <button class="theme-toggle" aria-label="Toggle dark mode theme"></button>
 
-    <!-- Main Home Page Content -->
-    <main>
-        <!-- Hero Section (Utilizing your existing .hero CSS) -->
-        <section class="hero">
-            <div class="hero-text">
-                <h2 style="text-align: left; margin-bottom: 1rem;">Artisanal Bakes, Crafted with Love</h2>
-                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Welcome to Granbakery. Experience the finest cookies, cakes, and pastries made fresh daily with premium ingredients.</p>
-                <button onclick="window.location.href='cookies.html'">Shop Catalogue</button>
-            </div>
-            
-            <!-- Placeholder for a nice hero image -->
-            <img class="hero-img" src="assets/img/hero_placeholder.jpg" alt="Display of freshly baked cookies and cakes" style="background-color: var(--border);">
-        </section>
-        
-        <section style="text-align: center; margin-top: 4rem;">
-            <h3>Why Choose Granbakery?</h3>
-            <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto;">
-                Every bite is a testament to our dedication. Whether you are ordering a custom cake for a special occasion or grabbing a quick artisanal cookie, we guarantee freshness and flavor in every crumb.
-            </p>
-        </section>
-    </main>
+      <!-- User Profile -->
+      <a href="login.html" aria-label="Go to login page">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
 
-    <!-- Global Footer -->
-    <footer>
-        <p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
-    </footer>
+      <!-- Shopping Cart -->
+      <a href="cart.html" aria-label="View shopping cart">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
 
-    <!-- Global JavaScript for Theme Toggle -->
-    <script src="js/global.js"></script>
+  <!-- Main Content Wrapper -->
+  <main>
     
-    <!-- Optional: Auth check script to welcome returning users if they are simulated as logged in -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const storedUserStr = localStorage.getItem('granbakery_user');
-            if (storedUserStr) {
-                const storedUser = JSON.parse(storedUserStr);
-                console.log(`Welcome back to the homepage, ${storedUser.fullName}!`);
-                // You could dynamically change the User icon to show they are logged in here if desired.
-            }
-        });
-    </script>
+    <!-- Top Welcome Banner (Fixed Layout) -->
+    <section class="welcome-banner" style="text-align: center; padding: 4rem 2rem;">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-primary, #333);">Artisanal Bakes, Crafted with Love</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-secondary, #666); line-height: 1.6;">
+          Welcome to Granbakery. Experience the finest cookies, cakes, and pastries made fresh daily with premium ingredients.
+        </p>
+        <button onclick="window.location.href='catalogue.html'" style="padding: 12px 28px; font-size: 1rem; font-weight: bold; background-color: #5a3d31; color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease;">
+          Shop Catalogue
+        </button>
+      </div>
+    </section>
+
+    <!-- Bakery Display Image -->
+    <section class="display" style="width: 100%; overflow: hidden;">
+      <img src="assets/img/home/homephoto2.png" alt="Display of our bakery storefront" class="homephoto" style="width: 100%; height: auto; display: block; object-fit: cover;">
+    </section>
+
+    <!-- Product Categories (Fixed Grid & Filtered to Cakes + Cookies) -->
+    <section class="productdisplay" style="text-align: center; padding: 4rem 2rem;">
+      <div class="productdisplay-text" style="margin-bottom: 2rem;">
+        <h1 style="font-size: 2rem; color: var(--text-primary, #333);">OUR PRODUCTS</h1>
+      </div>
+      <div class="displaygrid" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; max-width: 800px; margin: 0 auto;">
+        
+        <a href="cakes.html" class="productdisplay-btn" style="text-decoration: none; color: var(--text-primary, #333); display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/img/home/cake2.jpg" alt="Freshly baked whole cakes" class="productdisplay-img" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <span style="font-size: 1.2rem; font-weight: bold;">Whole Cakes</span>
+        </a>
+
+        <a href="cookies.html" class="productdisplay-btn" style="text-decoration: none; color: var(--text-primary, #333); display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/img/home/cookie2.jpg" alt="Assorted cookies" class="productdisplay-img" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <span style="font-size: 1.2rem; font-weight: bold;">Cookies</span>
+        </a>
+        
+
+      </div>
+    </section>
+
+    <!-- Story / About Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>GRANBAKERY STORY</h1>
+        <hr class="dotted-line-top">
+        <p>Welcome to the Granbakery, where every recipe comes seasoned with decades of love, patience, and a dash of grandparently magic! From our kitchen to your table, we specialize in warm, rustic breads, time-honored pastries, and comforting treats baked fresh every single morning using the very same recipes we've perfected over a lifetime together. For us, this isn't just a business—it's our way of spreading joy, welcoming neighbors, and making sure everyone who walks through our doors feels like they've just come home. Stop by, catch the aroma of fresh vanilla and yeast, and let us share a little piece of our heart with you!</p>
+        <a href="about.html" class="hero-btn">READ MORE</a>
+      </div>
+      <div class="hero-img">
+        <img src="assets/img/home/pic.jpg" alt="Baker's hands preparing fresh dough on a wooden table">
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section style="text-align: center; margin: 4rem 1rem;">
+      <h3>Why Choose Granbakery?</h3>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto; line-height: 1.6;">
+        Every bite is a testament to our dedication. Whether you are ordering a custom cake for a special occasion or grabbing a quick artisanal cookie, we guarantee freshness and flavor in every crumb.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Floating Cart Button -->
+  <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'" aria-label="View Cart">
+    🛒 <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- Global Footer -->
+  <footer>
+    <p>&copy; 2026 Granbakery Sdn Bhd. All rights reserved.</p>
+  </footer>
+
+  <!-- Global JavaScript -->
+  <script src="js/global.js"></script>
+
+  <!-- Auth check script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const storedUserStr = localStorage.getItem('granbakery_user');
+      if (storedUserStr) {
+        try {
+          const storedUser = JSON.parse(storedUserStr);
+          if (storedUser && storedUser.fullName) {
+            console.log(`Welcome back to the homepage, ${storedUser.fullName}!`);
+          }
+        } catch (e) {
+          console.error("Error parsing stored user data.");
+        }
+      }
+    });
+  </script>
 </body>
+
 </html>
