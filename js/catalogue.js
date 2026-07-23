@@ -2,7 +2,7 @@
 const cookiesDataset = [
   { id: 1, name: "Classic Choc Chip", category: "classic", price: 12.00, image: "assets/img/cookies/choco_chip.png" },
   { id: 2, name: "Double Chocolate", category: "classic", price: 14.00, image: "assets/img/cookies/double_choc.png" },
-  { id: 3, name: "Snickerdoole", category: "premium", price: 15.00, image: "assets/img/cookies/snickerdoodle.png" },
+  { id: 3, name: "Snickerdoodle", category: "premium", price: 15.00, image: "assets/img/cookies/snickerdoodle.png" },
   { id: 4, name: "Gluten-Free Oats", category: "healthy", price: 13.50, image: "assets/img/cookies/oatmeal_raisin.png" },
   { id: 5, name: "Vegan Peanut Butter", category: "healthy", price: 14.00, image: "assets/img/cookies/peanut_butter.png" },
   { id: 6, name: "Macadamia White Choc", category: "premium", price: 16.00, image: "assets/img/cookies/wchoc_mac.png" }

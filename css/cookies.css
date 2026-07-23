@@ -1,4 +1,9 @@
-/* ===== COOKIES PAGE - PREMIUM MINIMALIST STYLE ===== */
+/* --- Main Layout --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
 
 main section:first-of-type {
     text-align: center;
