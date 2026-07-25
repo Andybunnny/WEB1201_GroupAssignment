@@ -1,0 +1,56 @@
+
+/* --- Catalogue Page Sections --- */
+.category-section {
+    margin-bottom: 4rem;
+}
+
+.category-section:last-child {
+    margin-bottom: 0;
+}
+
+.category-section h2 {
+    text-align: left;
+    font-size: 1.75rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.category-subtitle {
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.view-more-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.view-more-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bg-body);
+    background-color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+    border-radius: var(--radius);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color var(--transition), color var(--transition), transform 0.15s ease;
+}
+
+.view-more-btn:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.view-more-btn:active {
+    transform: scale(0.97);
+}

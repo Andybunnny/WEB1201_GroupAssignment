@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="css/variables.css">
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" href="css/cookies.css">
+		<link rel="stylesheet" href="css/catalogue.css">
 	</head>
 	<body>
 		<div class="header-nav-wrapper" id="mainHeader">
@@ -33,28 +34,24 @@
 		</div>
 
 		<main>
-			<section>
-				<h2>Freshly Baked Cookies</h2>
-			</section>
-			<section id="controls" aria-label="Catalogue Controls" class="controls-container">
-				<input type="text" id="searchInput" placeholder="Search cookies..." aria-label="Search cookies">
-
-				<select id="categoryFilter" aria-label="Filter by category">
-					<option value="all">All Categories</option>
-					<option value="classic">Classic</option>
-					<option value="premium">Premium Delights</option>
-					<option value="healthy">Guilt-Free / Healthy</option>
-				</select>
-
-				<select id="priceSort" aria-label="Sort by price">
-					<option value="none">Sort By Price</option>
-					<option value="low-high">Price: Low to High</option>
-					<option value="high-low">Price: High to Low</option>
-				</select>
+			<section class="category-section" id="cookiesSection">
+				<br>
+				<h2>Cookies</h2>
+				<p class="category-subtitle">Our most loved cookie flavours, freshly baked daily</p>
+				<section id="cookiesGrid" class="product-grid" aria-live="polite"></section>
+				<div class="view-more-wrapper">
+					<a href="cookies.html" class="view-more-btn">View All</a>
+				</div>
 			</section>
 
-			<section id="catalogueGrid" class="product-grid" aria-live="polite">
-				<!-- Cookie cards will be injected here by JavaScript -->
+			<section class="category-section" id="cakesSection">
+				<br>
+				<h2>Cakes</h2>
+				<p class="category-subtitle">Our most loved cake flavours, freshly baked daily</p>
+				<section id="cakesGrid" class="product-grid" aria-live="polite"></section>
+				<div class="view-more-wrapper">
+					<a href="cakes.html" class="view-more-btn">View All</a>
+				</div>
 			</section>
 
 			<script src="js/global.js"></script>
