@@ -301,6 +301,67 @@ main {
     background-color: var(--accent-hover);
 }
 
+/* --- Dropdown Menu --- */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(2px);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    box-shadow: var(--shadow-hover);
+    min-width: 120px;
+    padding: 0.5rem 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), transform var(--transition), visibility 0s linear 0.35s;
+    z-index: 1001;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(12px);
+    transition: opacity var(--transition), transform var(--transition), visibility 0s linear 0s;
+}
+
+.dropdown-menu li {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    padding: 0.6rem 1.5rem;
+    position: relative;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.dropdown-menu li::after {
+    display: none;
+}
+
+.dropdown-menu li:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: color var(--transition);
+}
+
+.nav-dropdown .dropdown-menu li:hover a {
+    color: #ffffff;
+}
+
 /* --- Footer --- */
 footer {
     text-align: center;
