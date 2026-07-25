@@ -157,13 +157,6 @@ nav .nav-links li:hover::after {
     fill: none;
 }
 
-/* --- Main Layout --- */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem 4rem;
-}
-
 /* ===== floating cart button (global) ===== */
 .floating-cart-btn {
     position: fixed;
