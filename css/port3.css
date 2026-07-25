@@ -1,0 +1,157 @@
+/* Overall page container */
+.portfolio {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    color: #3e2723;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Every section fades/slides in on load */
+.portfolio section {
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.6s ease both;
+}
+
+/* Keyframes for the section entrance animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); } /* start slightly below and invisible */
+    to { opacity: 1; transform: translateY(0); }        /* end in place and fully visible */
+}
+
+/* hero  */
+.p-hero {
+    display: flex;          /* lays out image + text side by side */
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;        /* wraps to stacked layout on small screens */
+}
+
+.p-hero__image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;      /* crops image to fill the circle without distortion */
+    border-radius: 50%;     /* makes the image circular */
+    border: 4px solid #c1653b;
+}
+
+.p-role {
+    color: #c1653b;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+/* "Download CV" button */
+.cv-btn {
+    margin-top: 0.75rem;
+    background: #c1653b;
+    color: #ffffff;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cv-btn:hover {
+    background: #3e2723;
+    transform: translateY(-2px); /* slight lift effect on hover */
+}
+
+/* education */
+.edu-grid {
+    display: grid;
+    /* auto-fit columns, each at least 250px wide, filling available space */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.edu-card {
+    background: #faf3ea;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #c1653b; /* accent stripe on the left edge */
+    transition: transform 0.3s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-4px); /* lifts the card slightly on hover */
+}
+
+.edu-year {
+    font-size: 0.85rem;
+    color: #c1653b;
+    font-weight: 600;
+}
+
+/* skills */
+.skills-list {
+    display: flex;
+    flex-direction: column; /* stacks each skill bar vertically */
+    gap: 0.75rem;
+}
+
+.skill-bar__label {
+    display: flex;
+    justify-content: space-between; /* skill name on left, percentage on right */
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* The empty/background track behind the filled bar */
+.skill-bar__track {
+    background: #e6d9cd;
+    border-radius: 6px;
+    height: 12px;
+    overflow: hidden; /* clips the fill so it can't overflow the rounded track */
+}
+
+/* The colored fill that animates to represent skill level */
+.skill-bar__fill {
+    height: 100%;
+    width: 0; /* starts at 0 so the animation can grow it */
+    background: #c1653b;
+    border-radius: 6px;
+    animation: fillBar 1.2s ease forwards;
+    animation-delay: 0.3s; /* slight delay so it starts after the section fades in */
+}
+
+/* Grows the fill bar from 0 up to its target --percent value (set inline per skill) */
+@keyframes fillBar {
+    to { width: var(--percent); }
+}
+
+/* projects */
+.projects-grid {
+    display: grid;
+    /* auto-fit columns, each at least 260px wide */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: #faf3ea;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);            /* lift effect */
+    box-shadow: 0 8px 20px #3e272326;      /* soft shadow using hex with 15% opacity alpha (#26) */
+}
+
+.project-tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: #c1653b;
+    font-weight: 600;
+}
+
+/* responsive */
+/* On small screens, stack the hero image above the text instead of side by side */
+@media (max-width: 768px) {
+    .p-hero { flex-direction: column; text-align: center; }
+}
