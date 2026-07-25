@@ -31,11 +31,12 @@
 		</div>
 
 		<main>
+			<br>
 			<section>
-				<h2>Freshly Baked Cookies</h2>
+				<h2>Freshly Baked Cakes</h2>
 			</section>
 			<section id="controls" aria-label="Catalogue Controls" class="controls-container">
-				<input type="text" id="searchInput" placeholder="Search cookies..." aria-label="Search cookies">
+				<input type="text" id="searchInput" placeholder="Search cakes..." aria-label="Search cakes">
 
 				<select id="categoryFilter" aria-label="Filter by category">
 					<option value="all">All Categories</option>
@@ -52,29 +53,29 @@
 			</section>
 
 			<section id="catalogueGrid" class="product-grid" aria-live="polite">
-				<!-- Cookie cards will be injected here by JavaScript -->
+				<!-- Cake cards will be injected here by JavaScript -->
 			</section>
 
-			<script src="js/global.js"></script>
-			<script src="js/catalogue.js"></script>
+		<script src="js/global.js"></script>
+		<script src="js/cakes.js"></script>
 		</main>
 
 		<footer>
 			<p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
 		</footer>
 
-        <!-- NEW: Floating Cart Button -->
+        <!-- Floating Cart Button -->
         <button class="floating-cart-btn" id="cartBtn" onclick="toggleCart()">
             <span class="cart-count" id="cartCount">0</span>
         </button>
 
-        <!-- NEW: Slide-Out Cart Panel -->
+        <!-- Slide-Out Cart Panel -->
         <div id="slideOutCart" class="slide-out-cart">
             <div class="cart-header">
                 <h2>Your Cart</h2>
                 <button class="close-cart-btn" onclick="toggleCart()">✕</button>
             </div>
-            
+
             <div class="table-headers">
                 <div class="col-product">Product</div>
                 <div class="col-qty">Quantity</div>
@@ -82,7 +83,7 @@
             </div>
 
             <div id="slideCartItems" class="slide-cart-items"></div>
-            
+
             <div class="cart-footer">
                 <div id="slideCartTotal" class="slide-cart-total">Total: RM 0.00</div>
                 <button class="checkout-btn" onclick="window.location.href='cart.html'">Go to Checkout</button>
