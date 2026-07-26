@@ -10,14 +10,22 @@
 	<body>
 		<div class="header-nav-wrapper" id="mainHeader">
 			<header>
-				<img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo">
+				<a href="index.html" class="logo-link" aria-label="Go to Home Page">
+					<img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo" class="main-logo">
+				</a>
 			</header>
 
 			<nav>
 				<ul class="nav-links">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
-					<li><a href="catalogue.html">Catalogue</a></li>
+					<li class="nav-dropdown">
+						<a href="catalogue.html">Catalogue</a>
+						<ul class="dropdown-menu">
+							<li><a href="cookies.html">Cookies</a></li>
+							<li><a href="cakes.html">Cakes</a></li>
+						</ul>
+					</li>
 					<li><a href="reviews.html">Reviews</a></li>
 					<li><a href="team.html">Our Team</a></li>
 				</ul>
