@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentUser = JSON.parse(localStorage.getItem('granbakery_user'));
 
     // If the user data exists in local storage, show the logged-in state
-    if (currentUser && currentUser.fullName) {
+    if (currentUser && currentUser.firstName) {
         if (authFormContainer) authFormContainer.style.display = 'none';
         if (loggedInState) {
             loggedInState.style.display = 'block';
-            welcomeName.textContent = currentUser.fullName;
+            welcomeName.textContent = currentUser.firstName; 
         }
     }
 
@@ -77,13 +77,25 @@ document.addEventListener("DOMContentLoaded", () => {
             // Capture the input values
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            const fullName = document.getElementById('fullName').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phone = document.getElementById('phone').value;
+            const gender = document.getElementById('gender').value;
+            const address = document.getElementById('address').value;
+            const postcode = document.getElementById('postcode').value;
+            const state = document.getElementById('state').value;
 
             // Create a user object
             const userData = {
                 email: email,
                 password: password,
-                fullName: fullName
+                firstName: firstName,
+                lastName: lastName,
+                phone: phone,
+                gender: gender,
+                address: address,
+                postcode: postcode,
+                state: state
             };
 
             // Save object to localStorage as a string (Simulating database storage)
@@ -110,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 // Validate credentials against stored data
                 if (storedUser.email === loginEmail && storedUser.password === loginPassword) {
-                    alert(`Welcome back, ${storedUser.fullName}!`);
+                    alert(`Welcome back, ${storedUser.firstName}!`);
                     window.location.href = 'index.html'; // Redirect to home upon success
                 } else {
                     alert('Invalid email or password. Please try again.');
