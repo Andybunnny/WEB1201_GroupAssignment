@@ -45,8 +45,8 @@
             <div class="progress-indicator">
                 <span class="step active" id="step1-indicator">1. Account</span>
                 <span class="step" id="step2-indicator">2. Details</span>
-                <span class="step" id="step3-indicator">3. Address</span> <!-- NEW: Address Indicator -->
-                <span class="step" id="step4-indicator">4. Confirm</span> <!-- MODIFIED: Changed from 3 to 4 -->
+                <span class="step" id="step3-indicator">3. Address</span>
+                <span class="step" id="step4-indicator">4. Confirm</span>
             </div>
 
             <form id="signupForm">
@@ -55,7 +55,7 @@
                     <label for="email">Email Address</label>
                     <input type="email" id="email" required>
                     
-                    <label for="password">Password (Min 8 chars)</label>
+                    <label for="password">Password (Minimum 8 characters)</label>
                     <input type="password" id="password" minlength="8" required>
                     
                     <button type="button" onclick="nextStep(1)">Next Step</button>
@@ -66,7 +66,10 @@
                 <!-- STEP 2 -->
                 <div class="form-step hidden" id="step2">
                     <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" required>
+                    <input type="text" id="firstName" required>
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" required>
                     
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" pattern="[0-9]{10,11}" title="Please enter a valid 10-11 digit phone number" required>
@@ -93,6 +96,25 @@
                     <label for="postcode">Postcode</label>
                     <input type="text" id="postcode" pattern="[0-9]{5}" title="Please enter a valid 5-digit postcode" required>
                     
+                    <label for="state">State</label>
+                    <select id="state" required>
+                        <option value="" disabled selected>Select your state</option>
+                        <option value="johor">Johor</option>
+                        <option value="kedah">Kedah</option>
+                        <option value="kelantan">Kelantan</option>
+                        <option value="melaka">Melaka</option>
+                        <option value="negeri_sembilan">Negeri Sembilan</option>
+                        <option value="pahang">Pahang</option>
+                        <option value="penang">Penang</option>
+                        <option value="perak">Perak</option>
+                        <option value="perlis">Perlis</option>
+                        <option value="selangor">Selangor</option>
+                        <option value="terengganu">Terengganu</option>
+                        <option value="wp_kuala_lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                        <option value="wp_putrajaya">WP Putrajaya</option>
+                        <option value="wp_labuan">WP Labuan</option>
+                    </select>
+
                     <div class="btn-group">
                         <button type="button" class="prev-btn" onclick="prevStep(3)">Back</button>
                         <button type="button" onclick="nextStep(3)">Next Step</button>
