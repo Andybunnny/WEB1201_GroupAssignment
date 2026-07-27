@@ -357,10 +357,51 @@ nav .nav-links li:hover::after {
 
 /* --- Footer --- */
 footer {
-    text-align: center;
-    padding: 3rem 1rem;
     border-top: 1px solid var(--border);
-    margin-top: 2rem;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    background-color: var(--bg-body); /* Ensures background matches theme */
+    transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.footer-contact p {
+    margin: 0.3rem 0;
+    color: var(--text-secondary); /* Keeps text subtle so it isn't distracting */
+    font-size: 0.95rem;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0.5rem 0;
+}
+
+.footer-socials a {
+    color: var(--text-primary);
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effect on icons */
+.footer-socials a:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}
+
+.footer-copyright {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
 /* --- Responsive Layout --- */
