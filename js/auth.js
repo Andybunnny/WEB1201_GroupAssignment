@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loggedInState = document.getElementById('loggedInState');
     const welcomeName = document.getElementById('welcomeName');
     const logoutBtn = document.getElementById('logoutBtn');
-
     const currentUser = JSON.parse(localStorage.getItem('granbakery_user'));
 
     // If the user data exists in local storage, show the logged-in state
@@ -16,8 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (authFormContainer) authFormContainer.style.display = 'none';
         if (loggedInState) {
             loggedInState.style.display = 'block';
-            welcomeName.textContent = currentUser.firstName; 
-        }
+            welcomeName.textContent = `${currentUser.firstName} ${currentUser.lastName.charAt(0)}.`;        }
     }
 
     // Handle Logout Click
