@@ -8,6 +8,11 @@
 		<link rel="stylesheet" href="css/reviews.css">
         <script src="js/global.js"></script> 
         <script src="js/reviews.js"></script>
+        <script>
+            // Applies saved theme (Dark or Light Mode)
+            const savedTheme = localStorage.getItem("bakery-theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        </script>
 	</head>
 	<body>
 
