@@ -129,6 +129,7 @@ function showCart() {
     } else {
         cart.forEach((item, i) => {
             let qty = item.quantity || 1;
+            let itemPrice = parseFloat(item.price) || 0;
             let subtotal = item.price * qty;
             total += subtotal;
 
@@ -137,6 +138,10 @@ function showCart() {
                 <div class='col-product' style='display:flex; align-items:center;'>
                     <img src='${item.image || ""}' alt='${item.name}'>
                     <span style='font-weight: 500;'>${item.name}</span>
+                </div>
+                
+                <div class='col-price'>
+                    RM ${itemPrice.toFixed(2)}
                 </div>
                 
                 <div class='col-qty qty-controls' style='min-height: 40px;'>
