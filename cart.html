@@ -6,6 +6,11 @@
 		<link rel="stylesheet" href="css/variables.css">
 		<link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/cart.css">
+        <script>
+            // Applies saved theme (Dark or Light Mode)
+            const savedTheme = localStorage.getItem("bakery-theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        </script>
 	</head>
 	<body>
 		<div class="header-nav-wrapper" id="mainHeader">
@@ -44,6 +49,7 @@
                 
                 <div class="checkout-table-headers" id="tableHeaders">
                     <div class="col-product">Product</div>
+                    <div class="col-price" style="text-align: center;">Price</div>
                     <div class="col-qty" style="text-align: center;">Quantity</div>
                     <div class="col-total" style="text-align: right;">Total</div>
                 </div>
