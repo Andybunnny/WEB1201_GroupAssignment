@@ -67,8 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Fetch logged-in user's name if they registered and didn't check anonymous
             const userData = JSON.parse(localStorage.getItem('granbakery_user'));
-            if (userData && userData.fullName) {
-                authorName = userData.fullName;
+
+            if (userData) {
+                if (userData.firstName && userData.lastName) {
+                    authorName = `${userData.firstName} ${userData.lastName.charAt(0)}.`;
+                }
             }
         }
 

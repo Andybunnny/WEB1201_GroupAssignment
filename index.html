@@ -173,28 +173,6 @@
   <!-- Global JavaScript -->
   <script src="js/global.js"></script>
 
-  <!-- Auth check script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const storedUserStr = localStorage.getItem('granbakery_user');
-      if (storedUserStr) {
-        try {
-          const storedUser = JSON.parse(storedUserStr);
-          if (storedUser && storedUser.fullName) {
-            console.log(`Welcome back to the homepage, ${storedUser.fullName}!`);
-          }
-        } catch (e) {
-          console.error("Error parsing stored user data.");
-        }
-      }
-    });
-  </script>
-
-    <!-- Floating Cart Button -->
-  <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'" aria-label="View Cart">
-    <span class="cart-count" id="cartCount">0</span>
-  </button>
-  
 </body>
 
 </html>
