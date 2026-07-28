@@ -12,16 +12,8 @@
 /*--------------------------------------- Product display -------------------------------------------- */
 
 .productdisplay-text {
-  background-color: #ad9079; 
+  background-color: transparent; 
   height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montenegrin Gothic One", serif;
-  font-weight: 400;
-  font-style: normal;
-  max-width: 1690px;      /* limits how wide it can get */
-  margin: auto;          /* centers it on the page */
   border-radius: 8px;
 
   
@@ -31,6 +23,7 @@
   color: #ffffff; 
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
+
 
 }
 /* 1. Use Flexbox to display the cards side-by-side */
@@ -46,13 +39,11 @@
 /* 2. Style each card container */
 .productdisplay-btn {
   flex: 1 1 calc(25% - 20px); /* Responsive sizing: 4 columns minus the gap */
-  min-width: 200px;           /* Prevents cards from getting too squished */
-  
+  min-width: 200px;           /* Prevents cards from getting too squished */  
   position: relative;         /*  Acts as the anchor point for the absolute text */
   display: flex;              /* Centers the text inside the card boundaries */
   align-items: center;        /* Vertically centers the text */
   justify-content: center;    /* Horizontally centers the text */
-  
   text-decoration: none;
   overflow: hidden;
   border-radius: 8px;
@@ -69,8 +60,7 @@
 /* 4. Absolute position the text to overlay on top of the image */
 .productdisplay-btn span {
   position: absolute;         /* Pulls the text out of the normal flow so it sits ON TOP of the image */
-  z-index: 2;                 /* Keeps text layered above the image */
-  
+  z-index: 2;                 /* Keeps text layered above the image */ 
   color: #ffffff;
   font-family: 'Impact', 'Arial Black', sans-serif;
   font-size: 22px;
@@ -102,7 +92,8 @@
 .hero-text {
   flex: 1;                 /* takes remaining space */
   padding: 40px;
-  align-items: center;      
+  align-items: center;   
+  color: #000000;   
 }
 
 /* image column */
