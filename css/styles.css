@@ -399,6 +399,16 @@ footer {
     transform: translateY(-2px);
 }
 
+.footer-socials img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+[data-theme="dark"] .footer-socials img {
+    filter: invert(1);
+}
+
 .footer-copyright {
     color: var(--text-secondary);
     font-size: 0.85rem;
