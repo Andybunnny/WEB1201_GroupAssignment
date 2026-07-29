@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/home.css">
-	<script>
-		// Applies saved theme (Dark or Light Mode)
-		const savedTheme = localStorage.getItem("bakery-theme") || "light";
-		document.documentElement.setAttribute("data-theme", savedTheme);
-	</script>
+  <script>
+    // Applies saved theme (Dark or Light Mode)
+    const savedTheme = localStorage.getItem("bakery-theme") || "light";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  </script>
 </head>
 
 <body>
@@ -29,11 +29,11 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="nav-dropdown">
-            <a href="catalogue.html">Catalogue</a>
-            <ul class="dropdown-menu">
-                <li><a href="cookies.html">Cookies</a></li>
-                <li><a href="cakes.html">Cakes</a></li>
-            </ul>
+          <a href="catalogue.html">Catalogue</a>
+          <ul class="dropdown-menu">
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="cakes.html">Cakes</a></li>
+          </ul>
         </li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="team.html">Our Team</a></li>
@@ -129,7 +129,7 @@
 
   <footer>
     <div class="footer-container">
-      
+
       <!-- Contact & Location Info -->
       <div class="footer-contact">
         <p>Phone: +60123456789 | Email: hr@granbakery.my</p>
@@ -142,11 +142,11 @@
         <a href="https://www.facebook.com" aria-label="Visit our Facebook">
           <img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
         </a>
-        
+
         <a href="https://www.instagram.com" aria-label="Visit our Instagram">
           <img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
         </a>
-        
+
         <a href="https://www.youtube.com" aria-label="Visit our YouTube">
           <img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
         </a>
@@ -157,6 +157,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Cart Button -->
+  <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
 
   <!-- Global JavaScript -->
   <script src="js/global.js"></script>
