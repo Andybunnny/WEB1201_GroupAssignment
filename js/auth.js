@@ -15,7 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (authFormContainer) authFormContainer.style.display = 'none';
         if (loggedInState) {
             loggedInState.style.display = 'block';
-            welcomeName.textContent = `${currentUser.firstName} ${currentUser.lastName.charAt(0)}.`;        }
+            welcomeName.textContent = `${currentUser.firstName} ${currentUser.lastName.charAt(0)}.`;        
+        
+            renderAccountDetails(currentUser);
+            renderOrderHistory(currentUser);
+        }
     }
 
     // Handle Logout Click
@@ -121,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Validate credentials against stored data
                 if (storedUser.email === loginEmail && storedUser.password === loginPassword) {
                     alert(`Welcome back, ${storedUser.firstName}!`);
-                    window.location.href = 'index.html'; // Redirect to home upon success
+                    window.location.href = 'login.html'; // Redirect to account dashboard upon success
                 } else {
                     alert('Invalid email or password. Please try again.');
                 }
@@ -129,5 +133,49 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert('No account found. Please sign up first.');
             }
         });
+    }
+
+    // --- 4. ACCOUNT DASHBOARD RENDERING FUNCTIONS ---
+    function renderAccountDetails(user) {
+        const nameEl = document.getElementById('profileName');
+        const emailEl = document.getElementById('profileEmail');
+        const phoneEl = document.getElementById('profilePhone');
+        const genderEl = document.getElementById('profileGender');
+
+        // Fallback to "N/A" or "Not provided" if any field is missing
+        if (nameEl) nameEl.textContent = `${user.firstName} ${user.lastName}`;
+        if (emailEl) emailEl.textContent = user.email || "N/A";
+        if (phoneEl) phoneEl.textContent = user.phone || "Not provided";
+        if (genderEl) genderEl.textContent = user.gender || "Not provided";
+    }
+
+    function renderOrderHistory(user) {
+        const historyContainer = document.getElementById('orderHistoryContainer');
+        if (!historyContainer) return;
+
+        if (user.orders && user.orders.length > 0) {
+            historyContainer.innerHTML = ''; // Clear empty state
+            
+            user.orders.forEach(order => {
+                const orderCard = document.createElement('div');
+                orderCard.style.padding = "1rem 0";
+                orderCard.style.borderBottom = "1px solid var(--border)";
+                orderCard.style.color = "var(--text-secondary)";
+                
+                orderCard.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <strong style="color: var(--text-primary);">Order #${order.orderId}</strong>
+                        <span>${order.date}</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>${order.items.length} item(s)</span>
+                        <strong style="color: var(--accent);">RM ${order.total.toFixed(2)}</strong>
+                    </div>
+                `;
+                historyContainer.appendChild(orderCard);
+            });
+        } else {
+            historyContainer.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">You have no past orders yet.</p>';
+        }
     }
 });

@@ -75,8 +75,37 @@
             <p style="color: var(--text-secondary, #666); margin: 1rem 0 2rem;">You are currently signed into your
                 Granbakery account.</p>
 
-            <button id="logoutBtn"
-                style="background-color: #a67c52; color: #fff; border: none; padding: 12px 24px; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: bold; width: 100%; max-width: 250px; margin: 0 auto; transition: background-color 0.3s;">
+            <div id="accountDetailsSection" style="max-width: 600px; margin: 0 auto 2rem; text-align: left; background: var(--bg-card, #fff); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <h3 style="border-bottom: 1px solid var(--border, #eee); padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: var(--text-primary, #333);">Account Details</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; color: var(--text-secondary, #666);">
+                    <div>
+                        <strong style="color: var(--text-primary, #333); display: block; font-size: 0.9rem; margin-bottom: 0.25rem;">Full Name</strong>
+                        <span id="profileName">Loading...</span>
+                    </div>
+                    <div>
+                        <strong style="color: var(--text-primary, #333); display: block; font-size: 0.9rem; margin-bottom: 0.25rem;">Email Address</strong>
+                        <span id="profileEmail">Loading...</span>
+                    </div>
+                    <div>
+                        <strong style="color: var(--text-primary, #333); display: block; font-size: 0.9rem; margin-bottom: 0.25rem;">Phone Number</strong>
+                        <span id="profilePhone">Not provided</span>
+                    </div>
+                    <div>
+                        <strong style="color: var(--text-primary, #333); display: block; font-size: 0.9rem; margin-bottom: 0.25rem;">Gender</strong>
+                        <span id="profileGender">Not provided</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="profileSection" style="max-width: 600px; margin: 0 auto 2rem; text-align: left; background: var(--bg-card, #fff); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <h3 style="border-bottom: 1px solid var(--border, #eee); padding-bottom: 0.5rem; margin-bottom: 1rem; color: var(--text-primary, #333);">Your Order History</h3>
+                
+                <div id="orderHistoryContainer">
+                </div>
+            </div>
+
+            <button id="logoutBtn" style="background-color: #a67c52; color: #fff; border: none; padding: 12px 24px; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: bold; width: 100%; max-width: 250px; margin: 0 auto; transition: background-color 0.3s;">
                 Log Out
             </button>
         </div>
