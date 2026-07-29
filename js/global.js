@@ -54,6 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.innerHTML = `<img src="${theme === "dark" ? MOON_ICON : SUN_ICON}" alt="${theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}" class="theme-icon" width="24" height="24">`;
             btn.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
         });
+
+        const darkSrc = "assets/img/granbakery_header_dark.png";
+        const lightSrc = "assets/img/granbakery_header_final.png";
+        document.querySelectorAll(".main-logo").forEach((img) => {
+            img.src = theme === "dark" ? darkSrc : lightSrc;
+        });
     };
 
     // Initialize to light theme on page load

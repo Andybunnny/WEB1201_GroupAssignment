@@ -6,11 +6,17 @@
 		<link rel="stylesheet" href="css/variables.css">
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" href="css/cart.css">
-		<script>
-			// Applies saved theme (Dark or Light Mode)
-			const savedTheme = localStorage.getItem("bakery-theme") || "light";
-			document.documentElement.setAttribute("data-theme", savedTheme);
-		</script>
+		        <script>
+            // Applies saved theme (Dark or Light Mode)
+            const savedTheme = localStorage.getItem("bakery-theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+
+            const darkSrc = "assets/img/granbakery_header_dark.png";
+            const lightSrc = "assets/img/granbakery_header_final.png";
+            document.querySelectorAll(".main-logo").forEach((img) => {
+                img.src = savedTheme === "dark" ? darkSrc : lightSrc;
+            });
+        </script>
 	</head>
 	<body>
 		<div class="header-nav-wrapper" id="mainHeader">
