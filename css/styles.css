@@ -150,11 +150,19 @@ nav .nav-links li:hover::after {
     transform: scale(1.1);
 }
 
-.theme-toggle svg {
+.theme-toggle img.theme-icon,
+.nav-icons a img {
     width: 24px;
     height: 24px;
-    stroke: currentColor;
-    fill: none;
+    display: block;
+    color: var(--text-primary);
+    filter: invert(0);
+}
+
+[data-theme="dark"] .theme-toggle img.theme-icon,
+[data-theme="dark"] .nav-icons a img,
+[data-theme="dark"] .floating-cart-btn img {
+    filter: invert(1);
 }
 
 /* ===== floating cart button (global) ===== */
@@ -177,20 +185,10 @@ nav .nav-links li:hover::after {
     justify-content: center;
 }
 
-.floating-cart-btn::before {
-    content: "";
+.floating-cart-btn img {
     width: 24px;
     height: 24px;
-    display: block;
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" stroke="%23000000" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* --- Dark Mode: White Icon --- */
-[data-theme="dark"] .floating-cart-btn::before {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" stroke="%23ffffff" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>');
+    pointer-events: none;
 }
 
 .floating-cart-btn:hover {
@@ -399,6 +397,16 @@ footer {
 .footer-socials a:hover {
     opacity: 0.6;
     transform: translateY(-2px);
+}
+
+.footer-socials img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+[data-theme="dark"] .footer-socials img {
+    filter: invert(1);
 }
 
 .footer-copyright {

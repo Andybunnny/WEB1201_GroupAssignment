@@ -60,11 +60,10 @@ body {
     color: var(--accent);
 }
 
-.team-theme-toggle svg {
+.team-theme-toggle img.theme-icon {
     width: 24px;
     height: 24px;
-    stroke: currentColor;
-    fill: none;
+    display: block;
 }
 
 /* --- Main Layout --- */
