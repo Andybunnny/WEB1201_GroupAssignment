@@ -165,8 +165,8 @@ nav .nav-links li:hover::after {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #C4A484;
-    color: white;
+    background-color: var(--accent-floating, var(--accent));
+    color: var(--bg-body);
     border: none;
     cursor: pointer;
     box-shadow: var(--shadow-hover);
@@ -282,6 +282,8 @@ nav .nav-links li:hover::after {
     width: 100%;
     background-color: var(--accent);
     color: white;
+    font-weight: bold;
+    font-family: inherit;
     border: none;
     padding: 12px;
     border-radius: 6px;
