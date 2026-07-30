@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const logoutBtn = document.getElementById('logoutBtn');
     const currentUser = JSON.parse(localStorage.getItem('granbakery_user'));
 
-    // If the user data exists in local storage, show the logged-in state
-    if (currentUser && currentUser.firstName) {
+    // If the user data exists in local storage and they are logged in, show the logged-in state and hide the forms
+    if (currentUser && currentUser.isLoggedIn === true) {
         if (authFormContainer) authFormContainer.style.display = 'none';
         if (loggedInState) {
             loggedInState.style.display = 'block';
@@ -21,12 +21,29 @@ document.addEventListener("DOMContentLoaded", () => {
             renderOrderHistory(currentUser);
         }
     }
+    else {
+        // If no user is logged in, show the forms and hide the logged-in state
+        if (authFormContainer) authFormContainer.style.display = 'block';
+        if (loggedInState) loggedInState.style.display = 'none';
+    }
 
     // Handle Logout Click
     if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
-            // Remove user from storage and refresh the page to show forms again
-            localStorage.removeItem('granbakery_user');
+            // 1. Grab the saved account from local storage
+            let user = JSON.parse(localStorage.getItem("granbakery_user"));
+
+            // 2. Lock the account (set status to logged out) and save it back
+            if (user) {
+                user.isLoggedIn = false;
+                localStorage.setItem("granbakery_user", JSON.stringify(user));
+            }
+
+            // 3. Clear the active shopping cart so the next session starts fresh
+            localStorage.removeItem("cart");
+
+            // 4. Show a message and reload the page
+            alert("You have been securely logged out.");
             window.location.reload(); 
         });
     }
@@ -97,7 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 gender: gender,
                 address: address,
                 postcode: postcode,
-                state: state
+                state: state,
+                isLoggedIn: false
             };
 
             // Save object to localStorage as a string (Simulating database storage)
@@ -124,8 +142,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 // Validate credentials against stored data
                 if (storedUser.email === loginEmail && storedUser.password === loginPassword) {
+                    storedUser.isLoggedIn = true;
+                    localStorage.setItem('granbakery_user', JSON.stringify(storedUser));
+
                     alert(`Welcome back, ${storedUser.firstName}!`);
-                    window.location.href = 'login.html'; // Redirect to account dashboard upon success
+                    window.location.reload();
                 } else {
                     alert('Invalid email or password. Please try again.');
                 }
