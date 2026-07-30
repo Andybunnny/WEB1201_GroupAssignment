@@ -36,11 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (reviews.length === 0) {
 			const empty = document.createElement('div');
 			empty.className = 'review-card empty-state';
-			empty.innerHTML = `<p>No reviews yet. Be the first to share your experience!</p>`;
+			empty.innerHTML = `<p>No reviews yet. Be the first to <a href="reviews.html" class="empty-state-link">share your experience!</a></p>`;
 			track.appendChild(empty);
 			totalCards = 1;
 			dotsContainer.innerHTML = '';
 			updateDots();
+			updateButtons();
 			return;
 		}
 

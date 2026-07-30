@@ -231,6 +231,13 @@
 	padding: 3rem;
 }
 
+.empty-state-link {
+	color: var(--accent);
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
 .review-card-stars {
 	color: #f59e0b;
 	font-size: 1.2rem;
