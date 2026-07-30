@@ -116,6 +116,9 @@
       
     </section>
 
+   
+
+
 	<section class="aboutTopRow">
 
   <section class="hero">
@@ -158,12 +161,41 @@
 
 	<!-- 5: Decorative -->
 	<div class="sidebarDecor" aria-hidden="true">
-		<img src="assets/img/maps2.png"
+		<img src="assets/img/maps2.png" alt="Map showing Granbakery's location">
 	</div>
 
 </aside>
 
 </section>
+ <!-- Customer Reviews Slider -->
+	<section class="reviews-slider-section">
+	  <div class="reviews-slider-header">
+		<h2>Customer Reviews</h2>
+		<p>See what our customers are saying about Granbakery</p>
+	  </div>
+
+	  <div class="reviews-slider-wrapper">
+		<button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous review">
+		  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<polyline points="15 18 9 12 15 6"></polyline>
+		  </svg>
+		</button>
+
+		<div class="reviews-slider-viewport">
+		  <div class="reviews-slider-track" id="reviewsSliderTrack">
+			<!-- Review cards will be injected here by JavaScript -->
+		  </div>
+		</div>
+
+		<button class="slider-btn slider-next" id="sliderNext" aria-label="Next review">
+		  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<polyline points="9 18 15 12 9 6"></polyline>
+		  </svg>
+		</button>
+	  </div>
+
+	  <div class="slider-dots" id="sliderDots"></div>
+	</section>
 
 
     <!-- Why Choose Us -->
@@ -216,3 +248,4 @@
 
   <!-- Global JavaScript -->
   <script src="js/global.js"></script>
+  <script src="js/home.js"></script>
