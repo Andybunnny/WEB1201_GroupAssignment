@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/home.css">
+  <!-- Archivo Black font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
           <script>
             // Applies saved theme (Dark or Light Mode)
             const savedTheme = localStorage.getItem("bakery-theme") || "light";
@@ -79,29 +83,37 @@
     </section>
 
     <!-- Product Categories (Fixed Grid & Filtered to Cakes + Cookies) -->
-    <section class="productdisplay" style="text-align: center; padding: 4rem 2rem;">
-      <div class="productdisplay-text" style="margin-bottom: 2rem;">
-        <h1 style="font-size: 2rem; color: var(--text-primary, #333);">Our Products 👨‍🍳 </h1>
-      </div>
-      <div class="displaygrid"
-        style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; max-width: 800px; margin: 0 auto;">
+<section class="productdisplay">
+  <div class="productdisplay-inner">
 
-        <a href="cakes.html" class="productdisplay-btn"
-          style="text-decoration: none; color: var(--text-primary, #333); display: flex; flex-direction: column; align-items: center;">
-          <img src="assets/img/home/cake2.jpg" alt="Freshly baked whole cakes" class="productdisplay-img"
-            style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <span style="font-size: 1.2rem; font-weight: bold;"> Cakes</span>
+    <div class="productdisplay-text">
+      <h1 style="font-family: 'Archivo Black', sans-serif;">OUR PRODUCTS</h1>
+      <p class="productdisplay-subtitle">Handcrafted daily, straight from our oven to your table</p>
+    </div>
+
+    <div class="products-right">
+      <div class="displaygrid">
+
+        <a href="cakes.html" class="productdisplay-btn productdisplay-btn--large">
+          <img src="assets/img/home/cake2.jpg" alt="Freshly baked whole cakes" class="productdisplay-img">
+          <span>Cakes</span>
         </a>
 
-        <a href="cookies.html" class="productdisplay-btn"
-          style="text-decoration: none; color: var(--text-primary, #333); display: flex; flex-direction: column; align-items: center;">
-          <img src="assets/img/home/cookie2.jpg" alt="Assorted cookies" class="productdisplay-img"
-            style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <span style="font-size: 1.2rem; font-weight: bold;">Cookies</span>
+        <a href="cookies.html" class="productdisplay-btn productdisplay-btn--small">
+          <img src="assets/img/home/cookie2.jpg" alt="Assorted cookies" class="productdisplay-img">
+          <span>Cookies</span>
         </a>
 
+      </div>
+
+      <a href="catalogue.html" class="view-all-pill">All Products</a>
+    </div>
+
+  </div>
+</section>
 
       </div>
+      
     </section>
 
 	<section class="aboutTopRow">
@@ -110,12 +122,7 @@
     <div class="hero-text">
       <h1>GRANBAKERY STORY</h1>
       <hr class="dotted-line-top">
-      <p>Welcome to the Granbakery, where every recipe comes seasoned with decades of love, patience, and a dash of
-          grandparently magic! From our kitchen to your table, we specialize in warm, rustic breads, time-honored
-          pastries, and comforting treats baked fresh every single morning using the very same recipes we've perfected
-          over a lifetime together. For us, this isn't just a business. It's our way of spreading joy, welcoming
-          neighbors, and making sure everyone who walks through our doors feels like they've just come home. Stop by,
-          catch the aroma of fresh vanilla and yeast, and let us share a little piece of our heart with you!</p>
+      <p><p>Welcome to Granbakery, where every recipe is seasoned with decades of love and a dash of grandparently magic. From warm rustic breads to time-honored pastries, we bake fresh every morning using recipes perfected over a lifetime.</p></p>
           <a href="about.html" class="hero-btn">READ MORE</a>
     </div>
     
@@ -129,8 +136,8 @@
 	<!-- 3: Stats -->
 	<div class="sidebarCard statsCard">
 	<div class="statItem">
-		<strong>30+</strong>
-		<span>Years Baking</span>
+		<strong>2026</strong>
+		<span>Founded</span>
 	</div>
 	<div class="statItem">
 		<strong>50+</strong>
@@ -209,7 +216,3 @@
 
   <!-- Global JavaScript -->
   <script src="js/global.js"></script>
-
-</body>
-
-</html>
