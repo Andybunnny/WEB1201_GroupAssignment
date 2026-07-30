@@ -18,6 +18,10 @@
   padding: 3rem 3.5rem;
 }
 
+[data-theme="dark"] .productdisplay {
+  background-color: #1e1a17; 
+}
+
 /* Layout row holding the text block on the left and the product buttons on the right */
 .productdisplay-inner {
   display: flex;
