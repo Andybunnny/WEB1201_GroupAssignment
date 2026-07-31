@@ -11,8 +11,9 @@
 }
 
 .aboutHero h2 {
-    color: #ad9079;        /* muted brown/terracotta accent color */
     font-size: 2rem;
+    font-weight: 300;
+    font-family: inherit;
     margin-bottom: 15px;
     letter-spacing: 0.05em;
     border-bottom: 0.5px solid;
@@ -49,6 +50,8 @@
 .valueCard h3 {
     color: #0e0a0a;            /* near-black text */
     margin-bottom: 8px;
+    font-family: inherit;        /* ensures consistent font with the rest of the site */
+    font-weight: 500;
 }
 
 .valueCard p {
