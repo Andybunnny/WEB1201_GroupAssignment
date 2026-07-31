@@ -14,7 +14,6 @@
 /* Outer "Our Products" section - translucent warm gray background wrapping the whole block */
 .productdisplay {
   background-color: #cac0b7c4; 
-  border-radius: 8px;
   padding: 3rem 3.5rem;
 }
 
