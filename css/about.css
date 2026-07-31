@@ -1,7 +1,7 @@
 
 .image {
-  text-align: center;
-  margin: 20px 0;
+    text-align: center;
+    margin: 20px 0;
 }
 
 
@@ -17,12 +17,17 @@
   color: #ad9079;      /* muted brown/terracotta accent color */
   font-size: 2rem;
   margin-bottom: 15px;
+  letter-spacing: 0.05em;
+  border-bottom: 0.5px solid;
+  padding-bottom: 1px;
+  display: inline-block;
 }
 
 .aboutHero p {
   text-align: left;    /* left-aligns body text for readability, even though the container is centered */
   line-height: 1.8;    /* generous line spacing for long-form reading */
   margin-bottom: 20px;
+  color: var(--text-secondary, #666);
 }
 
 .aboutValues {
@@ -33,7 +38,6 @@
   flex-wrap: wrap;           /* allows cards to drop to a new line on narrow screens */
   justify-content: center;   /* keeps cards centered if they wrap or don't fill the row */
 }
-
 
 .valueCard {
   background: #beac6ea9;     /* semi-transparent warm gold/olive background */
