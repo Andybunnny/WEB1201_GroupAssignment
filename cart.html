@@ -118,8 +118,8 @@
 				const currentUser = JSON.parse(localStorage.getItem("granbakery_user"));
 
 				// Guard: Stop them if they aren't logged in
-				if (!currentUser) {
-					alert("Please log in or create an account to place your order.");
+				if (!currentUser || currentUser.isLoggedIn !== true) {
+					alert("Please log in to place your order.");
 					window.location.href = "login.html"; 
 					return; 
 				}
