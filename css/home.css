@@ -85,6 +85,9 @@
 .productdisplay-text h1 {
     font-size: 2.5rem;
     color: var(--text-primary);
+    font-family: inherit;
+    font-weight: 300;
+    letter-spacing: 0.1em;
 }
 
 .productdisplay-subtitle {
@@ -154,7 +157,7 @@
 /* The "Cakes" / "Cookies" label text overlaid on each card */
 .productdisplay-btn span {
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
     position: relative; /* keeps it above the absolutely-positioned image/tint via stacking order */
     z-index: 2; /* sits above the tint layer */
     color: #ffffff;
