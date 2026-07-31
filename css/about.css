@@ -38,8 +38,7 @@
 }
 
 .valueCard {
-    background: #beac6ea9;     /* semi-transparent warm gold/olive background */
-    border: 1px solid #ccc;
+    background: var(--accent);
     border-radius: 8px;
     padding: 20px;
     flex: 1;                   /* lets each card grow/shrink equally to fill available row space */
@@ -48,12 +47,12 @@
 }
 
 .valueCard h3 {
-    color: #0e0a0a;            /* near-black text */
+    color: var(--text-primary);
     margin-bottom: 8px;
     font-family: inherit;        /* ensures consistent font with the rest of the site */
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .valueCard p {
-    color: #13110f;            /* near-black text, slightly different shade from the h3 */
+    color: var(--text-secondary3);
 }
