@@ -1,61 +1,56 @@
-
 .image {
     text-align: center;
     margin: 20px 0;
 }
 
-
 .aboutHero {
-  max-width: 800px;
-  margin: 0 auto;      /* centers the block horizontally on the page */
-  padding: 20px;
-  text-align: center;  /* centers the heading; overridden below for the paragraph */
+    max-width: 800px;
+    margin: 0 auto;        /* centers the block horizontally on the page */
+    padding: 20px;
+    text-align: center;    /* centers the heading; overridden below for the paragraph */
 }
 
-
 .aboutHero h2 {
-  color: #ad9079;      /* muted brown/terracotta accent color */
-  font-size: 2rem;
-  margin-bottom: 15px;
-  letter-spacing: 0.05em;
-  border-bottom: 0.5px solid;
-  padding-bottom: 1px;
-  display: inline-block;
+    color: #ad9079;        /* muted brown/terracotta accent color */
+    font-size: 2rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+    border-bottom: 0.5px solid;
+    padding-bottom: 1px;
+    display: inline-block;
 }
 
 .aboutHero p {
-  text-align: left;    /* left-aligns body text for readability, even though the container is centered */
-  line-height: 1.8;    /* generous line spacing for long-form reading */
-  margin-bottom: 20px;
-  color: var(--text-secondary, #666);
+    text-align: left;      /* left-aligns body text for readability, even though the container is centered */
+    line-height: 1.8;      /* generous line spacing for long-form reading */
+    margin-bottom: 20px;
+    color: var(--text-secondary, #666);
 }
 
 .aboutValues {
-  display: flex;
-  gap: 20px;                /* spacing between each card */
-  max-width: 900px;
-  margin: 40px auto;         /* centers the row and adds vertical spacing above/below */
-  flex-wrap: wrap;           /* allows cards to drop to a new line on narrow screens */
-  justify-content: center;   /* keeps cards centered if they wrap or don't fill the row */
+    display: flex;
+    gap: 20px;                 /* spacing between each card */
+    max-width: 900px;
+    margin: 40px auto;         /* centers the row and adds vertical spacing above/below */
+    flex-wrap: wrap;           /* allows cards to drop to a new line on narrow screens */
+    justify-content: center;   /* keeps cards centered if they wrap or don't fill the row */
 }
 
 .valueCard {
-  background: #beac6ea9;     /* semi-transparent warm gold/olive background */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  flex: 1;                   /* lets each card grow/shrink equally to fill available row space */
-  min-width: 200px;          /* prevents cards from getting too narrow/squished when wrapping */
-  text-align: center;
+    background: #beac6ea9;     /* semi-transparent warm gold/olive background */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;                   /* lets each card grow/shrink equally to fill available row space */
+    min-width: 200px;          /* prevents cards from getting too narrow/squished when wrapping */
+    text-align: center;
 }
-
 
 .valueCard h3 {
-  color: #0e0a0a;            /* near-black text */
-  margin-bottom: 8px;
+    color: #0e0a0a;            /* near-black text */
+    margin-bottom: 8px;
 }
 
-
 .valueCard p {
-  color: #13110f;            /* near-black text, slightly different shade from the h3 */
+    color: #13110f;            /* near-black text, slightly different shade from the h3 */
 }
