@@ -323,7 +323,7 @@
     display: flex;
     align-items: stretch;
     gap: 20px;
-    width: 100vw; /* spans the full viewport width */
+    width: 100%;
     position: relative;
     left: 50%;
     right: 50%;
