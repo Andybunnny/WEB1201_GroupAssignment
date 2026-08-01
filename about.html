@@ -7,17 +7,17 @@
 	<link rel="stylesheet" href="css/variables.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/about.css">
-	        <script>
-            // Applies saved theme (Dark or Light Mode)
-            const savedTheme = localStorage.getItem("bakery-theme") || "light";
-            document.documentElement.setAttribute("data-theme", savedTheme);
+	<script>
+		// Applies saved theme (Dark or Light Mode)
+		const savedTheme = localStorage.getItem("bakery-theme") || "light";
+		document.documentElement.setAttribute("data-theme", savedTheme);
 
-            const darkSrc = "assets/img/granbakery_header_dark.png";
-            const lightSrc = "assets/img/granbakery_header_final.png";
-            document.querySelectorAll(".main-logo").forEach((img) => {
-                img.src = savedTheme === "dark" ? darkSrc : lightSrc;
-            });
-        </script>
+		const darkSrc = "assets/img/granbakery_header_dark.png";
+		const lightSrc = "assets/img/granbakery_header_final.png";
+		document.querySelectorAll(".main-logo").forEach((img) => {
+			img.src = savedTheme === "dark" ? darkSrc : lightSrc;
+		});
+	</script>
 
 </head>
 
@@ -97,9 +97,25 @@
 
 			<!-- Contact & Location Info -->
 			<div class="footer-contact">
-				<p>Phone: +60123456789 | Email: hr@granbakery.my</p>
-				<p>Operating Hours: Tuesday - Saturday, 10:00 AM - 3:00 PM</p>
-				<p>Closed on Sundays, Mondays and Public Holidays</p>
+				<div class="footer-column">
+					<h4>Contact Us</h4>
+					<p>Phone: +60123456789</p>
+					<p>Email: hr@granbakery.my</p>
+				</div>
+
+				<!-- Column 2: Location -->
+				<div class="footer-column">
+					<h4>Location</h4>
+					<p>142 Baker Street</p>
+					<p>Springfield, IL 62704</p>
+				</div>
+
+				<!-- Column 3: Hours -->
+				<div class="footer-column">
+					<h4>Operating Hours</h4>
+					<p>Tuesday - Saturday: 10:00 AM - 3:00 PM</p>
+					<p>Closed on Sundays, Mondays and Public Holidays</p>
+				</div>
 			</div>
 
 			<!-- Social Media Icons -->
@@ -126,7 +142,7 @@
 	<!-- Floating Cart Button -->
 	<button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
 		<img src="assets/img/global/cart.svg" alt="Shopping cart" width="24" height="24">
-            <span class="cart-count" id="cartCount">0</span>
+		<span class="cart-count" id="cartCount">0</span>
 	</button>
 
 	<script src="js/global.js"></script>

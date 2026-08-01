@@ -372,10 +372,42 @@ footer {
     gap: 1.5rem;
 }
 
-.footer-contact p {
+/* --- Footer 3-Columns layout --- */
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; /* Adds space between the two columns */
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-column {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-column h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-column p {
     margin: 0.3rem 0;
-    color: var(--text-secondary); /* Keeps text subtle so it isn't distracting */
+    color: var(--text-secondary); 
     font-size: 0.95rem;
+}
+
+/* Ensure the columns stack neatly on mobile phones */
+@media (max-width: 800px) {
+    .footer-contact {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
 
 .footer-socials {
