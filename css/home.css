@@ -15,7 +15,6 @@
     color: var(--text-primary, #333);
     font-weight: 300;
     letter-spacing: 0.1em;
-
 }
 
 .welcome-banner p {
@@ -29,7 +28,7 @@
     padding: 12px 28px;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #5a3d31;
+    background-color: var(--accent, #b08968);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -38,7 +37,7 @@
 }
 
 .welcome-btn:hover {
-    background-color: #3e2a22;
+    background-color: var(--accent-hover, #3e2a22);
     transform: translateY(-2px);
 }
 
@@ -55,115 +54,151 @@
     max-height: 400px; /* Adjust as needed */
     object-fit: cover; /* Ensures the image covers the area without distortion */
     margin-bottom: 5px; /* small gap before the next section */
-
-
 }
-/*--------------------------------------- Product display -------------------------------------------- */
 
+/*--------------------------------------- PRODUCT DISPLAY -------------------------------------------- */
 /* Outer "Our Products" section - translucent warm gray background wrapping the whole block */
 .productdisplay {
-  background-color: #cac0b7c4; 
-  padding: 3rem 3.5rem;
+    background-color: #cac0b7c4; 
+    padding: 3rem 3.5rem;
 }
 
 [data-theme="dark"] .productdisplay {
-  background-color: #1e1a17; 
+    background-color: #1e1a17; 
 }
-
 
 /* Layout row holding the text block on the left and the product buttons on the right */
 .productdisplay-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* was space-between — this was what pushed everything to the edges */
-  gap: 4rem;
-  flex-wrap: wrap; /* stacks text above buttons on narrow screens  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap; /* stacks text above buttons on narrow screens  */
 }
 
 /* "Our Products" heading + subtitle wrapper */
 .productdisplay-text {
-  flex: 0 1 auto; /* no longer forced to stretch/fill space, so it doesn't push the buttons away */
-  text-align: left;
+    flex: 0 1 auto; /* no longer forced to stretch/fill space, so it doesn't push the buttons away */
+    text-align: left;
 }
 
 .productdisplay-text h1 {
-  font-size: 2.5rem;
-  color: var(--text-primary);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-weight: 300;
+    letter-spacing: 0.1em;
 }
 
 .productdisplay-subtitle {
-  color: var(--text-secondary2); 
-  font-size: 1rem;
+    color: var(--text-secondary2); 
+    font-size: 1rem;
 }
 
 /* Column holding the two product buttons + the "All Products" pill underneath them */
 .products-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  margin-top: 2rem; /* nudges this whole column down slightly relative to the text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem; /* nudges this whole column down slightly relative to the text */
 }
 
 /* Row holding the two arch-shaped product buttons side by side */
 .displaygrid {
-  display: flex;
-  align-items: flex-end; /* bottoms of the two arches line up, matching the sketch */
-  gap: 20px;
+    display: flex;
+    align-items: flex-end; /* bottoms of the two arches line up, matching the sketch */
+    gap: 20px;
 }
 
 /* Both arches share one size */
 .productdisplay-btn {
-  width: 200px;
-  height: 270px;
-  position: relative;         /* anchor point for the absolutely-positioned image + tint + label */
-  display: flex;
-  align-items: center;        /* vertically centers the label text */
-  justify-content: center;    /* horizontally centers the label text */
-  text-decoration: none;
-  overflow: hidden;           /* clips the image into the arch shape defined by border-radius below */
-  border-radius: 150px 150px 12px 12px; /* rounded top corners create the "arch/window" shape, square-ish bottom */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooths the hover lift effect below */
+    width: 200px;
+    height: 270px;
+    position: relative; /* anchor point for the absolutely-positioned image + tint + label */
+    display: flex;
+    align-items: center; /* vertically centers the label text */
+    justify-content: center; /* horizontally centers the label text */
+    text-decoration: none;
+    overflow: hidden; /* clips the image into the arch shape defined by border-radius below */
+    border-radius: 150px 150px 12px 12px; /* rounded top corners create the "arch/window" shape, square-ish bottom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooths the hover lift effect below */
 }
+
 .productdisplay-btn:hover {
-  transform: translateY(-6px); /* lifts the card slightly on hover */
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14); /* deepens the shadow to sell the "lift" */
+    transform: translateY(-6px); /* lifts the card slightly on hover */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14); /* deepens the shadow to sell the "lift" */
 }
 
 /* The product photo itself, pulled out of normal flow so it sits as a full-size background layer */
 .productdisplay-btn .productdisplay-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  position: absolute; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute; 
 }
 
 /* Dark tint over the photo so the label text is readable by default */
 .productdisplay-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0; /* stretches to fill the button exactly */
-  background: rgba(0, 0, 0, 0.35);
-  transition: opacity 0.35s ease;
-  z-index: 1; /* sits above the image, below the label text */
+    content: '';
+    position: absolute;
+    inset: 0; /* stretches to fill the button exactly */
+    background: rgba(0, 0, 0, 0.35);
+    transition: opacity 0.35s ease;
+    z-index: 1; /* sits above the image, below the label text */
 }
 
 .productdisplay-btn:hover::after {
-  opacity: 0; /* tint fades away on hover, revealing the clean photo underneath */
+    opacity: 0; /* tint fades away on hover, revealing the clean photo underneath */
 }
 
 /* The "Cakes" / "Cookies" label text overlaid on each card */
 .productdisplay-btn span {
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
     position: relative; /* keeps it above the absolutely-positioned image/tint via stacking order */
-    z-index: 2;          /* sits above the tint layer */
+    z-index: 2; /* sits above the tint layer */
     color: #ffffff;
     letter-spacing: 1px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* keeps white text readable against busy photo backgrounds */
     transition: opacity 0.35s ease;
+}
+
+.productdisplay-btn:hover span {
+    opacity: 0; /* label fades out along with the tint on hover, revealing just the photo */
+}
+
+/* "All Products" pill button beneath the two arches */
+.view-all-pill {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1.75rem;
+    border-radius: 50px; /* fully rounded, pill shape */
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.view-all-pill:hover {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+/* Responsive: stack text above buttons and center everything on narrow screens */
+@media (max-width: 700px) {
+    .productdisplay-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .productdisplay-text {
+        text-align: center;
+    }
 }
 
 /*--------------------------------------- WHY CHOOSE US -------------------------------------------- */
@@ -177,7 +212,6 @@
     font-weight: 300;
     font-size: 1.8rem;
     letter-spacing: 0.05em;
-
 }
 
 .why-choose-us p {
@@ -187,41 +221,7 @@
     line-height: 1.6;
 }
 
-.productdisplay-btn:hover span {
-  opacity: 0; /* label fades out along with the tint on hover, revealing just the photo */
-}
-
-/* "All Products" pill button beneath the two arches */
-.view-all-pill {
-  background: var(--bg-card);
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-  padding: 0.5rem 1.75rem;
-  border-radius: 50px; /* fully rounded, pill shape */
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: background var(--transition), color var(--transition), border-color var(--transition);
-}
-
-.view-all-pill:hover {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
-}
-
-/* Responsive: stack text above buttons and center everything on narrow screens */
-@media (max-width: 700px) {
-  .productdisplay-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-  .productdisplay-text {
-    text-align: center;
-  }
-}
 /*--------------------------------------- HERO -------------------------------------------- */
-
 /* "Granbakery Story" section - image and text side by side */
 .hero {
     display: flex;
@@ -254,129 +254,131 @@
 }
 
 .hero-text p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.8; /* generous spacing for readability on longer paragraph text */
-  margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8; /* generous spacing for readability on longer paragraph text */
+    margin-bottom: 1.5rem;
 }
 
 /* Small decorative divider under the heading */
 .dotted-line-top {
-  border: none;
-  border-top: 2px dotted var(--accent);
-  width: 60px; /* short accent line rather than a full-width rule */
-  margin: 0 0 1.5rem 0;
+    border: none;
+    border-top: 2px dotted var(--accent);
+    width: 60px; /* short accent line rather than a full-width rule */
+    margin: 0 0 1.5rem 0;
 }
 
 /* "Read More" link, styled as an understated text-button */
 .hero-btn {
-  align-self: flex-start; /* keeps the button left-aligned instead of stretching full width */
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--accent); /* underline styled as a border instead of text-decoration */
-  transition: color var(--transition), border-color var(--transition), transform var(--transition);
+    align-self: flex-start; /* keeps the button left-aligned instead of stretching full width */
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--accent); /* underline styled as a border instead of text-decoration */
+    transition: color var(--transition), border-color var(--transition), transform var(--transition);
 }
 
 .hero-btn:hover {
-  color: var(--accent-hover);
-  border-color: var(--accent-hover);
-  transform: translateX(4px); /* nudges the button slightly right on hover */
+    color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateX(4px); /* nudges the button slightly right on hover */
 }
 
 /* Image column */
 .hero-img {
-  display: block;
-  width: auto;
-  height: 100%;
-  object-fit: cover;
+    display: block;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Small screens: stack image above text instead of side by side */
 @media (max-width: 800px) {
-  .hero {
-    flex-direction: column;
-    max-height: none; /* removes the desktop height cap so content isn't squeezed when stacked */
-  }
-  .hero-img {
-    width: 100%;
-    height: 220px; /* fixed height since width:auto no longer makes sense in a stacked layout */
-  }
-  .hero-text {
-    padding: 40px;
-  }
-  .hero-text h1 {
-    font-size: 1.6rem; /* slightly smaller heading to fit narrow screens better */
-  }
+    .hero {
+        flex-direction: column;
+        max-height: none; /* removes the desktop height cap so content isn't squeezed when stacked */
+    }
+    
+    .hero-img {
+        width: 100%;
+        height: 220px; /* fixed height since width:auto no longer makes sense in a stacked layout */
+    }
+    
+    .hero-text {
+        padding: 40px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.6rem; /* slightly smaller heading to fit narrow screens better */
+    }
 }
 
 /*--------------------------------------- ABOUT TOP ROW -------------------------------------------- */
-
 /* Full-bleed wrapper row holding the hero + sidebar, breaks out of the page's normal max-width container */
 .aboutTopRow {
-  display: flex;
-  align-items: stretch;
-  gap: 20px;
-  width: 100vw;         /* spans the full viewport width */
-  position: relative;
-  left: 50%;            
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 40px 3rem;   /* keeps the actual content clear of the viewport edges despite spanning full width */
-  box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: 100vw; /* spans the full viewport width */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 40px 3rem; /* keeps the actual content clear of the viewport edges despite spanning full width */
+    box-sizing: border-box;
 }
 
 /* The hero section takes up more space than the sidebar in this row */
 .aboutTopRow .hero {
-  flex: 2.2;
-  margin: 0; /* removes the hero's own default centering margin since it's now a flex child here */
+    flex: 2.2;
+    margin: 0; /* removes the hero's own default centering margin since it's now a flex child here */
 }
 
 /* Sidebar column: stats card, location card, and decorative map image, stacked vertically */
 .aboutSidebar {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 /* Shared card styling for each box inside the sidebar */
 .sidebarCard {
-  background: var(--bg-card);
-  border-radius: 8px;
-  box-shadow: var(--shadow-soft);
-  padding: 20px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
 }
 
 /* Stats card - lays its numbers out in a row */
 .statsCard {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
 
 /* Individual stat */
 .statItem {
-  display: flex;
-  flex-direction: column; /* stacks the number above its label */
+    display: flex;
+    flex-direction: column; /* stacks the number above its label */
 }
 
 .statItem strong {
-  font-size: 1.4rem;
-  color: var(--accent);
+    font-size: 1.4rem;
+    color: var(--accent);
 }
 
 .statItem span {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-top: 4px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 4px;
 }
 
 /* "Visit Us" location card heading */

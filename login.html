@@ -50,8 +50,9 @@
             </div>
         </nav>
     </div>
+    
     <main>
-        <div class="auth-container id=" authFormContainer id="authFormContainer">
+        <div class="auth-container" id="authFormContainer">
             <div class="form-step active-step">
                 <h2>Log in to Granbakery</h2>
 
@@ -65,27 +66,49 @@
 
                 <hr>
 
-                <button onclick="window.location.href='signup.html'" class="create-account-btn">Create new
-                    account</button>
+                <button onclick="window.location.href='signup.html'" class="create-account-btn">Create new account</button>
             </div>
         </div>
-        <div id="loggedInState" class="logged-in-container"
-            style="display: none; text-align: center; padding: 4rem 2rem;">
-            <h2>Welcome back, <span id="welcomeName" style="color: var(--accent, #8b5a2b);"></span>!</h2>
-            <p style="color: var(--text-secondary, #666); margin: 1rem 0 2rem;">You are currently signed into your
-                Granbakery account.</p>
 
-            <button id="logoutBtn"
-                style="background-color: #a67c52; color: #fff; border: none; padding: 12px 24px; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: bold; width: 100%; max-width: 250px; margin: 0 auto; transition: background-color 0.3s;">
-                Log Out
-            </button>
+        <!-- Dashboard Section -->
+        <div id="loggedInState" class="dashboard-container" style="display: none;">
+            <h2>Welcome back, <span id="welcomeName" class="dashboard-welcome-name"></span>!</h2>
+            <p class="dashboard-subtitle">You are currently signed into your Granbakery account.</p>
+
+            <div class="dashboard-card">
+                <h3 class="dashboard-card-title">Account Details</h3>
+                
+                <div class="dashboard-grid">
+                    <div>
+                        <strong class="dashboard-label">Full Name</strong>
+                        <span id="profileName">Loading...</span>
+                    </div>
+                    <div>
+                        <strong class="dashboard-label">Email Address</strong>
+                        <span id="profileEmail">Loading...</span>
+                    </div>
+                    <div>
+                        <strong class="dashboard-label">Phone Number</strong>
+                        <span id="profilePhone">Not provided</span>
+                    </div>
+                    <div>
+                        <strong class="dashboard-label">Gender</strong>
+                        <span id="profileGender">Not provided</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3 class="dashboard-card-title">Your Order History</h3>
+                <div id="orderHistoryContainer"></div>
+            </div>
+
+            <button id="logoutBtn" class="dashboard-logout-btn">Log Out</button>
         </div>
     </main>
 
     <footer>
         <div class="footer-container">
-
-            <!-- Contact & Location Info -->
             <div class="footer-contact">
                 <div class="footer-column">
                     <h4>Contact Us</h4>
@@ -108,16 +131,13 @@
                 </div>
             </div>
 
-            <!-- Social Media Icons -->
             <div class="footer-socials">
                 <a href="https://www.facebook.com" aria-label="Visit our Facebook">
                     <img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
                 </a>
-
                 <a href="https://www.instagram.com" aria-label="Visit our Instagram">
                     <img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
                 </a>
-
                 <a href="https://www.youtube.com" aria-label="Visit our YouTube">
                     <img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
                 </a>
@@ -132,5 +152,4 @@
     <script src="js/global.js"></script>
     <script src="js/auth.js"></script>
 </body>
-
 </html>
