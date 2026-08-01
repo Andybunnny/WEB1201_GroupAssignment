@@ -1,177 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Checkout - Granbakery</title>
-		<link rel="stylesheet" href="css/variables.css">
-		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" href="css/cart.css">
-		        <script>
-            // Applies saved theme (Dark or Light Mode)
-            const savedTheme = localStorage.getItem("bakery-theme") || "light";
-            document.documentElement.setAttribute("data-theme", savedTheme);
 
-            const darkSrc = "assets/img/granbakery_header_dark.png";
-            const lightSrc = "assets/img/granbakery_header_final.png";
-            document.querySelectorAll(".main-logo").forEach((img) => {
-                img.src = savedTheme === "dark" ? darkSrc : lightSrc;
-            });
-        </script>
-	</head>
-	<body>
-		<div class="header-nav-wrapper" id="mainHeader">
-			<header>
-				<a href="index.html" class="logo-link" aria-label="Go to Home Page">
-					<img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo" class="main-logo">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkout - Granbakery</title>
+	<link rel="stylesheet" href="css/variables.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/cart.css">
+	<script>
+		// Applies saved theme (Dark or Light Mode)
+		const savedTheme = localStorage.getItem("bakery-theme") || "light";
+		document.documentElement.setAttribute("data-theme", savedTheme);
+
+		const darkSrc = "assets/img/granbakery_header_dark.png";
+		const lightSrc = "assets/img/granbakery_header_final.png";
+		document.querySelectorAll(".main-logo").forEach((img) => {
+			img.src = savedTheme === "dark" ? darkSrc : lightSrc;
+		});
+	</script>
+</head>
+
+<body>
+	<div class="header-nav-wrapper" id="mainHeader">
+		<header>
+			<a href="index.html" class="logo-link" aria-label="Go to Home Page">
+				<img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo" class="main-logo">
+			</a>
+		</header>
+
+		<nav>
+			<ul class="nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li class="nav-dropdown">
+					<a href="catalogue.html">Catalogue</a>
+					<ul class="dropdown-menu">
+						<li><a href="cookies.html">Cookies</a></li>
+						<li><a href="cakes.html">Cakes</a></li>
+					</ul>
+				</li>
+				<li><a href="reviews.html">Reviews</a></li>
+				<li class="nav-dropdown">
+					<a href="team.html">Our Team</a>
+					<ul class="dropdown-menu">
+						<li><a href="portfolio_andy.html">Andy</a></li>
+						<li><a href="portfolio_tim.html">Tim</a></li>
+						<li><a href="portfolio_darv.html">Darvesh</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="nav-icons">
+				<button class="theme-toggle" aria-label="Toggle theme"></button>
+				<a href="login.html" aria-label="Go to login page">
+					<img src="assets/img/global/profile.svg" alt="Go to login page" width="24" height="24">
 				</a>
-			</header>
+			</div>
+		</nav>
+	</div>
 
-			<nav>
-				<ul class="nav-links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li class="nav-dropdown">
-						<a href="catalogue.html">Catalogue</a>
-						<ul class="dropdown-menu">
-							<li><a href="cookies.html">Cookies</a></li>
-							<li><a href="cakes.html">Cakes</a></li>
-						</ul>
-					</li>
-					<li><a href="reviews.html">Reviews</a></li>
-					<li><a href="team.html">Our Team</a></li>
-				</ul>
-				<div class="nav-icons">
-					<button class="theme-toggle" aria-label="Toggle theme"></button>
-					<a href="login.html" aria-label="Go to login page">
-						<img src="assets/img/global/profile.svg" alt="Go to login page" width="24" height="24">
-					</a>
-				</div>
-			</nav>
+	<main>
+		<div class="checkout-container">
+			<h2>Review Your Order</h2>
+
+			<div class="checkout-table-headers" id="tableHeaders">
+				<div class="col-product">Product</div>
+				<div class="col-price" style="text-align: center;">Price</div>
+				<div class="col-qty" style="text-align: center;">Quantity</div>
+				<div class="col-total" style="text-align: right;">Total</div>
+			</div>
+
+			<!-- global.js automatically looks for this ID and injects the cart items here! -->
+			<div id="cartItems"></div>
+
+			<div class="checkout-action">
+				<!-- global.js automatically injects the final total here! -->
+				<div id="cartTotal" class="slide-cart-total" style="font-size: 1.5rem; margin-bottom: 1.5rem;"></div>
+
+				<button class="checkout-btn" id="checkoutBtn" onclick="processCheckout()">Confirm & Pay</button>
+				<p id="orderMessage"
+					style="color: var(--accent); font-weight: 500; font-size: 1.2rem; margin-top: 1rem; display: none;">
+				</p>
+			</div>
 		</div>
+	</main>
 
-		<main>
-			<div class="checkout-container">
-				<h2>Review Your Order</h2>
+	<footer>
+		<div class="footer-container">
 
-				<div class="checkout-table-headers" id="tableHeaders">
-					<div class="col-product">Product</div>
-					<div class="col-price" style="text-align: center;">Price</div>
-					<div class="col-qty" style="text-align: center;">Quantity</div>
-					<div class="col-total" style="text-align: right;">Total</div>
-				</div>
-
-				<!-- global.js automatically looks for this ID and injects the cart items here! -->
-				<div id="cartItems"></div>
-
-				<div class="checkout-action">
-					<!-- global.js automatically injects the final total here! -->
-					<div id="cartTotal" class="slide-cart-total" style="font-size: 1.5rem; margin-bottom: 1.5rem;"></div>
-
-					<button class="checkout-btn" id="checkoutBtn" onclick="processCheckout()">Confirm & Pay</button>
-					<p id="orderMessage"
-						style="color: var(--accent); font-weight: 500; font-size: 1.2rem; margin-top: 1rem; display: none;">
-					</p>
-				</div>
+			<!-- Contact & Location Info -->
+			<div class="footer-contact">
+				<p>Phone: +60123456789 | Email: hr@granbakery.my</p>
+				<p>Operating Hours: Tuesday - Saturday, 10:00 AM - 3:00 PM</p>
+				<p>Closed on Sundays, Mondays and Public Holidays</p>
 			</div>
-		</main>
 
-		<footer>
-			<div class="footer-container">
+			<!-- Social Media Icons -->
+			<div class="footer-socials">
+				<a href="https://www.facebook.com" aria-label="Visit our Facebook">
+					<img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
+				</a>
 
-				<!-- Contact & Location Info -->
-				<div class="footer-contact">
-					<p>Phone: +60123456789 | Email: hr@granbakery.my</p>
-					<p>Operating Hours: Tuesday - Saturday, 10:00 AM - 3:00 PM</p>
-					<p>Closed on Sundays, Mondays and Public Holidays</p>
-				</div>
+				<a href="https://www.instagram.com" aria-label="Visit our Instagram">
+					<img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
+				</a>
 
-				<!-- Social Media Icons -->
-				<div class="footer-socials">
-					<a href="https://www.facebook.com" aria-label="Visit our Facebook">
-						<img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
-					</a>
-
-					<a href="https://www.instagram.com" aria-label="Visit our Instagram">
-						<img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
-						</a>
-
-					<a href="https://www.youtube.com" aria-label="Visit our YouTube">
-						<img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
-					</a>
-				</div>
-
-				<div class="footer-copyright">
-					<p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
-				</div>
+				<a href="https://www.youtube.com" aria-label="Visit our YouTube">
+					<img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
+				</a>
 			</div>
-		</footer>
 
-		<script src="js/global.js"></script>
+			<div class="footer-copyright">
+				<p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
+			</div>
+		</div>
+	</footer>
 
-		<!-- Local script to handle the final checkout button press -->
-		<script>
-			function processCheckout() {
-				// Check if cart is already empty
-				if (!cart || cart.length === 0) return;
+	<script src="js/global.js"></script>
 
-				// 1. AUTHENTICATION & ORDER SAVING LOGIC
-				const currentUser = JSON.parse(localStorage.getItem("granbakery_user"));
+	<!-- Local script to handle the final checkout button press -->
+	<script>
+		function processCheckout() {
+			// Check if cart is already empty
+			if (!cart || cart.length === 0) return;
 
-				// Guard: Stop them if they aren't logged in
-				if (!currentUser || currentUser.isLoggedIn !== true) {
-					alert("Please log in to place your order.");
-					window.location.href = "login.html"; 
-					return; 
-				}
+			// 1. AUTHENTICATION & ORDER SAVING LOGIC
+			const currentUser = JSON.parse(localStorage.getItem("granbakery_user"));
 
-				// Calculate total
-				let orderTotal = 0;
-				cart.forEach(item => {
-					let qty = item.quantity || 1;
-					orderTotal += (item.price * qty);
-				});
-
-				// Create the order receipt
-				const newOrder = {
-					orderId: 'ORD-' + Math.floor(Math.random() * 100000), 
-					date: new Date().toLocaleDateString(),
-					items: [...cart], 
-					total: orderTotal
-				};
-
-				// Save to user profile
-				if (!currentUser.orders) {
-					currentUser.orders = []; 
-				}
-				currentUser.orders.unshift(newOrder); 
-				localStorage.setItem("granbakery_user", JSON.stringify(currentUser));
-
-
-				// 2. UI & CART CLEARING LOGIC
-				// Wipe the local storage
-				localStorage.removeItem("cart");
-				cart = []; // Reset global cart array
-
-				// Hide the UI elements
-				const cartItemsDiv = document.getElementById("cartItems");
-				const cartTotalDiv = document.getElementById("cartTotal");
-				const tableHeaders = document.getElementById("tableHeaders");
-				const checkoutBtn = document.getElementById("checkoutBtn");
-
-				if (cartItemsDiv) cartItemsDiv.innerHTML = "";
-				if (cartTotalDiv) cartTotalDiv.innerHTML = "";
-				if (tableHeaders) tableHeaders.style.display = "none";
-				if (checkoutBtn) checkoutBtn.style.display = "none";
-
-				// Display the success message with order ID
-				const msg = document.getElementById("orderMessage");
-				if (msg) {
-					msg.style.display = "block";
-					msg.innerHTML = `Order #${newOrder.orderId} placed successfully! <br><span style='font-size: 1rem; color: var(--text-secondary); font-weight: normal;'>Thank you for supporting Granbakery. View your receipt in your profile.</span>`;
-				}
-
-				updateCartCount();
+			// Guard: Stop them if they aren't logged in
+			if (!currentUser || currentUser.isLoggedIn !== true) {
+				alert("Please log in to place your order.");
+				window.location.href = "login.html";
+				return;
 			}
-		</script>
-	</body>
+
+			// Calculate total
+			let orderTotal = 0;
+			cart.forEach(item => {
+				let qty = item.quantity || 1;
+				orderTotal += (item.price * qty);
+			});
+
+			// Create the order receipt
+			const newOrder = {
+				orderId: 'ORD-' + Math.floor(Math.random() * 100000),
+				date: new Date().toLocaleDateString(),
+				items: [...cart],
+				total: orderTotal
+			};
+
+			// Save to user profile
+			if (!currentUser.orders) {
+				currentUser.orders = [];
+			}
+			currentUser.orders.unshift(newOrder);
+			localStorage.setItem("granbakery_user", JSON.stringify(currentUser));
+
+
+			// 2. UI & CART CLEARING LOGIC
+			// Wipe the local storage
+			localStorage.removeItem("cart");
+			cart = []; // Reset global cart array
+
+			// Hide the UI elements
+			const cartItemsDiv = document.getElementById("cartItems");
+			const cartTotalDiv = document.getElementById("cartTotal");
+			const tableHeaders = document.getElementById("tableHeaders");
+			const checkoutBtn = document.getElementById("checkoutBtn");
+
+			if (cartItemsDiv) cartItemsDiv.innerHTML = "";
+			if (cartTotalDiv) cartTotalDiv.innerHTML = "";
+			if (tableHeaders) tableHeaders.style.display = "none";
+			if (checkoutBtn) checkoutBtn.style.display = "none";
+
+			// Display the success message with order ID
+			const msg = document.getElementById("orderMessage");
+			if (msg) {
+				msg.style.display = "block";
+				msg.innerHTML = `Order #${newOrder.orderId} placed successfully! <br><span style='font-size: 1rem; color: var(--text-secondary); font-weight: normal;'>Thank you for supporting Granbakery. View your receipt in your profile.</span>`;
+			}
+
+			updateCartCount();
+		}
+	</script>
+</body>
+
 </html>

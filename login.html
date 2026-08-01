@@ -40,7 +40,14 @@
                     </ul>
                 </li>
                 <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="team.html">Our Team</a></li>
+                <li class="nav-dropdown">
+                    <a href="team.html">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="portfolio_andy.html">Andy</a></li>
+                        <li><a href="portfolio_tim.html">Tim</a></li>
+                        <li><a href="portfolio_darv.html">Darvesh</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="nav-icons">
                 <button class="theme-toggle" aria-label="Toggle theme"></button>
@@ -50,7 +57,7 @@
             </div>
         </nav>
     </div>
-    
+
     <main>
         <div class="auth-container" id="authFormContainer">
             <div class="form-step active-step">
@@ -66,7 +73,8 @@
 
                 <hr>
 
-                <button onclick="window.location.href='signup.html'" class="create-account-btn">Create new account</button>
+                <button onclick="window.location.href='signup.html'" class="create-account-btn">Create new
+                    account</button>
             </div>
         </div>
 
@@ -77,7 +85,7 @@
 
             <div class="dashboard-card">
                 <h3 class="dashboard-card-title">Account Details</h3>
-                
+
                 <div class="dashboard-grid">
                     <div>
                         <strong class="dashboard-label">Full Name</strong>
@@ -136,4 +144,5 @@
     <script src="js/global.js"></script>
     <script src="js/auth.js"></script>
 </body>
+
 </html>

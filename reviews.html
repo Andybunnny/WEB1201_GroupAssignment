@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="css/reviews.css">
     <script src="js/global.js"></script>
     <script src="js/reviews.js"></script>
-            <script>
-            // Applies saved theme (Dark or Light Mode)
-            const savedTheme = localStorage.getItem("bakery-theme") || "light";
-            document.documentElement.setAttribute("data-theme", savedTheme);
+    <script>
+        // Applies saved theme (Dark or Light Mode)
+        const savedTheme = localStorage.getItem("bakery-theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
 
-            const darkSrc = "assets/img/granbakery_header_dark.png";
-            const lightSrc = "assets/img/granbakery_header_final.png";
-            document.querySelectorAll(".main-logo").forEach((img) => {
-                img.src = savedTheme === "dark" ? darkSrc : lightSrc;
-            });
-        </script>
+        const darkSrc = "assets/img/granbakery_header_dark.png";
+        const lightSrc = "assets/img/granbakery_header_final.png";
+        document.querySelectorAll(".main-logo").forEach((img) => {
+            img.src = savedTheme === "dark" ? darkSrc : lightSrc;
+        });
+    </script>
 </head>
 
 <body>
@@ -43,7 +43,14 @@
                     </ul>
                 </li>
                 <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="team.html">Our Team</a></li>
+                <li class="nav-dropdown">
+                    <a href="team.html">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="portfolio_andy.html">Andy</a></li>
+                        <li><a href="portfolio_tim.html">Tim</a></li>
+                        <li><a href="portfolio_darv.html">Darvesh</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="nav-icons">
                 <button class="theme-toggle" aria-label="Toggle theme"></button>
@@ -132,7 +139,7 @@
     <!-- Floating Cart Button -->
     <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
         <img src="assets/img/global/cart.svg" alt="Shopping cart" width="24" height="24">
-            <span class="cart-count" id="cartCount">0</span>
+        <span class="cart-count" id="cartCount">0</span>
     </button>
 </body>
 

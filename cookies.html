@@ -1,120 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Cookies - Granbakery</title>
-		<link rel="stylesheet" href="css/variables.css">
-		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" href="css/cookies.css">
-        <script>
-            // Applies saved theme (Dark or Light Mode)
-            const savedTheme = localStorage.getItem("bakery-theme") || "light";
-            document.documentElement.setAttribute("data-theme", savedTheme);
 
-            const darkSrc = "assets/img/granbakery_header_dark.png";
-            const lightSrc = "assets/img/granbakery_header_final.png";
-            document.querySelectorAll(".main-logo").forEach((img) => {
-                img.src = savedTheme === "dark" ? darkSrc : lightSrc;
-            });
-        </script>
+<head>
+	<meta charset="UTF-8">
+	<title>Cookies - Granbakery</title>
+	<link rel="stylesheet" href="css/variables.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/cookies.css">
+	<script>
+		// Applies saved theme (Dark or Light Mode)
+		const savedTheme = localStorage.getItem("bakery-theme") || "light";
+		document.documentElement.setAttribute("data-theme", savedTheme);
 
-	</head>
-	<body>
-		<div class="header-nav-wrapper" id="mainHeader">
-			<header>
-				<a href="index.html" class="logo-link" aria-label="Go to Home Page">
-					<img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo" class="main-logo">
+		const darkSrc = "assets/img/granbakery_header_dark.png";
+		const lightSrc = "assets/img/granbakery_header_final.png";
+		document.querySelectorAll(".main-logo").forEach((img) => {
+			img.src = savedTheme === "dark" ? darkSrc : lightSrc;
+		});
+	</script>
+
+</head>
+
+<body>
+	<div class="header-nav-wrapper" id="mainHeader">
+		<header>
+			<a href="index.html" class="logo-link" aria-label="Go to Home Page">
+				<img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo" class="main-logo">
+			</a>
+		</header>
+
+		<nav>
+			<ul class="nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li class="nav-dropdown">
+					<a href="catalogue.html">Catalogue</a>
+					<ul class="dropdown-menu">
+						<li><a href="cookies.html">Cookies</a></li>
+						<li><a href="cakes.html">Cakes</a></li>
+					</ul>
+				</li>
+				<li><a href="reviews.html">Reviews</a></li>
+				<li class="nav-dropdown">
+					<a href="team.html">Our Team</a>
+					<ul class="dropdown-menu">
+						<li><a href="portfolio_andy.html">Andy</a></li>
+						<li><a href="portfolio_tim.html">Tim</a></li>
+						<li><a href="portfolio_darv.html">Darvesh</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="nav-icons">
+				<button class="theme-toggle" aria-label="Toggle theme"></button>
+				<a href="login.html" aria-label="Go to login page">
+					<img src="assets/img/global/profile.svg" alt="Go to login page" width="24" height="24">
 				</a>
-			</header>
-
-			<nav>
-				<ul class="nav-links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li class="nav-dropdown">
-						<a href="catalogue.html">Catalogue</a>
-						<ul class="dropdown-menu">
-							<li><a href="cookies.html">Cookies</a></li>
-							<li><a href="cakes.html">Cakes</a></li>
-						</ul>
-					</li>
-					<li><a href="reviews.html">Reviews</a></li>
-					<li><a href="team.html">Our Team</a></li>
-				</ul>
-				<div class="nav-icons">
-					<button class="theme-toggle" aria-label="Toggle theme"></button>
-					<a href="login.html" aria-label="Go to login page">
-						<img src="assets/img/global/profile.svg" alt="Go to login page" width="24" height="24">
-					</a>
-				</div>
-			</nav>
-		</div>
-
-		<main>
-			<br>
-			<section>
-				<h2>Freshly Baked Cookies</h2>
-			</section>
-			<section id="controls" aria-label="Catalogue Controls" class="controls-container">
-				<input type="text" id="searchInput" placeholder="Search cookies..." aria-label="Search cookies">
-
-				<select id="categoryFilter" aria-label="Filter by category">
-					<option value="all">All Categories</option>
-					<option value="classic">Classic</option>
-					<option value="premium">Premium Delights</option>
-					<option value="healthy">Guilt-Free / Healthy</option>
-				</select>
-
-				<select id="priceSort" aria-label="Sort by price">
-					<option value="none">Sort By Price</option>
-					<option value="low-high">Price: Low to High</option>
-					<option value="high-low">Price: High to Low</option>
-				</select>
-			</section>
-
-			<section id="catalogueGrid" class="product-grid" aria-live="polite">
-				<!-- Cookie cards will be injected here by JavaScript -->
-			</section>
-
-			<script src="js/global.js"></script>
-			<script src="js/cookies.js"></script>
-		</main>
-
-		<footer>
-			<div class="footer-container">
-
-				<!-- Contact & Location Info -->
-				<div class="footer-contact">
-					<p>Phone: +60123456789 | Email: hr@granbakery.my</p>
-					<p>Operating Hours: Tuesday - Saturday, 10:00 AM - 3:00 PM</p>
-					<p>Closed on Sundays, Mondays and Public Holidays</p>
-				</div>
-
-				<!-- Social Media Icons -->
-				<div class="footer-socials">
-					<a href="https://www.facebook.com" aria-label="Visit our Facebook">
-						<img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
-					</a>
-
-					<a href="https://www.instagram.com" aria-label="Visit our Instagram">
-						<img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
-					</a>
-
-					<a href="https://www.youtube.com" aria-label="Visit our YouTube">
-						<img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
-					</a>
-				</div>
-
-				<div class="footer-copyright">
-					<p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
-				</div>
 			</div>
-		</footer>
+		</nav>
+	</div>
 
-		<!-- Floating Cart Button -->
-		<button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
-			<img src="assets/img/global/cart.svg" alt="Shopping cart" width="24" height="24">
-			<span class="cart-count" id="cartCount">0</span>
-		</button>
-	</body>
+	<main>
+		<br>
+		<section>
+			<h2>Freshly Baked Cookies</h2>
+		</section>
+		<section id="controls" aria-label="Catalogue Controls" class="controls-container">
+			<input type="text" id="searchInput" placeholder="Search cookies..." aria-label="Search cookies">
+
+			<select id="categoryFilter" aria-label="Filter by category">
+				<option value="all">All Categories</option>
+				<option value="classic">Classic</option>
+				<option value="premium">Premium Delights</option>
+				<option value="healthy">Guilt-Free / Healthy</option>
+			</select>
+
+			<select id="priceSort" aria-label="Sort by price">
+				<option value="none">Sort By Price</option>
+				<option value="low-high">Price: Low to High</option>
+				<option value="high-low">Price: High to Low</option>
+			</select>
+		</section>
+
+		<section id="catalogueGrid" class="product-grid" aria-live="polite">
+			<!-- Cookie cards will be injected here by JavaScript -->
+		</section>
+
+		<script src="js/global.js"></script>
+		<script src="js/cookies.js"></script>
+	</main>
+
+	<footer>
+		<div class="footer-container">
+
+			<!-- Contact & Location Info -->
+			<div class="footer-contact">
+				<p>Phone: +60123456789 | Email: hr@granbakery.my</p>
+				<p>Operating Hours: Tuesday - Saturday, 10:00 AM - 3:00 PM</p>
+				<p>Closed on Sundays, Mondays and Public Holidays</p>
+			</div>
+
+			<!-- Social Media Icons -->
+			<div class="footer-socials">
+				<a href="https://www.facebook.com" aria-label="Visit our Facebook">
+					<img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
+				</a>
+
+				<a href="https://www.instagram.com" aria-label="Visit our Instagram">
+					<img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
+				</a>
+
+				<a href="https://www.youtube.com" aria-label="Visit our YouTube">
+					<img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
+				</a>
+			</div>
+
+			<div class="footer-copyright">
+				<p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Floating Cart Button -->
+	<button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
+		<img src="assets/img/global/cart.svg" alt="Shopping cart" width="24" height="24">
+		<span class="cart-count" id="cartCount">0</span>
+	</button>
+</body>
+
 </html>
