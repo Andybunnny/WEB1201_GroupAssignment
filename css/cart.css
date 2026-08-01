@@ -1,3 +1,11 @@
+/* Text Alignment Utilities */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Visibility Utilities */
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
 .checkout-container {
   max-width: 800px;
   margin: 2rem auto;
@@ -36,4 +44,22 @@
   width: auto;
   padding: 14px 40px;
   font-size: 1.1rem;
+}
+
+.checkout-total {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.order-success-msg {
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.order-subtext {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: normal;
 }
