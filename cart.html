@@ -114,24 +114,63 @@
 				// Check if cart is already empty
 				if (!cart || cart.length === 0) return;
 
-				// 1. Wipe the local storage
+				// 1. AUTHENTICATION & ORDER SAVING LOGIC
+				const currentUser = JSON.parse(localStorage.getItem("granbakery_user"));
+
+				// Guard: Stop them if they aren't logged in
+				if (!currentUser || currentUser.isLoggedIn !== true) {
+					alert("Please log in to place your order.");
+					window.location.href = "login.html"; 
+					return; 
+				}
+
+				// Calculate total
+				let orderTotal = 0;
+				cart.forEach(item => {
+					let qty = item.quantity || 1;
+					orderTotal += (item.price * qty);
+				});
+
+				// Create the order receipt
+				const newOrder = {
+					orderId: 'ORD-' + Math.floor(Math.random() * 100000), 
+					date: new Date().toLocaleDateString(),
+					items: [...cart], 
+					total: orderTotal
+				};
+
+				// Save to user profile
+				if (!currentUser.orders) {
+					currentUser.orders = []; 
+				}
+				currentUser.orders.unshift(newOrder); 
+				localStorage.setItem("granbakery_user", JSON.stringify(currentUser));
+
+
+				// 2. UI & CART CLEARING LOGIC
+				// Wipe the local storage
 				localStorage.removeItem("cart");
 				cart = []; // Reset global cart array
 
-				// 2. Hide the UI elements
-				document.getElementById("cartItems").innerHTML = "";
-				document.getElementById("cartTotal").innerHTML = "";
-				document.getElementById("tableHeaders").style.display = "none";
-				document.getElementById("checkoutBtn").style.display = "none";
+				// Hide the UI elements
+				const cartItemsDiv = document.getElementById("cartItems");
+				const cartTotalDiv = document.getElementById("cartTotal");
+				const tableHeaders = document.getElementById("tableHeaders");
+				const checkoutBtn = document.getElementById("checkoutBtn");
 
-				// 3. Display the success message
+				if (cartItemsDiv) cartItemsDiv.innerHTML = "";
+				if (cartTotalDiv) cartTotalDiv.innerHTML = "";
+				if (tableHeaders) tableHeaders.style.display = "none";
+				if (checkoutBtn) checkoutBtn.style.display = "none";
+
+				// Display the success message with order ID
 				const msg = document.getElementById("orderMessage");
-				msg.style.display = "block";
-				msg.innerHTML = "Order placed successfully! 🍪<br><span style='font-size: 1rem; color: var(--text-secondary); font-weight: normal;'>Thank you for supporting Granbakery.</span>";
+				if (msg) {
+					msg.style.display = "block";
+					msg.innerHTML = `Order #${newOrder.orderId} placed successfully! <br><span style='font-size: 1rem; color: var(--text-secondary); font-weight: normal;'>Thank you for supporting Granbakery. View your receipt in your profile.</span>`;
+				}
 
-				// 4. Force the slide-out cart bubble to update back to 0
 				updateCartCount();
-				showCart();
 			}
 		</script>
 	</body>

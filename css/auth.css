@@ -153,7 +153,6 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    animation: slideIn 0.4s ease-out forwards;
 }
 
 .btn-group {
@@ -183,7 +182,75 @@
     background-color: #2e7d32 !important;
 }
 
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
+/* ===== DASHBOARD (LOGGED IN STATE) STYLES ===== */
+
+.dashboard-container {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.dashboard-welcome-name {
+    color: var(--accent, #8b5a2b);
+}
+
+.dashboard-subtitle {
+    color: var(--text-secondary, #666);
+    margin: 1rem 0 2rem;
+}
+
+.dashboard-card {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    text-align: left;
+    background: var(--bg-card, #fff);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.dashboard-card-title {
+    border-bottom: 1px solid var(--border, #eee);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary, #333);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    color: var(--text-secondary, #666);
+}
+
+.dashboard-label {
+    color: var(--text-primary, #333);
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.dashboard-logout-btn {
+    background-color: #a67c52;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+.dashboard-logout-btn:hover {
+    background-color: var(--accent-hover, #8b5a2b);
+}
+
+/* Responsive adjustment for dashboard grid */
+@media (max-width: 550px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
 }
