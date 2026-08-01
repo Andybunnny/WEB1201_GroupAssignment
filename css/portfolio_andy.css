@@ -1,0 +1,434 @@
+/* =========================================
+   1. CUSTOM PROPERTIES & BASE STYLES
+   ========================================= */
+:root {
+    --bg-color: var(--bg-body, #ffffff);
+    --text-main: var(--text-primary, #1d1d1f);
+    --text-muted: var(--text-secondary, #86868b);
+    --accent-color: var(--accent, #a67c52); 
+    --light-gray: var(--bg-card, #f5f5f7);
+    --border-color: var(--border, #d2d2d7);
+    
+    --font-stack: 'Inter', sans-serif;
+    --apple-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+.portfolio-main {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-stack);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    padding-top: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   2. NAVIGATION & STICKY HEADERS
+   ========================================= */
+.back-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem var(--spacing-md) 0;
+}
+
+.back-to-teams-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-teams-btn:hover {
+    color: var(--accent-color);
+    transform: translateX(-4px);
+}
+
+.section-sticky {
+    position: sticky;
+    top: 130px;
+    background: var(--bg-color);
+    padding: 2rem 0 1rem 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.sticky-title {
+    margin-bottom: 0;
+}
+
+.sticky-subtitle {
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+#hero {
+    min-height: calc(100vh - 180px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem var(--spacing-md) 2rem;
+}
+
+.hero-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+#hero h1 {
+    font-family: var(--apple-font);
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+}
+
+.role-title {
+    font-size: 1.20rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.bio {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap; /* Ensures they stack neatly on small mobile screens */
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1.5rem 0.6rem 0.8rem; /* Slightly less padding on the left to hug the icon */
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-decoration: none;
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 50px; /* Creates the sleek pill shape */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    background-color: var(--bg-color);
+}
+
+/* Icon visibility fix for dark mode */
+.contact-btn img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    background-color: #ffffff; /* Forces a white background so black transparent icons are always visible */
+    border-radius: 50%; /* Makes the white background a perfect circle */
+    padding: 5px; /* Adds breathing room between the icon and the edge of the circle */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.scroll-arrow {
+    color: var(--text-main);
+    animation: bounce 2s infinite;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-arrow:hover {
+    opacity: 0.5;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* =========================================
+   4. EDUCATION ROADMAP
+   ========================================= */
+#education {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.roadmap-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+    position: relative;
+    gap: 15%;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background-color: #a0a0a0;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .timeline-line {
+    background-color: #ffffff; 
+}
+
+.roadmap-node {
+    background: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.roadmap-node.active {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+.roadmap-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 4rem;
+}
+
+.edu-block {
+    margin-bottom: 15vh;
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: 18px;
+}
+
+.roadmap-content .edu-block:last-child {
+    margin-bottom: 0;
+}
+
+.edu-block.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.edu-block h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.edu-block .year {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.pop-out {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   5. SKILLS SECTION (2-Column Grid)
+   ========================================= */
+#skills {
+    padding: 3rem 0 6rem 0;
+    background: var(--bg-color);
+}
+
+.skills-category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.skills-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skills-category-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    transition: growBar 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes growBar {
+    0% { transform: scaleX(0); transform-origin: left; }
+    100% { transform: scaleX(1); transform-origin: left; }
+}
+
+/* Progress Bar Width Utilities */
+.progress-fill.w-95 { width: 95%; }
+.progress-fill.w-90 { width: 90%; }
+.progress-fill.w-85 { width: 85%; }
+.progress-fill.w-80 { width: 80%; }
+.progress-fill.w-75 { width: 75%; }
+.progress-fill.w-70 { width: 70%; }
+.progress-fill.w-65 { width: 65%; }
+.progress-fill.w-60 { width: 60%; }
+.progress-fill.w-55 { width: 55%; }
+.progress-fill.w-50 { width: 50%; }
+.progress-fill.w-40 { width: 40%; }
+
+@media (max-width: 768px) {
+    .skills-category-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* =========================================
+   6. PROJECTS & CV
+   ========================================= */
+#projects {
+    padding: 4rem 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.project-card {
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.cv-container {
+    text-align: center;
+}
+
+.btn-cv {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cv:hover {
+    background-color: #333;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--text-main);
+    transform: translateX(4px); /* Slides slightly to the right on hover */
+}
