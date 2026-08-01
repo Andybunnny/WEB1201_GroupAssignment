@@ -1,35 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darvesh Dana - Portfolio | Granbakery</title>
+
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/port3.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/team.css">
+    <link rel="stylesheet" href="css/port3.css">
+
+    <script>
+        // Applies saved theme (Dark or Light Mode) on load
+        const savedTheme = localStorage.getItem("bakery-theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
 </head>
+
 <body>
 
+    <!-- Header and navbar -->
+    <div class="header-nav-wrapper" id="mainHeader">
+        <header>
+            <a href="index.html" class="logo-link" aria-label="Go to Home Page">
+                <img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo" class="main-logo">
+            </a>
+        </header>
 
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="catalogue.html">Catalogue</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cookies.html">Cookies</a></li>
+                        <li><a href="cakes.html">Cakes</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li class="nav-dropdown">
+                    <a href="team.html">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="portfolio_andy.html">Andy</a></li>
+                        <li><a href="portfolio_tim.html">Tim</a></li>
+                        <li><a href="portfolio_darv.html">Darvesh</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-    <!------ Redirect Button ------>
-    
-    <a href="team.html" class="back-btn" aria-label="Return to Home">
-        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-        Back to Teams
-    </a>
-    </a>
+            <div class="nav-icons">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <a href="login.html" aria-label="Go to login page">
+                    <img src="assets/img/global/profile.svg" alt="Go to login page" width="24" height="24">
+                </a>
+            </div>
+        </nav>
+    </div>
 
-    <button class="theme-toggle" aria-label="Toggle theme">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-    </button>
-
+    <!-- MAIN CONTENT -->
     <main class="portfolio">
+
+        <!-- Back to Teams Button -->
+        <div class="back-nav-container">
+            <a href="team.html" class="back-to-teams-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Team Page
+            </a>
+        </div>
 
         <!-- HERO -->
         <section class="p-hero">
@@ -54,23 +97,23 @@
             </p>
         </section>
 
-        <!------ EDUCATION ------>
+        <!-- EDUCATION -->
         <div class="edu-grid">
             <div class="edu-card">
                 <span class="edu-year">2025 - Present</span>
                 <h3>BSE in Software Engineering</h3>
                 <p>Currently studying core computing modules including Web Fundamentals,
-                Operating Systems, and Object-Oriented Programming.</p>
+                    Operating Systems, and Object-Oriented Programming.</p>
             </div>
             <div class="edu-card">
                 <span class="edu-year">2022-2025</span>
                 <h3>High School Graduate</h3>
                 <p>Completed secondary education before progressing directly into the
-                Software Engineering degree program.</p>
+                    Software Engineering degree program.</p>
             </div>
         </div>
 
-        <!------ SKILLS ------>
+        <!-- SKILLS -->
         <section class="p-skills">
             <h2>Technical Skills</h2>
             <div class="skills-list">
@@ -78,55 +121,65 @@
                     <div class="skill-bar__label">
                         <span>HTML5</span><span>90%</span>
                     </div>
-                    <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+                    <div class="skill-bar__track">
+                        <div class="skill-bar__fill"></div>
+                    </div>
                 </div>
                 <div class="skill-bar" style="--percent: 85%;">
                     <div class="skill-bar__label">
                         <span>CSS3</span><span>85%</span>
                     </div>
-                    <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+                    <div class="skill-bar__track">
+                        <div class="skill-bar__fill"></div>
+                    </div>
                 </div>
                 <div class="skill-bar" style="--percent: 75%;">
                     <div class="skill-bar__label">
                         <span>JavaScript</span><span>75%</span>
                     </div>
-                    <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+                    <div class="skill-bar__track">
+                        <div class="skill-bar__fill"></div>
+                    </div>
                 </div>
                 <div class="skill-bar" style="--percent: 65%;">
                     <div class="skill-bar__label">
                         <span>Java</span><span>65%</span>
                     </div>
-                    <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+                    <div class="skill-bar__track">
+                        <div class="skill-bar__fill"></div>
+                    </div>
                 </div>
                 <div class="skill-bar" style="--percent: 80%;">
                     <div class="skill-bar__label">
                         <span>Python</span><span>80%</span>
                     </div>
-    <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-</div>
+                    <div class="skill-bar__track">
+                        <div class="skill-bar__fill"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!------ PROJECTS ------>
+        <!-- PROJECTS -->
         <section class="p-projects">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <article class="project-card">
                     <h3>Granbakery - Order & Checkout System</h3>
                     <p>Built the cart and checkout flow using vanilla JavaScript, including
-                       dynamic item totals and validation before order confirmation.</p>
+                        dynamic item totals and validation before order confirmation.</p>
                     <span class="project-tag">HTML · CSS · JavaScript</span>
                 </article>
                 <article class="project-card">
                     <h3>Granbakery - Home & About Pages</h3>
                     <p>Designed and coded the landing page and About page layout, including
-                       the hero section and responsive image handling.</p>
+                        the hero section and responsive image handling.</p>
                     <span class="project-tag">HTML · CSS</span>
                 </article>
                 <article class="project-card">
                     <h3>Personal Portfolio Site</h3>
                     <p>This page, built with CSS Grid, Flexbox, custom properties, and a
-                       dedicated print stylesheet.</p>
+                        dedicated print stylesheet.</p>
                     <span class="project-tag">HTML · CSS</span>
                 </article>
             </div>
@@ -134,7 +187,56 @@
 
     </main>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contact">
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Phone: +60123456789</p>
+                    <p>Email: hr@granbakery.my</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Location</h4>
+                    <p>142 Baker Street</p>
+                    <p>Springfield, IL 62704</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Operating Hours</h4>
+                    <p>Tuesday - Saturday: 10:00 AM - 3:00 PM</p>
+                    <p>Closed on Sundays, Mondays and Public Holidays</p>
+                </div>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://www.facebook.com" aria-label="Visit our Facebook">
+                    <img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
+                </a>
+                <a href="https://www.instagram.com" aria-label="Visit our Instagram">
+                    <img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
+                </a>
+                <a href="https://www.youtube.com" aria-label="Visit our YouTube">
+                    <img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
+                </a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
+        <img src="assets/img/global/cart.svg" alt="Shopping cart" width="24" height="24">
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- Scripts -->
     <script src="js/global.js"></script>
     <script src="js/portfoliodownload.js"></script>
 </body>
-</html>>
+
+</html>

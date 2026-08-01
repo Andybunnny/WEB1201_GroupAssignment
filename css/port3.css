@@ -1,11 +1,65 @@
+/* =========================================
+   GLOBAL OVERRIDES & FIXES
+   ========================================= */
+
+/* Back to Teams Button Styling */
+.back-nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 0; 
+}
+
+.back-to-teams-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted, #86868b);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-teams-btn:hover {
+    color: var(--accent, #a67c52);
+    transform: translateX(-4px);
+}
+
+/* Footer 3-Column Ensure Override */
+.footer-contact {
+    display: flex !important;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.footer-column {
+    flex: 1;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .footer-contact {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* =========================================
+   DARVESH'S PORTFOLIO STYLES
+   ========================================= */
+
 /* Overall page container */
 .portfolio {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem 3rem; /* Adjusted top padding to account for the header */
     color: var(--text-primary);      
     font-family: 'Segoe UI', sans-serif;
-    background: var(--bg-body);      /* this so the page bg switches too */
+    background: var(--bg-body);      
+    min-height: 100vh;
 }
 
 /* Every section fades/slides in on load */
@@ -16,23 +70,23 @@
 
 /* Keyframes for the section entrance animation */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); } /* start slightly below and invisible */
-    to { opacity: 1; transform: translateY(0); }        /* end in place and fully visible */
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); }        
 }
 
 /* hero  */
 .p-hero {
-    display: flex;          /* lays out image + text side by side */
+    display: flex;          
     align-items: center;
     gap: 3rem;
-    flex-wrap: wrap;        /* wraps to stacked layout on small screens */
+    flex-wrap: wrap;        
 }
 
 .p-hero__image img {
     width: 180px;
     height: 180px;
-    object-fit: cover;      /* crops image to fill the circle without distortion */
-    border-radius: 50%;     /* makes the image circular */
+    object-fit: cover;      
+    border-radius: 50%;     
     border: 4px solid #c1653b;
 }
 
@@ -55,14 +109,13 @@
 }
 
 .cv-btn:hover {
-    background: var(--accent-hover);  
+    background: var(--accent-hover, #8a6440);  
     transform: translateY(-2px);
 }
 
 /* education */
 .edu-grid {
     display: grid;
-    /* auto-fit columns, each at least 250px wide, filling available space */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
@@ -77,30 +130,29 @@
 }
 
 .edu-card:hover {
-    transform: translateY(-4px); /* lifts the card slightly on hover */
+    transform: translateY(-4px); 
 }
 
 .edu-year {
     font-size: 0.85rem;
-    color: var(--accent);             
+    color: var(--accent);            
     font-weight: 600;
 }
 
 /* skills */
 .skills-list {
     display: flex;
-    flex-direction: column; /* stacks each skill bar vertically */
+    flex-direction: column; 
     gap: 0.75rem;
 }
 
 .skill-bar__label {
     display: flex;
-    justify-content: space-between; /* skill name on left, percentage on right */
+    justify-content: space-between; 
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
 
-/* The empty/background track behind the filled bar */
 .skill-bar__track {
     background: var(--border);        
     border-radius: 6px;
@@ -108,7 +160,6 @@
     overflow: hidden;
 }
 
-/* The colored fill that animates to represent skill level */
 .skill-bar__fill {
     height: 100%;
     width: 0;
@@ -118,7 +169,6 @@
     animation-delay: 0.3s;
 }
 
-/* Grows the fill bar from 0 up to its target --percent value (set inline per skill) */
 @keyframes fillBar {
     to { width: var(--percent); }
 }
@@ -126,7 +176,6 @@
 /* projects */
 .projects-grid {
     display: grid;
-    /* auto-fit columns, each at least 260px wide */
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
 }
@@ -139,10 +188,9 @@
     color: var(--text-primary);      
 }
 
-
 .project-card:hover {
-    transform: translateY(-5px);            /* lift effect */
-    box-shadow: 0 8px 20px #3e272326;      /* soft shadow using hex with 15% opacity alpha (#26) */
+    transform: translateY(-5px);            
+    box-shadow: 0 8px 20px #3e272326;      
 }
 
 .project-tag {
@@ -154,7 +202,6 @@
 }
 
 /* responsive */
-/* On small screens, stack the hero image above the text instead of side by side */
 @media (max-width: 768px) {
     .p-hero { flex-direction: column; text-align: center; }
 }
