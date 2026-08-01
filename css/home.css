@@ -382,36 +382,47 @@
 /* "Visit Us" location card heading */
 .locationCard h4 {
   color: var(--accent);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.95rem;
+}
+
+/* Two-column layout for the address and hours/phone inside the visit us card */
+.location-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
 .locationCard p {
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 /* Decorative map image container at the bottom of the sidebar */
 .sidebarDecor {
-  flex: 1;
-  min-height: 100px;
+  flex: 1 1 auto; /* allows this box to grow and fill remaining space in the sidebar */
+  position: relative; /* establishes a stacking context for the image inside */
+  min-height: 150px; /* gives the container a minimum height */
   border-radius: 8px;
   overflow: hidden; /* clips the image to this container's rounded corners */
 }
 
 .sidebarDecor img {
+  position: absolute; /* allows the image to fill the container */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 98%; /* intentionally slightly less than 100% - avoids a 1-2px gap/overflow at the container's bottom edge */
+  height: 100%;
   object-fit: cover;
   object-position: center bottom; /* keeps the bottom-center portion of the image visible when cropped */
   display: block;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
   .aboutTopRow {
     flex-direction: column;
   }
@@ -422,6 +433,9 @@
   .sidebarCard, .sidebarDecor {
     flex: 1 1 45%;
   }
+  .location-cols {
+        grid-template-columns: 1fr;
+    }
 }
 
 /*--------------------------------------- REVIEWS SLIDER -------------------------------------------- */
