@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Granbakery</title>
-    
+
     <!-- Global CSS files -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/home.css">
-    
+
     <script>
         // Applies saved theme (Dark or Light Mode)
         const savedTheme = localStorage.getItem("bakery-theme") || "light";
@@ -63,7 +63,8 @@
             <div class="welcome-banner-content">
                 <h2>Artisanal Bakes, Crafted with Love</h2>
                 <p>
-                    Welcome to Granbakery. Experience the finest cookies, cakes, and pastries made fresh daily with premium ingredients.
+                    Welcome to Granbakery. Experience the finest cookies, cakes, and pastries made fresh daily with
+                    premium ingredients.
                 </p>
                 <button class="welcome-btn" onclick="window.location.href='catalogue.html'">
                     Shop Catalogue
@@ -85,7 +86,8 @@
 
             <div class="reviews-slider-wrapper">
                 <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous review">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
@@ -97,7 +99,8 @@
                 </div>
 
                 <button class="slider-btn slider-next" id="sliderNext" aria-label="Next review">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                 </button>
@@ -117,7 +120,8 @@
                 <div class="products-right">
                     <div class="displaygrid">
                         <a href="cakes.html" class="productdisplay-btn productdisplay-btn--large">
-                            <img src="assets/img/home/cake2.jpg" alt="Freshly baked whole cakes" class="productdisplay-img">
+                            <img src="assets/img/home/cake2.jpg" alt="Freshly baked whole cakes"
+                                class="productdisplay-img">
                             <span>Cakes</span>
                         </a>
 
@@ -138,10 +142,12 @@
                 <div class="hero-text">
                     <h1>GRANBAKERY STORY</h1>
                     <hr class="dotted-line-top">
-                    <p>Welcome to Granbakery, where every recipe is seasoned with decades of love and a dash of grandparently magic. From warm rustic breads to time-honored pastries, we bake fresh every morning using recipes perfected over a lifetime.</p>
+                    <p>Welcome to Granbakery, where every recipe is seasoned with decades of love and a dash of
+                        grandparently magic. From warm rustic breads to time-honored pastries, we bake fresh every
+                        morning using recipes perfected over a lifetime.</p>
                     <a href="about.html" class="hero-btn">READ MORE</a>
                 </div>
-                
+
                 <div class="hero-img">
                     <img src="assets/img/home/pic.jpg" alt="Baker's hands preparing fresh dough on a wooden table">
                 </div>
@@ -167,8 +173,15 @@
                 <!-- 4: Location -->
                 <div class="sidebarCard locationCard">
                     <h4>Visit Us</h4>
-                    <p>Tuesday – Saturday<br>10:00 AM – 3:00 PM</p>
-                    <p>+60123456789</p>
+                    <div class="location-cols">
+                        <div class="loc-col">
+                            <p>142 Baker Street<br>Springfield, IL 62704</p>
+                        </div>
+                        <div class="loc-col">
+                            <p>Tuesday – Saturday<br>10:00 AM – 3:00 PM</p>
+                            <p>+60123456789</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 5: Decorative -->
@@ -177,12 +190,13 @@
                 </div>
             </aside>
         </section>
- 
+
         <!-- Why Choose Us -->
         <section class="why-choose-us">
             <h3>Why Choose Granbakery?</h3>
             <p>
-                Every bite is a testament to our dedication. Whether you are ordering a custom cake for a special occasion or grabbing a quick artisanal cookie, we guarantee freshness and flavor in every crumb.
+                Every bite is a testament to our dedication. Whether you are ordering a custom cake for a special
+                occasion or grabbing a quick artisanal cookie, we guarantee freshness and flavor in every crumb.
             </p>
         </section>
 
@@ -192,9 +206,25 @@
         <div class="footer-container">
             <!-- Contact & Location Info -->
             <div class="footer-contact">
-                <p>Phone: +60123456789 | Email: hr@granbakery.my</p>
-                <p>Operating Hours: Tuesday - Saturday, 10:00 AM - 3:00 PM</p>
-                <p>Closed on Sundays, Mondays and Public Holidays</p>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Phone: +60123456789</p>
+                    <p>Email: hr@granbakery.my</p>
+                </div>
+
+                <!-- Column 2: Location -->
+                <div class="footer-column">
+                    <h4>Location</h4>
+                    <p>142 Baker Street</p>
+                    <p>Springfield, IL 62704</p>
+                </div>
+
+                <!-- Column 3: Hours -->
+                <div class="footer-column">
+                    <h4>Operating Hours</h4>
+                    <p>Tuesday - Saturday: 10:00 AM - 3:00 PM</p>
+                    <p>Closed on Sundays, Mondays and Public Holidays</p>
+                </div>
             </div>
 
             <!-- Social Media Icons -->
@@ -229,4 +259,5 @@
     <script src="js/home.js"></script>
 
 </body>
+
 </html>
