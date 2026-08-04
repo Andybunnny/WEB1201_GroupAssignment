@@ -19,7 +19,7 @@ function createCard(item) {
     <article class="cookie-card">
       <img src="${item.image}" alt="Photo of ${item.name}">
       <h3>${item.name}</h3>
-      <p class="cookie-category">Category: ${item.category}</p>
+      <p class="cookie-category">Category: ${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</p>
       <p class="cookie-price">RM ${item.price.toFixed(2)}</p>
       <button aria-label="Add ${item.name} to cart" onclick="addToCart('${item.name}', ${item.price}, '${item.image}')">Add to Cart</button>
     </article>

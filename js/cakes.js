@@ -32,7 +32,7 @@ function renderCakes(cakesToRender) {
       <article class="cookie-card">
         <img src="${cake.image}" alt="Photo of ${cake.name}">
         <h3>${cake.name}</h3>
-        <p class="cookie-category">Category: ${cake.category}</p>
+        <p class="cookie-category">Category: ${cake.category.charAt(0).toUpperCase() + cake.category.slice(1)}</p>
         <p class="cookie-price">RM ${cake.price.toFixed(2)}</p>
         <!-- UPDATED: Added the onclick trigger -->
         <button aria-label="Add ${cake.name} to cart" onclick="addToCart('${cake.name}', ${cake.price}, '${cake.image}')">Add to Cart</button>
