@@ -1,0 +1,348 @@
+/* ==========================================================================
+   Portfolio Main Container
+   ========================================================================== */
+.portfolio-main {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    line-height: 1.6;
+    transition: background-color var(--transition), color var(--transition);
+    padding-top: 2rem;
+}
+
+.portfolio-main h1, .portfolio-main h2, .portfolio-main h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.portfolio-main p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.portfolio-main section {
+    padding: 4rem 5%;
+}
+
+.bg-alt {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+/* ==========================================================================
+   Back Navigation
+   ========================================================================== */
+.back-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 5% 0;
+}
+
+.back-to-teams-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-teams-btn:hover {
+    color: var(--accent);
+    transform: translateX(-4px);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.profile-container {
+    flex: 1 1 250px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+.bio-content {
+    flex: 2 1 400px;
+}
+
+.bio-content h2 {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.bio-content p {
+    text-align: justify;
+    max-width: 1000px; /* Restricts the paragraph width so it doesn't stretch across big screens */
+}
+
+.contact-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Education Grid
+   ========================================================================== */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.edu-card {
+    background-color: var(--bg-body);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition);
+}
+
+.edu-card:hover {
+    transform: translateY(-3px);
+}
+
+.edu-prog {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem !important;
+}
+
+.edu-dates {
+    font-size: 0.9rem;
+    margin-bottom: 1rem !important;
+}
+
+/* ==========================================================================
+   Skill Progress Bars
+   ========================================================================== */
+.skills-container {
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.skill-bar-container {
+    background-color: var(--border);
+    border-radius: var(--radius);
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: var(--radius);
+    animation: loadBar 1.5s var(--transition) forwards;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+/* Explicit width classes */
+.fill-70 { width: 70%; }
+.fill-65 { width: 65%; }
+.fill-60 { width: 60%; }
+.fill-50 { width: 50%; }
+
+@keyframes loadBar {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+/* ==========================================================================
+   Projects
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.project-card {
+    background-color: var(--bg-body);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.project-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+
+.project-desc {
+    margin-bottom: 1.5rem !important;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn-primary, .btn-outline {
+    display: inline-block;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color var(--transition), color var(--transition), transform var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+    border: 2px solid var(--accent);
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.cv-section {
+    text-align: center;
+}
+
+/* ==========================================================================
+   Media Queries (to support viewing on multiple devices)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+    }
+    .contact-links {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .portfolio-main section {
+        padding: 3rem 5%;
+    }
+    .projects-grid, .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   Print Stylesheet
+   ========================================================================== */
+@media print {
+
+    :root, [data-theme="dark"] {
+        --bg-body: #ffffff;
+        --bg-card: #ffffff;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --border: #cccccc;
+        --accent: #5c3f29;
+    }
+
+    .header-nav-wrapper, footer, .floating-cart-btn, #cv-download-btn, .back-nav-container, .contact-links, .cv-section{
+        display: none !important;
+    }
+
+	.hero-section {
+        min-height: auto;
+        align-items: flex-start;
+    }
+
+    /* Remove the default screen padding at the top of the page */
+    .portfolio-main {
+        padding-top: 0 !important;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    .portfolio-main section {
+        padding: 1rem 0;
+        page-break-inside: avoid;
+    }
+
+    .project-card, .edu-card {
+        border: none;
+        border-bottom: 1px solid var(--border);
+        box-shadow: none;
+        border-radius: 0;
+        padding: 1rem 0;
+    }
+
+    .skill-bar-container {
+        border: 1px solid var(--border);
+    }
+
+    .skill-bar {
+        background-color: var(--accent) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

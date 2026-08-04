@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Individual Portfolio for Tan Yn Shii - Software Engineering Student.">
+    <title>Tan Yn Shii | Portfolio</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portfolio_tim.css">
+
+    <!-- Global Theme Script -->
+    <script>
+        const savedTheme = localStorage.getItem("bakery-theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+</head>
+<body>
+
+    <!-- 1. GLOBAL HEADER & NAV -->
+    <div class="header-nav-wrapper" id="mainHeader">
+        <header>
+            <a href="index.html" class="logo-link" aria-label="Go to Home Page">
+                <img src="assets/img/granbakery_header_final.png" height="90" alt="Granbakery Logo" class="main-logo">
+            </a>
+        </header>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="catalogue.html">Catalogue</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cookies.html">Cookies</a></li>
+                        <li><a href="cakes.html">Cakes</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+
+                <li class="nav-dropdown">
+                    <a href="team.html">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="portfolio_andy.html">Andy</a></li>
+                        <li><a href="portfolio_tim.html">Timothy</a></li>
+                        <li><a href="portfolio_darv.html">Darvesh</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="nav-icons">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <a href="login.html" aria-label="Go to login page">
+                    <img src="assets/img/global/profile.svg" alt="Go to login page" width="24" height="24">
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 2. PORTFOLIO MAIN CONTENT -->
+    <main class="portfolio-main">
+
+        <!-- Back Navigation -->
+        <div class="back-nav-container">
+            <a href="team.html" class="back-to-teams-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Team Page
+            </a>
+        </div>
+
+        <!-- Hero & Bio Section -->
+        <section id="about" class="hero-section">
+            <div class="profile-container">
+                <img src="assets/img/portfolio/tim/tim_pfp.png" alt="Portrait of Tan Yn Shii" class="profile-img">
+            </div>
+            <div class="bio-content">
+                <h1>Tan Yn Shii (Timothy)</h1>
+                <h2>Software Engineering Student</h2>
+                <p>
+                    I am an aspiring developer concurrently studying software engineering at <strong>Sunway University</strong> and coding at <strong>42 Kuala Lumpur</strong>.
+                </p>
+                <p>
+                    Outside of class, I am a content committee member for both GDGoC Sunway University and the Sunway AI Builders Club, where I curate topics and invite speakers to share their expertise with fellow university students. During my free time, I love staying active—weight lifting at the gym for workouts and playing badminton for fun!
+                </p>
+
+                <!-- Contact Links -->
+                <div class="contact-links">
+                    <a href="mailto:tim@gmail.com" class="btn-outline">Email Me</a>
+                    <a href="https://www.linkedin.com/in/timtys/" target="_blank" rel="noopener noreferrer" class="btn-outline">LinkedIn</a>
+                    <a href="https://github.com/timmmtam" target="_blank" rel="noopener noreferrer" class="btn-outline">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section (Grid Layout) -->
+        <section id="education" class="education-section bg-alt">
+			<h2>Education Background</h2>
+            <div class="education-grid">
+				<article class="edu-card">
+					<h3>St. John's Institution</h3>
+					<p class="edu-prog">SPM</p>
+					<p class="edu-dates">Jan 2018 - Mar 2023</p>
+					<p class="edu-achievements"><strong>Achievement:</strong> 9A</p>
+				</article>
+
+				<article class="edu-card">
+					<h3>Sunway College KL</h3>
+					<p class="edu-prog">Foundation in Arts</p>
+					<p class="edu-dates">Aug 2023 - Jul 2024</p>
+					<p class="edu-achievements"><strong>Achievement:</strong> CGPA 4.0</p>
+				</article>
+
+				<article class="edu-card">
+					<h3>42 Kuala Lumpur</h3>
+					<p class="edu-prog">Core Programme</p>
+					<p class="edu-dates">May 2025 - Present</p>
+					<p class="edu-achievements"><strong>Achievement:</strong> Milestone 3</p>
+				</article>
+
+				<article class="edu-card">
+					<h3>Sunway University</h3>
+                    <p class="edu-prog">Bachelor of Software Engineering</p>
+                    <p class="edu-dates">Sep 2025 - Present</p>
+                    <p class="edu-achievements"><strong>Achievement:</strong> CGPA 3.96</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="skills-section">
+            <h2>Technical Skills</h2>
+            <p class="section-desc">Core programming and web development proficiencies.</p>
+
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-info"><span>C</span><span>70%</span></div>
+                    <div class="skill-bar-container" aria-hidden="true">
+                        <div class="skill-bar fill-70"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>HTML</span><span>70%</span></div>
+                    <div class="skill-bar-container" aria-hidden="true">
+                        <div class="skill-bar fill-70"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Java</span><span>65%</span></div>
+                    <div class="skill-bar-container" aria-hidden="true">
+                        <div class="skill-bar fill-65"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>CSS</span><span>60%</span></div>
+                    <div class="skill-bar-container" aria-hidden="true">
+                        <div class="skill-bar fill-60"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Python</span><span>50%</span></div>
+                    <div class="skill-bar-container" aria-hidden="true">
+                        <div class="skill-bar fill-50"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>JavaScript</span><span>50%</span></div>
+                    <div class="skill-bar-container" aria-hidden="true">
+                        <div class="skill-bar fill-50"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section bg-alt">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <h3>SentimentFlow</h3>
+                    <p class="project-desc">A customer relations management and sentiment analysis software.</p>
+                    <p><strong>Tech Stack:</strong> Python, SQLite, uvicorn</p>
+                    <p><strong>Role:</strong> Team Lead</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Fract-ol</h3>
+                    <p class="project-desc">A graphical program visualizing the Mandelbrot and Julia set with psychedelic colors.</p>
+                    <p><strong>Tech Stack:</strong> C language and DirectX</p>
+                    <p><strong>Role:</strong> 42KL Project Developer</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Push_swap</h3>
+                    <p class="project-desc">A program to sort numbers using two stacks with a set of instructions using an algorithmic approach.</p>
+                    <p><strong>Tech Stack:</strong> C language</p>
+                    <p><strong>Role:</strong> 42KL Project Developer</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Grade Management Programme</h3>
+                    <p class="project-desc">A CLI programme used to manage and store student grades.</p>
+                    <p><strong>Tech Stack:</strong> Python</p>
+                    <p><strong>Role:</strong> Team Lead</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Download CV Section -->
+        <section class="cv-section">
+            <h2>Curriculum Vitae</h2>
+            <p>Download a comprehensive overview of my academic background, projects, and technical skills.</p>
+            <a href="assets/cv/tim_cv.pdf" download id="cv-download-btn" class="btn-primary" aria-label="Download Curriculum Vitae">Download CV</a>
+        </section>
+    </main>
+
+    <!-- 3. GLOBAL FOOTER -->
+    <footer>
+		<div class="footer-container">
+			<div class="footer-contact">
+				<div class="footer-column">
+					<h4>Contact Us</h4>
+					<p>Phone: +60123456789</p>
+					<p>Email: hr@granbakery.my</p>
+				</div>
+				<div class="footer-column">
+					<h4>Location</h4>
+					<p>142 Baker Street</p>
+					<p>Springfield, IL 62704</p>
+				</div>
+				<div class="footer-column">
+					<h4>Operating Hours</h4>
+					<p>Tuesday - Saturday: 10:00 AM - 3:00 PM</p>
+					<p>Closed on Sundays, Mondays and Public Holidays</p>
+				</div>
+			</div>
+			<div class="footer-socials">
+				<a href="https://www.facebook.com" aria-label="Visit our Facebook">
+					<img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
+				</a>
+				<a href="https://www.instagram.com" aria-label="Visit our Instagram">
+					<img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
+				</a>
+				<a href="https://www.youtube.com" aria-label="Visit our YouTube">
+					<img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
+				</a>
+			</div>
+			<div class="footer-copyright">
+				<p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
+			</div>
+		</div>
+	</footer>
+
+    <!-- Floating Cart Button -->
+    <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
+        <img src="assets/img/global/cart.svg" alt="Shopping cart" width="24" height="24">
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/global.js"></script>
+    <script src="js/portfolio_tim.js" defer></script>
+</body>
+</html>
