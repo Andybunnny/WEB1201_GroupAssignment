@@ -37,9 +37,9 @@
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--bg-body);
-    background-color: var(--text-primary);
-    border: 1px solid var(--text-primary);
+    color: #fff;
+    background-color: var(--accent);
+    border: none;
     border-radius: var(--radius);
     text-decoration: none;
     cursor: pointer;
@@ -47,8 +47,7 @@
 }
 
 .view-more-btn:hover {
-    background-color: transparent;
-    color: var(--text-primary);
+    background-color: var(--accent-hover);
 }
 
 .view-more-btn:active {

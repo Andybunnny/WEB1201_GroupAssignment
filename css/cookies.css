@@ -117,17 +117,16 @@ main section:first-of-type h2 {
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--bg-body);
-    background-color: var(--text-primary);
-    border: 1px solid var(--text-primary);
+    color: #fff;
+    background-color: var(--accent);
+    border: none;
     border-radius: var(--radius);
     cursor: pointer;
     transition: background-color var(--transition), color var(--transition), transform 0.15s ease;
 }
 
 .cookie-card button:hover {
-    background-color: transparent;
-    color: var(--text-primary);
+    background-color: var(--accent-hover);
 }
 
 .cookie-card button:active {
