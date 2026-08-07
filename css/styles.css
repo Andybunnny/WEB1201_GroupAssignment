@@ -7,6 +7,23 @@
     padding: 0;
 }
 
+/* Prevent horizontal scrolling globally */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; 
+}
+
+/* Ensure padding and borders don't add to the width of elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Make all images responsive so they never overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: var(--font-sans);
     background-color: var(--bg-body);
@@ -403,10 +420,29 @@ footer {
 }
 
 /* Ensure the columns stack neatly on mobile phones */
-@media (max-width: 800px) {
-    .footer-contact {
-        flex-direction: column;
-        gap: 2rem;
+@media (max-width: 768px) {
+    /* 1. Shrink the base font size slightly so all 'rem' units scale down */
+    html {
+        font-size: 14px; 
+    }
+
+    /* 2. Specifically target massive headers (adjust these numbers to fit your design) */
+    h1 {
+        font-size: 2.5rem !important; 
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+
+    /* 3. Adjust the global header/nav padding so it doesn't take up the whole screen */
+    header img.main-logo {
+        height: 60px; /* Shrinks the logo on mobile */
+    }
+
+    .nav-links {
+        gap: 1rem; /* Brings navigation links closer together */
+        font-size: 0.9rem;
     }
 }
 
