@@ -430,6 +430,11 @@ footer {
         gap: 1rem; /* Brings navigation links closer together */
         font-size: 0.9rem;
     }
+    
+    .footer-contact {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
 
 .footer-socials {

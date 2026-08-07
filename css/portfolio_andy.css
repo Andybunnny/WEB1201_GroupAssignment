@@ -257,11 +257,6 @@
     margin-bottom: 0;
 }
 
-.edu-block.in-view {
-    opacity: 1;
-    transform: scale(1);
-}
-
 .edu-block h3 {
     font-size: 1.8rem;
     margin-bottom: 0.2rem;
