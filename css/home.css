@@ -1,4 +1,5 @@
-/*--------------------------------------- WELCOME BANNER -------------------------------------------- */
+/* Home Page */
+/* Welcome Banner */
 .welcome-banner {
     text-align: center;
     padding: 4rem 2rem;
@@ -41,7 +42,7 @@
     transform: translateY(-2px);
 }
 
-/*--------------------------------------- HOME PHOTO  -------------------------------------------- */
+/* Display Section */
 .display-section {
     width: 100%;
     overflow: hidden;
@@ -56,7 +57,7 @@
     margin-bottom: 5px; /* small gap before the next section */
 }
 
-/*--------------------------------------- PRODUCT DISPLAY -------------------------------------------- */
+/* Product Display */
 /* Outer "Our Products" section - translucent warm gray background wrapping the whole block */
 .productdisplay {
     background-color: #cac0b7c4; 
@@ -201,7 +202,7 @@
     }
 }
 
-/*--------------------------------------- WHY CHOOSE US -------------------------------------------- */
+/* Why Choose Us */
 .why-choose-us {
     text-align: center;
     margin: 4rem 1rem;
@@ -221,7 +222,7 @@
     line-height: 1.6;
 }
 
-/*--------------------------------------- HERO -------------------------------------------- */
+/* Hero Section */
 /* "Granbakery Story" section - image and text side by side */
 .hero {
     display: flex;
@@ -333,7 +334,7 @@
     }
 }
 
-/*--------------------------------------- ABOUT TOP ROW -------------------------------------------- */
+/* ABOUT TOP ROW  */
 /* Full-bleed wrapper row holding the hero + sidebar, breaks out of the page's normal max-width container */
 .aboutTopRow {
     display: flex;
@@ -456,7 +457,7 @@
     }
 }
 
-/*--------------------------------------- REVIEWS SLIDER -------------------------------------------- */
+/* Reviews Slider */
 .reviews-slider-section {
     max-width: 1100px;
     margin: 4rem auto;

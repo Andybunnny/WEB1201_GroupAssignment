@@ -1,5 +1,4 @@
-/* ===== REVIEWS SECTION ===== */
-
+/* REVIEWS SECTION */
 .reviews-section {
     max-width: 900px;
     margin: 4rem auto;
@@ -33,7 +32,7 @@
     margin-bottom: 4rem;
 }
 
-/* --- Star Rating System --- */
+/* Star Rating System */
 .star-rating {
     display: flex;
     justify-content: center;
@@ -65,7 +64,7 @@
     margin-bottom: 1rem;
 }
 
-/* --- Textarea & Character Count --- */
+/* Textarea & Character Count */
 .textarea-group {
     position: relative;
     margin-bottom: 1.5rem;
@@ -96,7 +95,7 @@
     margin-top: 0.5rem;
 }
 
-/* --- Submit Button --- */
+/* Submit Button */
 .submit-btn {
     width: 100%;
     padding: 1rem;
@@ -117,7 +116,7 @@
     background-color: var(--accent-hover, #000); 
 }
 
-/* --- Anonymous Toggle --- */
+/* Anonymous Toggle */
 .anonymous-toggle {
     display: flex;
     align-items: center;
@@ -139,7 +138,7 @@
     user-select: none;
 }
 
-/* --- Display Grid for Submitted Reviews --- */
+/* Display Grid for Submitted Reviews */
 .reviews-display {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

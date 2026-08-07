@@ -1,8 +1,8 @@
-/* Text Alignment Utilities */
+/* Cart Page */
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
-/* Visibility Utilities */
+/* Visibility */
 .hidden { display: none !important; }
 .visible { display: block !important; }
 

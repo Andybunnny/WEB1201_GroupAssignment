@@ -1,47 +1,6 @@
-/* =========================================
-   SHARED NAV BEHAVIOUR
-   ========================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // ---------- Products Dropdown Menu ----------
-    // Handles opening and closing the dropdown menu when clicking the button or clicking outside of it.
-    const dropdown = document.querySelector(".dropdown");
-    const dropdownBtn = dropdown?.querySelector(".nav-link-btn");
-
-    const closeDropdown = () => dropdown?.setAttribute("data-open", "false");
-    const openDropdown = () => dropdown?.setAttribute("data-open", "true");
-
-    dropdownBtn?.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const isOpen = dropdown.getAttribute("data-open") === "true";
-        isOpen ? closeDropdown() : openDropdown();
-        dropdownBtn.setAttribute("aria-expanded", String(!isOpen));
-    });
-
-    document.addEventListener("click", (e) => {
-        if (dropdown && !dropdown.contains(e.target)) closeDropdown();
-    });
-
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeDropdown();
-    });
-
-    // ---------- Mobile Navigation Toggle ----------
-    // Toggles the mobile hamburger menu open and closed for smaller screen sizes.
-    const navToggle = document.querySelector(".nav-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    navToggle?.addEventListener("click", () => {
-        const isOpen = navLinks.getAttribute("data-mobile-open") === "true";
-        navLinks.setAttribute("data-mobile-open", String(!isOpen));
-        navToggle.setAttribute("aria-expanded", String(!isOpen));
-    });
-
-    /* ==========================================
-       JS FEATURE 4 - Dark Theme Toggle
-       Switches between light and dark themes and swaps the SVG icons.
-       ========================================== */
+    // Dark Theme Toggle
+    // Switches between light and dark themes and swaps the SVG icons
     const themeToggleBtns = document.querySelectorAll(".theme-toggle");
     const root = document.documentElement;
 
@@ -75,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ---------- Sticky Header Logic ----------
+    // Sticky Header Logic
     // Makes the navigation bar stick to the top of the screen with a smooth animation after scrolling down.
     const headerWrapper = document.getElementById('mainHeader');
 
@@ -97,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ---------- Global Cart Logic ----------
+// Global Cart Logic 
 // Data persistence & array manipulation via LocalStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 

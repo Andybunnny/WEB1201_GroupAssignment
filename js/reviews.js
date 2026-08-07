@@ -1,5 +1,3 @@
-/* ===== FILE: reviews.js ===== */
-
 document.addEventListener('DOMContentLoaded', () => {
     const starContainer = document.getElementById('starRatingContainer');
     const stars = document.querySelectorAll('.star');

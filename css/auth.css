@@ -1,5 +1,4 @@
-/* ===== AUTHENTICATION STYLES (LOGIN & SIGNUP) ===== */
-
+/* Login and Signup Page */
 .auth-container {
     max-width: 550px;
     margin: 4rem auto;
@@ -29,7 +28,7 @@
     margin: 2.5rem 0;
 }
 
-/* --- FORM LAYOUT (FLEXBOX) --- */
+/* Form Layout */
 .auth-container form {
     display: flex;
     flex-direction: column;
@@ -65,7 +64,7 @@
     box-shadow: 0 0 0 3px rgba(176, 137, 104, 0.08);
 }
 
-/* --- BUTTONS --- */
+/* Button */
 .auth-container button {
     background-color: var(--accent);
     color: #ffffff;
@@ -125,7 +124,7 @@
     color: #ffffff !important;
 }
 
-/* --- PROGRESS INDICATOR --- */
+/* Progress Indicator */
 .progress-indicator {
     display: flex;
     justify-content: space-between;
@@ -146,7 +145,6 @@
     color: var(--accent);
 }
 
-/* --- UTILITY CLASSES --- */
 .hidden { display: none !important; }
 .form-step { display: none; }
 .form-step.active-step {
@@ -182,8 +180,7 @@
     background-color: #2e7d32 !important;
 }
 
-/* ===== DASHBOARD (LOGGED IN STATE) STYLES ===== */
-
+/* Dashboard */
 .dashboard-container {
     text-align: center;
     padding: 4rem 2rem;
