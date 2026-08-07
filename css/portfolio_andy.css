@@ -432,3 +432,79 @@
     color: var(--text-main);
     transform: translateX(4px); /* Slides slightly to the right on hover */
 }
+
+/* =========================================
+   PRINT STYLES (Activated on Ctrl+P)
+   ========================================= */
+@media print {
+    /* 1. Force light mode variables so it prints on white */
+    :root {
+        --bg-body: #ffffff !important;
+        --bg-card: #ffffff !important;
+        --text-primary: #000000 !important;
+        --text-secondary: #333333 !important;
+        --text-main: #000000 !important;
+        --text-muted: #333333 !important;
+        --border: #cccccc !important;
+    }
+
+    /* 2. Force block layout (CRITICAL: Flex/Grid breaks pagination) */
+    body, main, .portfolio {
+        display: block !important;
+        background-color: #ffffff !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Aggressive page breaking for sections */
+    .portfolio > section, 
+    .portfolio > div {
+        display: block !important;
+        page-break-before: always !important; /* Legacy browsers */
+        break-before: page !important;        /* Modern browsers */
+        padding-top: 2rem !important;
+    }
+
+    /* Prevent a blank page at the very beginning */
+    .portfolio > section:first-of-type,
+    .portfolio > div:first-child {
+        page-break-before: avoid !important;
+        break-before: auto !important;
+        padding-top: 0 !important;
+    }
+
+    /* 4. Hide all website UI navigation */
+    .header-nav-wrapper,
+    footer,
+    .floating-cart-btn,
+    .back-nav-container,
+    .cv-btn,
+    .theme-toggle,
+    .contact-links {
+        display: none !important;
+    }
+
+    /* 5. Clean up cards for paper */
+    .project-card, .edu-card, .edu-block {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        color: #000000 !important;
+        background: #ffffff !important;
+    }
+
+    /* 6. Fix skill bars */
+    .skill-bar__fill {
+        animation: none !important;
+        width: var(--percent) !important;
+        background-color: #777 !important; /* Grayscale for printing */
+    }
+
+    /* 7. Force precise colors */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
