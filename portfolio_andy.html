@@ -347,8 +347,8 @@
 
     <script src="js/global.js"></script>
 
-    <!-- Minimal JS to make the Education Timeline work on scroll -->
     <script>
+        <!-- Minimal JS to make the Education Timeline work on scroll -->
         document.addEventListener("DOMContentLoaded", () => {
             const eduBlocks = document.querySelectorAll(".edu-block");
             const navNodes = document.querySelectorAll(".roadmap-node");
@@ -377,6 +377,34 @@
                 roadmapObserver.observe(block);
             });
         });
+
+        // --- SKILLS ANIMATION OBSERVER ---
+            const skillSection = document.getElementById('skills');
+            const progressBars = document.querySelectorAll('.progress-fill');
+
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // When the skills section enters the viewport...
+                    if (entry.isIntersecting) {
+                        // Loop through every progress bar and add the animation class
+                        progressBars.forEach((bar, index) => {
+                            // Optional: Add a tiny stagger delay so they don't all load at the exact same millisecond
+                            setTimeout(() => {
+                                bar.classList.add('animate-bar');
+                            }, index * 50); 
+                        });
+                        
+                        // Stop observing once the animation has triggered so it doesn't repeat unnecessarily
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2 // Triggers when 20% of the skills section is visible
+            });
+
+            if (skillSection) {
+                skillsObserver.observe(skillSection);
+            }
     </script>
 
 </body>

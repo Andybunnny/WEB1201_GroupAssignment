@@ -325,12 +325,17 @@
     height: 100%;
     background-color: var(--accent-color);
     border-radius: 4px;
-    transition: growBar 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.progress-fill.animate-bar {
+    animation: growBar 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes growBar {
-    0% { transform: scaleX(0); transform-origin: left; }
-    100% { transform: scaleX(1); transform-origin: left; }
+    0% { transform: scaleX(0);}
+    100% { transform: scaleX(1);}
 }
 
 /* Progress Bar Width Utilities */
