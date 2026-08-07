@@ -12,33 +12,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Dark Mode Toggle Button (Top Right) */
-.team-theme-toggle {
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, color 0.3s ease;
-    padding: 0;
-}
-
-.team-theme-toggle:hover {
-    transform: scale(1.1);
-    color: var(--accent);
-}
-
-.team-theme-toggle img.theme-icon {
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
 /* Main Layout */
 .team-section {
     max-width: 1300px;
@@ -318,13 +291,6 @@ body {
 .tech-icons span:hover {
     transform: translateY(-3px);
     color: var(--accent);
-}
-
-.team-footer {
-    text-align: center;
-    padding: 3rem 2rem 2rem;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
 }
 
 /* Responsive Adjustments */
