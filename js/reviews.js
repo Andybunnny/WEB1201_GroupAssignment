@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const starContainer = document.getElementById('starRatingContainer');
     const stars = document.querySelectorAll('.star');
     const reviewText = document.getElementById('reviewText');
     const charCountDisplay = document.getElementById('currentCharCount');
