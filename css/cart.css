@@ -63,3 +63,42 @@
     color: var(--text-secondary);
     font-weight: normal;
 }
+
+.col-price {
+    flex: 1.5;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    /* Hide the headers for mobile */
+    .checkout-table-headers {
+        display: none;
+    }
+
+    /* Change the item row into a 2x2 grid */
+    .cart-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        align-items: center;
+        padding: 1.5rem 0;
+    }
+
+    .col-product {
+        grid-column: 1 / 3;
+        width: 100%;
+    }
+    
+    /* Hide the price column on mobile */
+    .col-price {
+        display: none;
+    }
+
+    .col-qty {
+        justify-content: flex-start !important;
+    }
+
+    .col-total {
+        text-align: right !important;
+    }
+}
