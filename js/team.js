@@ -1,5 +1,3 @@
-/* ===== FILE: team.js ===== */
-
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".team-card");
     const closeBtns = document.querySelectorAll(".close-btn");

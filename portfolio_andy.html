@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andy Wong | Portfolio</title>
-    
+
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/portfolio_andy.css">
-    
+
     <script>
         // Applies saved theme (Dark or Light Mode) on load
         const savedTheme = localStorage.getItem("bakery-theme") || "light";
         document.documentElement.setAttribute("data-theme", savedTheme);
     </script>
 </head>
+
 <body>
 
 
@@ -38,7 +40,7 @@
                     </ul>
                 </li>
                 <li><a href="reviews.html">Reviews</a></li>
-                
+
                 <li class="nav-dropdown">
                     <a href="team.html">Our Team</a>
                     <ul class="dropdown-menu">
@@ -48,7 +50,7 @@
                     </ul>
                 </li>
             </ul>
-            
+
             <div class="nav-icons">
                 <button class="theme-toggle" aria-label="Toggle theme"></button>
                 <a href="login.html" aria-label="Go to login page">
@@ -60,11 +62,12 @@
 
     <!-- 2. PORTFOLIO MAIN CONTENT -->
     <main class="portfolio-main">
-        
+
         <!-- Back Navigation -->
         <div class="back-nav-container">
             <a href="team.html" class="back-to-teams-btn">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
                 </svg>
@@ -73,16 +76,19 @@
         </div>
 
         <!-- HERO SECTION -->
-        <section id="hero" class="fade-in">
+        <section id="hero">
             <div class="hero-content">
                 <img src="assets/img/team/andy.png" alt="Picture of Andy Wong" class="profile-pic">
                 <h1>Andy Wong Jian Dao</h1>
                 <h2 class="role-title">Year 1 Semester 3 Software Engineering Student</h2>
-                <p class="bio">    
-                    I enjoy spending my time learning programming languages, exploring trending open-source projects repositories on GitHub.<br><br>
-                    Unrelated to my studies and coding wise, I enjoy watching films and reading books of various genres and topics, 
+                <p class="bio">
+                    I enjoy spending my time learning programming languages, exploring trending open-source projects
+                    repositories on GitHub.<br><br>
+                    Unrelated to my studies and coding wise, I enjoy watching films and reading books of various genres
+                    and topics,
                     as well as doing sports such as badminton and running with friends.<br><br>
-                    Currently, I am also starting up and working on my personal projects that help me apply and expand my technical coding knowledge.
+                    Currently, I am also starting up and working on my personal projects that help me apply and expand
+                    my technical coding knowledge.
                 </p>
 
                 <div class="contact-links">
@@ -157,69 +163,90 @@
         <section id="skills">
             <div class="section-sticky">
                 <h2 class="section-title sticky-title">Technical Skills</h2>
-                <p class="section-subtitle sticky-subtitle">Proficiencies developed through academic research and practical implementation.</p>
+                <p class="section-subtitle sticky-subtitle">Proficiencies developed through academic research and
+                    practical implementation.</p>
             </div>
-            
+
             <div class="container">
                 <div class="skills-category-grid">
-                    
+
                     <!-- Front End -->
                     <div class="skills-column">
                         <h3 class="skills-category-title">Front End</h3>
-                        
+
                         <div class="skill-item">
                             <div class="skill-info"><span>HTML</span><span>80%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-80"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-80"></div>
+                            </div>
                         </div>
 
                         <div class="skill-item">
                             <div class="skill-info"><span>CSS</span><span>75%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-75"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-75"></div>
+                            </div>
                         </div>
 
                         <div class="skill-item">
                             <div class="skill-info"><span>JavaScript (JS)</span><span>70%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-70"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-70"></div>
+                            </div>
                         </div>
 
                         <div class="skill-item">
                             <div class="skill-info"><span>React</span><span>50%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-50"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-50"></div>
+                            </div>
                         </div>
 
                         <div class="skill-item">
                             <div class="skill-info"><span>Angular JS</span><span>40%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-40"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-40"></div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Back End -->
                     <div class="skills-column">
                         <h3 class="skills-category-title">Back End</h3>
-                        
+
                         <div class="skill-item">
                             <div class="skill-info"><span>Python</span><span>70%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-70"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-70"></div>
+                            </div>
                         </div>
 
                         <div class="skill-item">
                             <div class="skill-info"><span>Java</span><span>75%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-75"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-75"></div>
+                            </div>
                         </div>
 
                         <div class="skill-item">
                             <div class="skill-info"><span>C</span><span>60%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-60"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-60"></div>
+                            </div>
                         </div>
 
                         <div class="skill-item">
                             <div class="skill-info"><span>SQL</span><span>75%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-75"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-75"></div>
+                            </div>
                         </div>
 
                         <div class="skill-item">
                             <div class="skill-info"><span>Node JS</span><span>50%</span></div>
-                            <div class="progress-bar"><div class="progress-fill w-50"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill w-50"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -228,30 +255,34 @@
         </section>
 
         <!-- PROJECTS & CV SECTION -->
-        <section id="projects"">
-            <div class="section-sticky">
-                <h2 class="section-title sticky-title">Project Highlights</h2>
+        <section id="projects">
+            <div class=" section-sticky">
+            <h2 class="section-title sticky-title">Project Highlights</h2>
             </div>
-            
+
             <div class="container">
                 <div class="projects-grid">
                     <div class="project-card">
                         <h3>UMHackathon Project: SentimentFlowAI</h3>
-                        <p>An end-to-end engagement system designed to bridge the gap between customer feedback and business improvement
-                             by leveraging AI-powered sentiment analysis for enquiry and complaint handling.
+                        <p>An end-to-end engagement system designed to bridge the gap between customer feedback and
+                            business improvement
+                            by leveraging AI-powered sentiment analysis for enquiry and complaint handling.
                         </p>
                         <br></br>
                         <p><strong>Tech Stack:</strong> Python, Streamlit, SQLite, FastAPI</p>
-                        <a class="project-link" href="https://github.com/timmmtam/SentimentFlow" target="_blank">View on GitHub &rarr;</a>
+                        <a class="project-link" href="https://github.com/timmmtam/SentimentFlow" target="_blank">View on
+                            GitHub &rarr;</a>
                     </div>
                     <div class="project-card">
                         <h3>Web Development Project: Granbakery</h3>
-                        <p>Developed a responsive website for a local bakery, implementing modern web technologies and user-friendly design
-                             principles.
+                        <p>Developed a responsive website for a local bakery, implementing modern web technologies and
+                            user-friendly design
+                            principles.
                         </p>
                         <br></br>
                         <p><strong>Tech Stack:</strong> HTML5, CSS3, JavaScript</p>
-                        <a class="project-link" href="https://github.com/Andybunnny/WEB1201_GroupAssignment" target="_blank">View on GitHub &rarr;</a>
+                        <a class="project-link" href="https://github.com/Andybunnny/WEB1201_GroupAssignment"
+                            target="_blank">View on GitHub &rarr;</a>
                     </div>
                 </div>
 
@@ -261,63 +292,63 @@
 
     <!-- 3. GLOBAL FOOTER -->
     <footer>
-		<div class="footer-container">
+        <div class="footer-container">
 
-			<!-- Contact & Location Info -->
-			<div class="footer-contact">
-				<div class="footer-column">
-					<h4>Contact Us</h4>
-					<p>Phone: +60123456789</p>
-					<p>Email: hr@granbakery.my</p>
-				</div>
+            <!-- Contact & Location Info -->
+            <div class="footer-contact">
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Phone: +60123456789</p>
+                    <p>Email: hr@granbakery.my</p>
+                </div>
 
-				<!-- Column 2: Location -->
-				<div class="footer-column">
-					<h4>Location</h4>
-					<p>142 Baker Street</p>
-					<p>Springfield, IL 62704</p>
-				</div>
+                <!-- Column 2: Location -->
+                <div class="footer-column">
+                    <h4>Location</h4>
+                    <p>142 Baker Street</p>
+                    <p>Springfield, IL 62704</p>
+                </div>
 
-				<!-- Column 3: Hours -->
-				<div class="footer-column">
-					<h4>Operating Hours</h4>
-					<p>Tuesday - Saturday: 10:00 AM - 3:00 PM</p>
-					<p>Closed on Sundays, Mondays and Public Holidays</p>
-				</div>
-			</div>
+                <!-- Column 3: Hours -->
+                <div class="footer-column">
+                    <h4>Operating Hours</h4>
+                    <p>Tuesday - Saturday: 10:00 AM - 3:00 PM</p>
+                    <p>Closed on Sundays, Mondays and Public Holidays</p>
+                </div>
+            </div>
 
-			<!-- Social Media Icons -->
-			<div class="footer-socials">
-				<a href="https://www.facebook.com" aria-label="Visit our Facebook">
-					<img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
-				</a>
+            <!-- Social Media Icons -->
+            <div class="footer-socials">
+                <a href="https://www.facebook.com" aria-label="Visit our Facebook">
+                    <img src="assets/img/global/facebook.svg" alt="Visit our Facebook" width="20" height="20">
+                </a>
 
-				<a href="https://www.instagram.com" aria-label="Visit our Instagram">
-					<img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
-				</a>
+                <a href="https://www.instagram.com" aria-label="Visit our Instagram">
+                    <img src="assets/img/global/instagram.svg" alt="Visit our Instagram" width="20" height="20">
+                </a>
 
-				<a href="https://www.youtube.com" aria-label="Visit our YouTube">
-					<img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
-				</a>
-			</div>
+                <a href="https://www.youtube.com" aria-label="Visit our YouTube">
+                    <img src="assets/img/global/youtube.svg" alt="Visit our YouTube" width="20" height="20">
+                </a>
+            </div>
 
-			<div class="footer-copyright">
-				<p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
-			</div>
-		</div>
-	</footer>
+            <div class="footer-copyright">
+                <p>Copyright 2026 &copy; Granbakery Sdn Bhd</p>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- Floating Cart Button -->
-    <button class="floating-cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
+    <button class="floating-cart-btn" onclick="window.location.href='cart.html'">
         <img src="assets/img/global/cart.svg" alt="Shopping cart" width="24" height="24">
         <span class="cart-count" id="cartCount">0</span>
     </button>
 
     <script src="js/global.js"></script>
-    
-    <!-- Minimal JS to make the Education Timeline work on scroll -->
+
     <script>
+        <!-- Minimal JS to make the Education Timeline work on scroll -->
         document.addEventListener("DOMContentLoaded", () => {
             const eduBlocks = document.querySelectorAll(".edu-block");
             const navNodes = document.querySelectorAll(".roadmap-node");
@@ -327,10 +358,10 @@
                     if (entry.isIntersecting) {
                         // 1. Remove the 'active' highlight from all nodes
                         navNodes.forEach(node => node.classList.remove("active"));
-                        
+
                         // 2. Find out which block we just scrolled to (hs, col, or uni)
                         const currentId = entry.target.id;
-                        
+
                         // 3. Add the 'active' highlight to the matching node
                         const activeNode = document.getElementById(`nav-${currentId}`);
                         if (activeNode) {
@@ -346,7 +377,36 @@
                 roadmapObserver.observe(block);
             });
         });
+
+        // --- SKILLS ANIMATION OBSERVER ---
+            const skillSection = document.getElementById('skills');
+            const progressBars = document.querySelectorAll('.progress-fill');
+
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // When the skills section enters the viewport...
+                    if (entry.isIntersecting) {
+                        // Loop through every progress bar and add the animation class
+                        progressBars.forEach((bar, index) => {
+                            // Optional: Add a tiny stagger delay so they don't all load at the exact same millisecond
+                            setTimeout(() => {
+                                bar.classList.add('animate-bar');
+                            }, index * 50); 
+                        });
+                        
+                        // Stop observing once the animation has triggered so it doesn't repeat unnecessarily
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2 // Triggers when 20% of the skills section is visible
+            });
+
+            if (skillSection) {
+                skillsObserver.observe(skillSection);
+            }
     </script>
 
 </body>
+
 </html>

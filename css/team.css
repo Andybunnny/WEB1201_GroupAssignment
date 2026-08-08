@@ -1,5 +1,4 @@
-/* ===== CSS theme file for team page ===== */
-
+/* Team Page */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,60 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- Back to Bakery Button --- */
-.back-btn {
-    position: absolute;
-    top: 2.5rem;
-    left: 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.back-btn svg {
-    width: 20px;
-    height: 20px;
-    stroke: currentColor;
-}
-
-.back-btn:hover {
-    transform: translateX(-5px);
-    color: var(--accent);
-}
-
-/* --- Dark Mode Toggle Button (Top Right) --- */
-.team-theme-toggle {
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, color 0.3s ease;
-    padding: 0;
-}
-
-.team-theme-toggle:hover {
-    transform: scale(1.1);
-    color: var(--accent);
-}
-
-.team-theme-toggle img.theme-icon {
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-/* --- Main Layout --- */
+/* Main Layout */
 .team-section {
     max-width: 1300px;
     margin: 0 auto;
@@ -104,7 +50,7 @@ body {
     gap: 0;
 }
 
-/* --- Base Card Styles --- */
+/* Base Card Styles */
 .team-card {
     flex: 1;
     display: flex;
@@ -190,7 +136,7 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Detailed Information --- */
+/* Detailed Information */
 .detailed-info {
     max-height: 0;
     opacity: 0;
@@ -228,7 +174,7 @@ body {
     font-weight: 600;
 }
 
-/* --- Card Actions (Buttons) --- */
+/* Card Actions (Buttons) */
 .card-actions {
     display: flex;
     gap: 1rem;
@@ -269,7 +215,7 @@ body {
     color: var(--text-primary);
 }
 
-/* --- EXPANDED STATE --- */
+/* EXPANDED STATE */
 .team-card.is-expanded {
     flex: 1; 
     max-width: 1000px; 
@@ -293,7 +239,7 @@ body {
     padding-top: 3.5rem; 
 }
 
-/* --- HIDDEN STATE --- */
+/* HIDDEN STATE */
 .team-card.is-hidden {
     flex: 0;
     opacity: 0;
@@ -304,7 +250,7 @@ body {
     overflow: hidden;
 }
 
-/* --- Tech Stack & Footer --- */
+/* Tech Stack & Footer */
 .tech-stack {
     text-align: center;
     margin-top: 6rem;
@@ -347,14 +293,7 @@ body {
     color: var(--accent);
 }
 
-.team-footer {
-    text-align: center;
-    padding: 3rem 2rem 2rem;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-}
-
-/* --- Responsive Adjustments --- */
+/* Responsive Adjustments */
 @media (max-width: 950px) {
     .team-container {
         flex-direction: column;

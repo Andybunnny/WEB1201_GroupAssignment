@@ -1,4 +1,5 @@
-/*--------------------------------------- WELCOME BANNER -------------------------------------------- */
+/* Home Page */
+/* Welcome Banner */
 .welcome-banner {
     text-align: center;
     padding: 4rem 2rem;
@@ -41,7 +42,7 @@
     transform: translateY(-2px);
 }
 
-/*--------------------------------------- HOME PHOTO  -------------------------------------------- */
+/* Display Section */
 .display-section {
     width: 100%;
     overflow: hidden;
@@ -56,7 +57,7 @@
     margin-bottom: 5px; /* small gap before the next section */
 }
 
-/*--------------------------------------- PRODUCT DISPLAY -------------------------------------------- */
+/* Product Display */
 /* Outer "Our Products" section - translucent warm gray background wrapping the whole block */
 .productdisplay {
     background-color: #cac0b7c4; 
@@ -201,7 +202,7 @@
     }
 }
 
-/*--------------------------------------- WHY CHOOSE US -------------------------------------------- */
+/* Why Choose Us */
 .why-choose-us {
     text-align: center;
     margin: 4rem 1rem;
@@ -221,7 +222,7 @@
     line-height: 1.6;
 }
 
-/*--------------------------------------- HERO -------------------------------------------- */
+/* Hero Section */
 /* "Granbakery Story" section - image and text side by side */
 .hero {
     display: flex;
@@ -297,27 +298,43 @@
 }
 
 /* Small screens: stack image above text instead of side by side */
-@media (max-width: 800px) {
-    .hero {
-        flex-direction: column;
-        max-height: none; /* removes the desktop height cap so content isn't squeezed when stacked */
+@media (max-width: 768px) {
+/* 1. Reduce the massive desktop padding so the content has room to breathe */
+    .productdisplay {
+        padding: 2rem 1rem !important;
     }
-    
-    .hero-img {
+
+    /* 2. Center the button group and reduce the gap between them */
+    .displaygrid {
+        gap: 12px;
+        justify-content: center;
         width: 100%;
-        height: 220px; /* fixed height since width:auto no longer makes sense in a stacked layout */
     }
-    
-    .hero-text {
-        padding: 40px;
+
+    /* 3. Scale down the arches so they can sit side-by-side on small screens */
+    .productdisplay-btn {
+        width: 140px !important; /* Shrunk from 200px */
+        height: 190px !important; /* Shrunk from 270px */
     }
-    
-    .hero-text h1 {
-        font-size: 1.6rem; /* slightly smaller heading to fit narrow screens better */
+
+    /* 4. Slightly reduce the text inside the scaled-down buttons */
+    .productdisplay-btn span {
+        font-size: 1rem;
+    }
+
+    /* 5. Center the text layout */
+    .productdisplay-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .productdisplay-text {
+        text-align: center;
     }
 }
 
-/*--------------------------------------- ABOUT TOP ROW -------------------------------------------- */
+/* ABOUT TOP ROW  */
 /* Full-bleed wrapper row holding the hero + sidebar, breaks out of the page's normal max-width container */
 .aboutTopRow {
     display: flex;
@@ -440,7 +457,7 @@
     }
 }
 
-/*--------------------------------------- REVIEWS SLIDER -------------------------------------------- */
+/* Reviews Slider */
 .reviews-slider-section {
     max-width: 1100px;
     margin: 4rem auto;
