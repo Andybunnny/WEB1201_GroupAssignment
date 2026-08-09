@@ -370,7 +370,8 @@
                     }
                 });
             }, {
-                threshold: 0.5 // Triggers when 50% of the block is on screen
+                rootMargin: "-30% 0px -50% 0px",
+                threshold: 0
             });
 
             eduBlocks.forEach(block => {
