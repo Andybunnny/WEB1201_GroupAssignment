@@ -406,11 +406,9 @@ html, body {
     transform: translateX(4px); /* Slides slightly to the right on hover */
 }
 
-/* =========================================
-   PRINT STYLES (Activated on Ctrl+P)
-   ========================================= */
+/* PRINT STYLES*/
 @media print {
-    /* 1. Force light mode variables so it prints on white */
+    /* Force light mode variables so it prints on white */
     :root {
         --bg-body: #ffffff !important;
         --bg-card: #ffffff !important;
@@ -421,7 +419,6 @@ html, body {
         --border: #cccccc !important;
     }
 
-    /* 2. Force block layout (CRITICAL: Flex/Grid breaks pagination) */
     body, main, .portfolio {
         display: block !important;
         background-color: #ffffff !important;
@@ -430,12 +427,11 @@ html, body {
         margin: 0 !important;
     }
 
-    /* 3. Aggressive page breaking for sections */
     .portfolio > section, 
     .portfolio > div {
         display: block !important;
         page-break-before: always !important; /* Legacy browsers */
-        break-before: page !important;        /* Modern browsers */
+        break-before: page !important; /* Modern browsers */
         padding-top: 2rem !important;
     }
 
@@ -447,7 +443,7 @@ html, body {
         padding-top: 0 !important;
     }
 
-    /* 4. Hide all website UI navigation */
+    /* Hide all website UI navigation */
     .header-nav-wrapper,
     footer,
     .floating-cart-btn,
@@ -458,7 +454,6 @@ html, body {
         display: none !important;
     }
 
-    /* 5. Clean up cards for paper */
     .project-card, .edu-card, .edu-block {
         box-shadow: none !important;
         border: 1px solid #ddd !important;
@@ -468,14 +463,12 @@ html, body {
         background: #ffffff !important;
     }
 
-    /* 6. Fix skill bars */
     .skill-bar__fill {
         animation: none !important;
         width: var(--percent) !important;
         background-color: #777 !important; /* Grayscale for printing */
     }
 
-    /* 7. Force precise colors */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
